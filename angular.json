@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "indicka"
+    }
+  },
+  "defaultProject": "indicka",
+  "cli": {
+    "analytics": "f5c2ec27-7f4e-4d48-9b7c-ab8fdcbd09a7"
+  }
 }
