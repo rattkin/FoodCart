@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,6 +129,7 @@
   },
   "defaultProject": "indicka",
   "cli": {
-    "analytics": "f5c2ec27-7f4e-4d48-9b7c-ab8fdcbd09a7"
+    "defaultCollection": "@ngrx/schematics",
+    "analytics": "c2edd051-ab83-4883-92a6-b84714683701"
   }
 }

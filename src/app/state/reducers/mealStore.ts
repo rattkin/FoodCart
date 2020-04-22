@@ -1,7 +1,7 @@
 import { Action, createAction, createReducer, MetaReducer, on, props } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
-import { Meal } from '../../meal';
-import { Menu } from '../../menu';
+import { Meal } from '../../interfaces/meal';
+import { Menu } from '../../interfaces/menu';
 
 export const mealFeatureKey = 'mealStore';
 
