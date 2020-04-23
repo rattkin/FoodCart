@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
@@ -11,16 +10,25 @@ import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { MenuComponent } from './menu/menu.component';
 import * as fromReducers from './state/reducers/mealStore';
+import { MaterialModule } from './material-module';
+import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
+import { MatDialogRef } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { OrderListComponent } from './order-list/order-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    PickSideDishComponent,
+    OrderListComponent,
   ],
   imports: [
-    MatCardModule,
+    MaterialModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot(fromReducers.reducer,
       //  {      metaReducers    }
     ),
@@ -32,7 +40,13 @@ import * as fromReducers from './state/reducers/mealStore';
     }),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  entryComponents: [
+    PickSideDishComponent,
+  ],
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

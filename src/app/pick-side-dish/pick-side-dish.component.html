@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Vyberte si přílohu</h1>
+<mat-dialog-content>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="chosenSideDish">
+        <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes |async" [value]="side">
+            {{side.name}}
+        </mat-radio-button>
+    </mat-radio-group>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onSubmit()">
+        potvrdit
+    </button>
+    <button mat-button (click)="checkClose()">
+        Zrušit
+    </button>
+</mat-dialog-actions>

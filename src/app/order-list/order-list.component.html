@@ -1,0 +1,16 @@
+<mat-card class="example-card" *ngIf="order |async">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        Objednávka:
+    </mat-card-header>
+    <mat-card-content>
+        <mat-chip-list aria-label="Objednávka:">
+            <mat-chip *ngFor="let item of order |async">{{item.name}}</mat-chip>
+        </mat-chip-list>
+
+        {{total |async}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>Objednat</button>
+    </mat-card-actions>
+</mat-card>
