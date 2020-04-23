@@ -10,6 +10,7 @@
                 <mat-card-content>
                     <p>
                         Cena: {{item.price}} Kč
+                        <span *ngIf="item.packaging" class="packing"> + obal {{item.packaging}} Kč</span>
 
                         <span *ngIf="item.orderQuantity">
                             Objednávka: {{item.orderQuantity}} ks
@@ -17,7 +18,7 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button (click)="pickSideDish(item)">Objednat</button>
+                    <button mat-raised-button color="accent" (click)="pickSideDish(item)">Objednat</button>
                     <button *ngIf="item.orderQuantity" mat-stroked-button (click)="remove(item.name)">Odstranit
                     </button>
                 </mat-card-actions>

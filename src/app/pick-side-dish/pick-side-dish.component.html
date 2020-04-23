@@ -3,7 +3,9 @@
     <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
         [(ngModel)]="chosenSideDish">
         <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes |async" [value]="side">
-            {{side.name}}
+            {{side.name}} ({{side.description}}) {{side.price}} Kč
+            <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
+
         </mat-radio-button>
     </mat-radio-group>
 </mat-dialog-content>

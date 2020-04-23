@@ -21,7 +21,7 @@ export const selectOrder = createSelector(
 export const selectOrderTotal = createSelector(
     selectMealState,
     (state) => {
-        let total: number;
+        let total = 0;
         console.log(total);
         state.order.forEach(item => {
             console.log(item.price, item.packaging);

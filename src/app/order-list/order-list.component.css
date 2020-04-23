@@ -1,3 +1,15 @@
-.mat-chip-list-wrapper {
-    flex-direction: column !important;
+.floating {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 999;
+    zoom: 2;
+}
+.floating-card {
+    position: fixed;
+    right: 10px;
+    bottom: 140px;
+    z-index: 999;
+    text-align: center;
+    width: 300px;
 }
