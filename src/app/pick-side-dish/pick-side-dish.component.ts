@@ -2,7 +2,7 @@ import { Component, OnInit, Optional, Inject } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { selectSideDishes } from '../state/selectors';
-import { order } from '../actions/order.actions';
+import { addToOrder } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
 
 @Component({
@@ -17,7 +17,7 @@ export class PickSideDishComponent implements OnInit {
 
   constructor(
     private store: Store<any>,
-    public cropDialogRef: MatDialogRef<PickSideDishComponent>,
+    public DialogRef: MatDialogRef<PickSideDishComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.dish = data.dish;
@@ -27,12 +27,12 @@ export class PickSideDishComponent implements OnInit {
   }
 
   onSubmit() {
-    this.store.dispatch(order({ item: this.dish, sideDish: this.chosenSideDish }));
-    this.cropDialogRef.close();
+    this.store.dispatch(addToOrder({ item: this.dish, sideDish: this.chosenSideDish }));
+    this.DialogRef.close();
   }
 
   checkClose() {
-    this.cropDialogRef.close();
+    this.DialogRef.close();
   }
 
 }

@@ -6,19 +6,25 @@ export const pickSideDish = createAction(
   props<{ item: Meal; }>()
 );
 
-export const order = createAction(
-  'order',
+export const showOrder = createAction(
+  'showOrder',
+);
+
+export const addToOrder = createAction(
+  'addToOrder',
   props<{
     item: Meal;
     sideDish: Meal;
   }>()
 );
 
-export const remove = createAction(
-  'remove',
+export const removeFromOrder = createAction(
+  'removeFromOrder',
   props<{ item: string; }>()
 );
 
-
+export const confirmOrder = createAction(
+  'confirmOrder',
+);
 
 

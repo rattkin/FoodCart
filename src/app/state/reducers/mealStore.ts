@@ -1,10 +1,10 @@
-import { Action, createAction, createReducer, MetaReducer, on, props } from '@ngrx/store';
+import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
+import { addToOrder, removeFromOrder } from 'src/app/actions/order.actions';
+import { SideDishes } from 'src/app/interfaces/side-dishes';
+import { Soups } from 'src/app/interfaces/soups';
 import { environment } from '../../../environments/environment';
 import { Meal } from '../../interfaces/meal';
 import { Menu } from '../../interfaces/menu';
-import { order, remove } from 'src/app/actions/order.actions';
-import { SideDishes } from 'src/app/interfaces/side-dishes';
-import { Soups } from 'src/app/interfaces/soups';
 
 export const mealFeatureKey = 'mealStore';
 
@@ -30,7 +30,7 @@ export interface State {
 const mealReducer = createReducer(
   initialState,
 
-  on(order, (state, { item: item, sideDish: sideDish }) => ({
+  on(addToOrder, (state, { item: item, sideDish: sideDish }) => ({
     ...state,
     order: [...state.order, item, sideDish]
 
@@ -52,7 +52,7 @@ const mealReducer = createReducer(
 
 
   // TODO remove
-  on(remove, (state, { item: payload }) => ({
+  on(removeFromOrder, (state, { item: payload }) => ({
     ...state,
     menu: [...state.menu.map(item => {
 

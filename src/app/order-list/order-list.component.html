@@ -1,16 +1,2 @@
-<button mat-fab color="warn" *ngIf="total |async" class="floating"> {{total |async}} Kč</button>
-
-<mat-card class="floating-card" *ngIf="total |async" color="warn">
-    <mat-card-header>
-        Objednávka:
-    </mat-card-header>
-    <mat-card-content>
-        <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical" aria-label="Objednávka:">
-            <mat-chip *ngFor="let item of order |async">{{item.name}}</mat-chip>
-        </mat-chip-list>
-
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>Objednat</button>
-    </mat-card-actions>
-</mat-card>
+<button mat-fab color="warn" *ngIf="total |async" class="floating" (click)="showOrder()"> <small>Objednávka:</small><br>
+    {{total |async}} Kč</button>

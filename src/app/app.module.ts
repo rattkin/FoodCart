@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
@@ -8,14 +11,12 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
-import { MenuComponent } from './menu/menu.component';
-import * as fromReducers from './state/reducers/mealStore';
 import { MaterialModule } from './material-module';
-import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
-import { MatDialogRef } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
 import { OrderListComponent } from './order-list/order-list.component';
-
+import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
+import * as fromReducers from './state/reducers/mealStore';
+import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,12 @@ import { OrderListComponent } from './order-list/order-list.component';
     MenuComponent,
     PickSideDishComponent,
     OrderListComponent,
+    OrderDialogComponent,
   ],
   imports: [
     MaterialModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     StoreModule.forRoot(fromReducers.reducer,

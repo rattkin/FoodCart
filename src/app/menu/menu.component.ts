@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { selectMenu } from '../state/selectors';
-import { order, remove, pickSideDish } from '../actions/order.actions';
+import { addToOrder, removeFromOrder, pickSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
 
 @Component({
@@ -22,6 +22,6 @@ export class MenuComponent implements OnInit {
   }
 
   remove(orderItem: string) {
-    this.store.dispatch(remove({ item: orderItem }));
+    this.store.dispatch(removeFromOrder({ item: orderItem }));
   }
 }
