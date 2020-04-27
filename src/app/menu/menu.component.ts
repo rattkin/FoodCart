@@ -3,6 +3,10 @@ import { Store, select } from '@ngrx/store';
 import { selectMenu } from '../state/selectors';
 import { addToOrder, removeFromOrder, pickSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
+import { GoogleAnalyticsService } from 'angular-ga';
+
+// declare ga as a function to set and sent the events
+declare let gtag: Function;
 
 @Component({
   selector: 'app-menu',
@@ -15,6 +19,7 @@ export class MenuComponent implements OnInit {
   constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
+    gtag('send', 'pageview');
   }
 
   pickSideDish(orderItem: Meal) {

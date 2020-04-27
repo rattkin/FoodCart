@@ -6,6 +6,9 @@ import { confirmOrder } from '../actions/order.actions';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
 import { selectOrder, selectOrderTotal } from '../state/selectors';
 
+// declare ga as a function to set and sent the events
+declare let gtag: Function;
+
 @Component({
   selector: 'app-order-dialog',
   templateUrl: './order-dialog.component.html',
@@ -26,6 +29,8 @@ export class OrderDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    gtag('send', 'pageview');
+
     this.usernameForm = this.formBuilder.group({
       formUsername: ['', [
         Validators.required,

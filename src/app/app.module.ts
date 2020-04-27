@@ -20,6 +20,9 @@ import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderTimeComponent } from './order-time/order-time.component';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import { GoogleAnalyticsModule, GA_TOKEN } from 'angular-ga';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { OrderTimeComponent } from './order-time/order-time.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    MatMomentDateModule,
+    GoogleAnalyticsModule.forRoot(),
     StoreModule.forRoot(fromReducers.reducer,
       //  {      metaReducers    }
     ),
@@ -55,7 +60,6 @@ import { OrderTimeComponent } from './order-time/order-time.component';
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },
-
   ],
   bootstrap: [AppComponent]
 })

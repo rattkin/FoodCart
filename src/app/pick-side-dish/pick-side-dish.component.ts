@@ -6,6 +6,9 @@ import { addToOrder } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+// declare ga as a function to set and sent the events
+declare let gtag: Function;
+
 @Component({
   selector: 'app-pick-side-dish',
   templateUrl: './pick-side-dish.component.html',
@@ -28,6 +31,9 @@ export class PickSideDishComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    gtag('send', 'pageview');
+
+
     this.sideForm = this.formBuilder.group({
       formSideRadio: ['', [
         Validators.required,
