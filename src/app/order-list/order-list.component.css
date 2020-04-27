@@ -5,11 +5,7 @@
     z-index: 999;
     zoom: 2;
 }
-.floating-card {
-    position: fixed;
-    right: 10px;
-    bottom: 140px;
-    z-index: 999;
-    text-align: center;
-    width: 300px;
+
+small {
+    font-size: 50%;
 }

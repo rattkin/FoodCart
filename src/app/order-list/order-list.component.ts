@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { selectOrder, selectOrderTotal } from '../state/selectors';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
 import { showOrder } from '../actions/order.actions';
+import { selectOrder, selectOrderTotal } from '../state/selectors';
 
 @Component({
   selector: 'app-order-list',
@@ -17,7 +15,6 @@ export class OrderListComponent implements OnInit {
 
   constructor(
     private store: Store<any>,
-    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
@@ -26,20 +23,4 @@ export class OrderListComponent implements OnInit {
   showOrder() {
     this.store.dispatch(showOrder());
   }
-
-  sendOrder() {
-    console.log('send');
-
-
-    // TODO config
-    return (this.http.post('https://rattkin.info/mail.php', { mailData: 'frank', age: 10 }))
-      .subscribe(
-        map(res => {
-          console.log(res);
-
-          return res;
-        }),
-      );
-  }
-
 }

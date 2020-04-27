@@ -1,5 +1,5 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
-import { addToOrder, removeFromOrder } from 'src/app/actions/order.actions';
+import { addToOrder, confirmOrder, removeFromOrder, OrderSuccess } from 'src/app/actions/order.actions';
 import { SideDishes } from 'src/app/interfaces/side-dishes';
 import { Soups } from 'src/app/interfaces/soups';
 import { environment } from '../../../environments/environment';
@@ -14,7 +14,8 @@ export const initialState: State = {
   sideDishes: SideDishes,
   soups: Soups,
   order: [],
-  customer: undefined,
+  name: undefined,
+  comment: undefined,
 };
 
 export interface State {
@@ -24,7 +25,8 @@ export interface State {
   sideDishes: Meal[];
   soups: Meal[];
   order: Meal[];
-  customer: any;
+  name: string;
+  comment: string;
 }
 
 const mealReducer = createReducer(
@@ -32,7 +34,7 @@ const mealReducer = createReducer(
 
   on(addToOrder, (state, { item: item, sideDish: sideDish }) => ({
     ...state,
-    order: [...state.order, item, sideDish]
+    order: [...state.order, { ...item, name: item.name + ' (' + sideDish.name + ')', sideDish: { ...sideDish } }]
 
     // menu: [...state.menu.map(item => {
     //   if (item.name !== payload) {
@@ -49,6 +51,17 @@ const mealReducer = createReducer(
     // })
     // ]
   })),
+
+  on(confirmOrder, (state, { name: kdo, comment: text }) => ({
+    ...state,
+    // date: Date.now(),
+    name: kdo,
+    comment: text,
+  })),
+
+  on(OrderSuccess, () => (
+    initialState
+  )),
 
 
   // TODO remove

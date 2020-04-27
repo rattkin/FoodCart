@@ -1,17 +1,21 @@
 <h1 mat-dialog-title>Vyberte si přílohu</h1>
-<mat-dialog-content>
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-        [(ngModel)]="chosenSideDish">
-        <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes |async" [value]="side">
-            {{side.name}} ({{side.description}}) {{side.price}} Kč
-            <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
 
-        </mat-radio-button>
-    </mat-radio-group>
-</mat-dialog-content>
+
+<form [formGroup]="sideForm">
+    <mat-dialog-content>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="formSideRadio"
+            [(ngModel)]="chosenSideDish">
+            <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes |async" [value]="side">
+                {{side.name}} ({{side.description}}) {{side.price}} Kč
+                <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
+    
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-dialog-content>
+</form>
 
 <mat-dialog-actions>
-    <button mat-raised-button (click)="onSubmit()">
+    <button mat-raised-button color="accent" (click)="onSubmit()">
         potvrdit
     </button>
     <button mat-button (click)="checkClose()">

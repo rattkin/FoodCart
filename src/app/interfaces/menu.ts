@@ -9,6 +9,8 @@ export const Menu: Meal[] = [
         price: 100,
         photo: 'assets/Rara.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Shahi Paneer',
@@ -18,6 +20,8 @@ export const Menu: Meal[] = [
         price: 95,
         photo: 'assets/Shahi Paneer.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Chicken Palak',
@@ -27,6 +31,8 @@ export const Menu: Meal[] = [
         price: 100,
         photo: 'assets/Palak.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Chicken Korma',
@@ -36,6 +42,8 @@ export const Menu: Meal[] = [
         price: 100,
         photo: 'assets/Korma.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Chicken Badam Pasanda',
@@ -45,6 +53,8 @@ export const Menu: Meal[] = [
         price: 100,
         photo: 'assets/Chicken Badam Pasanda.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Chicken Curry',
@@ -54,6 +64,8 @@ export const Menu: Meal[] = [
         price: 100,
         photo: 'assets/Curry.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Pork Rara',
@@ -63,6 +75,8 @@ export const Menu: Meal[] = [
         price: 100,
         photo: 'assets/Pork Rara.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Palak Paneer',
@@ -72,6 +86,8 @@ export const Menu: Meal[] = [
         price: 95,
         photo: 'assets/Palak Paneer.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Aloo Rajma',
@@ -81,6 +97,8 @@ export const Menu: Meal[] = [
         price: 95,
         photo: 'assets/Aloo Rajma.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Lamb Kadai',
@@ -90,6 +108,8 @@ export const Menu: Meal[] = [
         price: 135,
         photo: 'assets/Lamb Kadai.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Paneer Badam Pasanda',
@@ -99,6 +119,8 @@ export const Menu: Meal[] = [
         price: 95,
         photo: 'assets/Paneer Badam Pasanda.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Dal Makhani',
@@ -108,6 +130,8 @@ export const Menu: Meal[] = [
         price: 95,
         photo: 'assets/Dal Makhani.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Malai Kofta',
@@ -117,6 +141,8 @@ export const Menu: Meal[] = [
         price: 95,
         photo: 'assets/Malai kofta.jpg',
         packaging: 5,
+        sideDish: {},
+        type: 'menu',
     },
     {
         name: 'Chicken Mango',
@@ -126,5 +152,7 @@ export const Menu: Meal[] = [
         price: 100,
         packaging: 5,
         photo: 'assets/Chicken Mango.jpg',
+        sideDish: {},
+        type: 'menu',
     }
 ];

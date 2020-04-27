@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,9 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import * as fromReducers from './state/reducers/mealStore';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
+import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
+import { OrderFailedComponent } from './order-failed/order-failed.component';
+import { OrderTimeComponent } from './order-time/order-time.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,16 @@ import { OrderDialogComponent } from './order-dialog/order-dialog.component';
     PickSideDishComponent,
     OrderListComponent,
     OrderDialogComponent,
+    OrderSuccessfulComponent,
+    OrderFailedComponent,
+    OrderTimeComponent,
   ],
   imports: [
     MaterialModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     StoreModule.forRoot(fromReducers.reducer,
       //  {      metaReducers    }

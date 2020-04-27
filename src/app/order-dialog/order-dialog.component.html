@@ -1,1 +1,40 @@
-<p>order-dialog works!</p>
+<h1 mat-dialog-title>Objednávka Polední menu</h1>
+
+<mat-dialog-content>
+<p>
+    Polední menu. Dostupné pouze Po-Pá: 10:30 - 15:00 (mimo svátky)
+</p>
+    <mat-chip-list class="mat-chip-list-stacked" ngClass="orderItems" aria-orientation="vertical"
+        aria-label="Objednávka:">
+        <mat-chip *ngFor="let item of order |async">{{item.name}}</mat-chip>
+    </mat-chip-list>
+
+</mat-dialog-content>
+
+<p>
+    <mat-divider></mat-divider>
+</p>
+
+<p>
+    Jídlo které si objednáte si můžete vyzvednout až vám pošleme e-mail zpět. Vyplňte prosím Váš e-mail:
+</p>
+
+<form [formGroup]="usernameForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Váš email</mat-label>
+        <input type="email" matInput formControlName="formUsername" placeholder="E-mail" autocomplete="username email">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Poznámka (vyplňte, pokud nechcete jídlo hned, ale později)</mat-label>
+        <input matInput formControlName="formComment">
+    </mat-form-field>
+
+    <app-order-time></app-order-time>
+    <mat-dialog-actions>
+        <button mat-button (click)="onSubmit()">Objednat</button>
+        <button mat-button (click)="checkClose()">
+            Zrušit
+        </button>
+    </mat-dialog-actions>
+</form>

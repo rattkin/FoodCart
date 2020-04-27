@@ -12,10 +12,7 @@ export const showOrder = createAction(
 
 export const addToOrder = createAction(
   'addToOrder',
-  props<{
-    item: Meal;
-    sideDish: Meal;
-  }>()
+  props<{ item: Meal; sideDish: Meal; }>()
 );
 
 export const removeFromOrder = createAction(
@@ -25,6 +22,18 @@ export const removeFromOrder = createAction(
 
 export const confirmOrder = createAction(
   'confirmOrder',
+  props<{ name: string; comment: string; }>(),
+);
+
+export const sendOrder = createAction(
+  'sendOrder',
+);
+
+export const OrderSuccess = createAction(
+  'OrderSuccess',
+);
+export const OrderFailed = createAction(
+  'OrderFailed',
 );
 
 

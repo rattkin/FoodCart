@@ -1,2 +1,2 @@
-<button mat-fab color="warn" *ngIf="total |async" class="floating" (click)="showOrder()"> <small>Objednávka:</small><br>
+<button mat-fab color="warn" ngClass="orderButton" *ngIf="total |async" class="floating" (click)="showOrder()"> <small>Objednávka:</small><br>
     {{total |async}} Kč</button>
