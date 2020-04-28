@@ -1,18 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/scss/bootstrap-reboot';
-@import '~bootstrap/scss/bootstrap-grid';
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/bootstrap-grid";
 
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: url('https://indickarestaurace.cz/themes/indicka_orange/images/pozadi.png');}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url("https://indickarestaurace.cz/themes/indicka_orange/images/pozadi.png");
+}
 
+.orderButton .mat-button-wrapper {
+    line-height: 11px !important;
+}
 
-    .orderButton .mat-button-wrapper  {
-        line-height: 11px !important;
-    }
-
-    .orderItems{
-        
-    }
+.mat-dialog-content {
+    overflow: visible !important;
+}

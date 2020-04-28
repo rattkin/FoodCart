@@ -1,16 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Action, Store, select } from '@ngrx/store';
+import { Action, select, Store } from '@ngrx/store';
 import { Observable, of, EMPTY } from 'rxjs';
-import { tap, concatMap, withLatestFrom, switchMap, map, catchError } from 'rxjs/operators';
-import { addToOrder, pickSideDish, showOrder, confirmOrder, OrderSuccess, OrderFailed } from './actions/order.actions';
-import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
+import { catchError, concatMap, map, switchMap, tap, withLatestFrom, mergeMap } from 'rxjs/operators';
+import { confirmOrder, OrderFailed, OrderSuccess, pickSideDish, showOrder, removeFromOrder } from './actions/order.actions';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
-import { selectOrder, selectOrderTotal, selectName, selectComment } from './state/selectors';
-import { HttpClient } from '@angular/common/http';
-import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
+import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
+import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
+import { selectComment, selectName, selectOrder, selectOrderTotal } from './state/selectors';
 
 @Injectable()
 export class AppEffects {
@@ -21,7 +21,7 @@ export class AppEffects {
     private SideDishDialog: MatDialog,
     private sideDishDialogRef: MatDialogRef<PickSideDishComponent>,
     private orderDialog: MatDialog,
-    private orderDialogRef: MatDialogRef<PickSideDishComponent>,
+    private orderDialogRef: MatDialogRef<OrderDialogComponent>,
     private http: HttpClient,
   ) { }
 
@@ -35,10 +35,20 @@ export class AppEffects {
   showOrder: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(showOrder),
     tap(action => {
-      this.orderDialog.open(OrderDialogComponent, {
-        height: '400px',
-        width: '600px',
-      });
+      this.orderDialogRef = this.orderDialog.open(OrderDialogComponent);
+    })
+  ), { dispatch: false });
+
+  closeOrderDialog: Observable<Action> = createEffect(() => this.actions.pipe(
+    ofType(removeFromOrder),
+    concatMap(action => of(action).pipe(
+      withLatestFrom(this.store.pipe(select(selectOrder))),
+    )),
+    switchMap(([action, order]) => {
+      if (!order.length) {
+        this.orderDialogRef.close();
+      }
+      return EMPTY;
     })
   ), { dispatch: false });
 

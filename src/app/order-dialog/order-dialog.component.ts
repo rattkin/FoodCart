@@ -59,7 +59,7 @@ export class OrderDialogComponent implements OnInit {
     this.DialogRef.close();
   }
 
-  remove(orderItem: Meal) {
+  remove(orderItem: number) {
     this.store.dispatch(removeFromOrder({ item: orderItem }));
   }
 

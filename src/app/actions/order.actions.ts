@@ -17,7 +17,7 @@ export const addToOrder = createAction(
 
 export const removeFromOrder = createAction(
   'removeFromOrder',
-  props<{ item: Meal; }>()
+  props<{ item: number; }>()
 );
 
 export const confirmOrder = createAction(
