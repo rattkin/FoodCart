@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { selectMenu } from '../state/selectors';
-import { addToOrder, removeFromOrder, pickSideDish } from '../actions/order.actions';
+import { select, Store } from '@ngrx/store';
+import { pickSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
-import { GoogleAnalyticsService } from 'angular-ga';
+import { selectMenu } from '../state/selectors';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;

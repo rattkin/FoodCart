@@ -21,7 +21,6 @@ import { OrderSuccessfulComponent } from './order-successful/order-successful.co
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderTimeComponent } from './order-time/order-time.component';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
-import { GoogleAnalyticsModule, GA_TOKEN } from 'angular-ga';
 
 
 @NgModule({
@@ -43,7 +42,6 @@ import { GoogleAnalyticsModule, GA_TOKEN } from 'angular-ga';
     ReactiveFormsModule,
     FormsModule,
     MatMomentDateModule,
-    GoogleAnalyticsModule.forRoot(),
     StoreModule.forRoot(fromReducers.reducer,
       //  {      metaReducers    }
     ),

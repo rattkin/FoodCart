@@ -1,6 +1,15 @@
 import { Meal } from './meal';
 
 export const Menu: Meal[] = [
+    // {
+    //     name: 'Tomato Soup',
+    //     description: 'Rajčatová polévka',
+    //     allergen: '1,7,',
+    //     price: 25,
+    //     photo: 'assets/Rara.jpg',
+    //     packaging: 5,
+    //     type: 'menu',
+    // },
     {
         name: 'Chicken Rara',
         description: 'Kuřecí kostky s jemně pálivou omáčkou, indická rýže nebo indické placky',
