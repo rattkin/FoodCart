@@ -1,19 +1,19 @@
 import { Meal } from './meal';
 
 export const Menu: Meal[] = [
-    // {
-    //     name: 'Tomato Soup',
-    //     description: 'Rajčatová polévka',
-    //     allergen: '1,7,',
-    //     price: 25,
-    //     photo: 'assets/Rara.jpg',
-    //     packaging: 5,
-    //     type: 'menu',
-    // },
+    {
+        name: 'Tomato Soup',
+        description: 'Rajčatová polévka',
+        allergen: '1,7',
+        price: 25,
+        photo: 'assets/TomatoSoup.jpg',
+        packaging: 5,
+        type: 'menu',
+    },
     {
         name: 'Chicken Rara',
         description: 'Kuřecí kostky s jemně pálivou omáčkou, indická rýže nebo indické placky',
-        allergen: '1,3,7,',
+        allergen: '1,3,7',
         weight: '100g',
         price: 100,
         photo: 'assets/Rara.jpg',
@@ -46,7 +46,7 @@ export const Menu: Meal[] = [
     {
         name: 'Chicken Korma',
         description: 'Kuřecí kostky s jemnou omáčkou, indická rýže nebo indické placky',
-        allergen: '1,7,8,',
+        allergen: '1,7,8',
         weight: '100g',
         price: 100,
         photo: 'assets/Korma.jpg',
@@ -79,7 +79,7 @@ export const Menu: Meal[] = [
     {
         name: 'Pork Rara',
         description: 'Vepřové kostky s jemnou pálivou omáčkou, indická rýže nebo indické placky',
-        allergen: '1,3,7,',
+        allergen: '1,3,7',
         weight: '100g',
         price: 100,
         photo: 'assets/Pork Rara.jpg',
@@ -162,6 +162,23 @@ export const Menu: Meal[] = [
         packaging: 5,
         photo: 'assets/Chicken Mango.jpg',
         sideDish: {},
+        type: 'menu',
+    },
+    {
+        name: 'Plain Rice',
+        description: 'Samotná indická rýže',
+        weight: '100g',
+        price: 25,
+        packaging: 5,
+        photo: 'assets/rice.jpg',
+        type: 'menu',
+    },
+    {
+        name: 'Tandoori Chapati',
+        description: 'Samotná indická placka',
+        allergen: '1',
+        price: 20,
+        photo: 'assets/Chapati.jpg',
         type: 'menu',
     }
 ];

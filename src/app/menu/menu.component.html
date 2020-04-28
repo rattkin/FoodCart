@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4" *ngFor="let item of menu |async">
+        <div class="col-md-6 col-lg-4" *ngFor="let item of menu |async">
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>{{item.name}}</mat-card-title>
@@ -8,14 +8,14 @@
                 </mat-card-header>
                 <img mat-card-image src="{{item.photo}}">
                 <mat-card-content>
-                    <p>
-                        Cena: {{item.price}} Kč
-                        <span *ngIf="item.packaging" class="packing"> + obal {{item.packaging}} Kč</span>
+                        <div class="prices">
+                            Cena: {{item.price}} Kč
+                            <span *ngIf="item.packaging" class="packing"> + obal {{item.packaging}} Kč</span>
+                        </div>
 
-                        <span *ngIf="item.orderQuantity">
-                            Objednávka: {{item.orderQuantity}} ks
-                        </span>
-                    </p>
+                        <div *ngIf="item.allergen" class="allergen">
+                            Alergen: {{item.allergen}}
+                        </div>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button color="accent" (click)="pickSideDish(item)">Objednat</button>

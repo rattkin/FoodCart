@@ -1,11 +1,10 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
-import { addToOrder, confirmOrder, removeFromOrder, OrderSuccess } from 'src/app/actions/order.actions';
+import { addToOrderWithSideDish, confirmOrder, removeFromOrder, OrderSuccess, addToOrderWithoutSideDish } from 'src/app/actions/order.actions';
 import { SideDishes } from 'src/app/interfaces/side-dishes';
 import { Soups } from 'src/app/interfaces/soups';
 import { environment } from '../../../environments/environment';
 import { Meal } from '../../interfaces/meal';
 import { Menu } from '../../interfaces/menu';
-import * as _ from 'lodash';
 
 export const mealFeatureKey = 'mealStore';
 
@@ -33,24 +32,14 @@ export interface State {
 const mealReducer = createReducer(
   initialState,
 
-  on(addToOrder, (state, { item: item, sideDish: sideDish }) => ({
+  on(addToOrderWithSideDish, (state, { item: item, sideDish: sideDish }) => ({
     ...state,
     order: [...state.order, { ...item, name: item.name + ' (' + sideDish.name + ')', sideDish: { ...sideDish } }]
+  })),
 
-    // menu: [...state.menu.map(item => {
-    //   if (item.name !== payload) {
-    //     return item;
-    //   } else {
-    //     let quantity = item.orderQuantity;
-    //     if (quantity) {
-    //       ++quantity;
-    //     } else {
-    //       quantity = 1;
-    //     }
-    //     return { ...item, orderQuantity: quantity };
-    //   }
-    // })
-    // ]
+  on(addToOrderWithoutSideDish, (state, { item: item, }) => ({
+    ...state,
+    order: [...state.order, { ...item }]
   })),
 
   on(confirmOrder, (state, { name: kdo, comment: text }) => ({
@@ -64,8 +53,6 @@ const mealReducer = createReducer(
     initialState
   )),
 
-
-  // TODO remove
   on(removeFromOrder, (state, { item: payload }) => ({
     ...state,
     order: state.order.filter(item => state.order.indexOf(item) !== payload)
@@ -75,11 +62,5 @@ const mealReducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return mealReducer(state, action);
 }
-
-
-// export const reducers: ActionReducerMap<State> = {
-
-// };
-
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

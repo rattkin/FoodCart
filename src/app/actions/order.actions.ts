@@ -10,9 +10,14 @@ export const showOrder = createAction(
   'showOrder',
 );
 
-export const addToOrder = createAction(
-  'addToOrder',
+export const addToOrderWithSideDish = createAction(
+  'addToOrderWithSideDish',
   props<{ item: Meal; sideDish: Meal; }>()
+);
+
+export const addToOrderWithoutSideDish = createAction(
+  'addToOrderWithoutSideDish',
+  props<{ item: Meal; }>()
 );
 
 export const removeFromOrder = createAction(

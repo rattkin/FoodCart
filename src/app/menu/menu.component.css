@@ -2,11 +2,21 @@
     margin-top: 30px;
 }
 
+.prices {
+    display: inline-block;
+    width: 65%;
+}
+
+.allergen {
+    display: inline-block;
+    width: 35%;
+}
+
 .mat-card-header {
     min-height: 100px;
 }
 
-.mat-card-image{
+.mat-card-image {
     height: 200px;
     object-fit: cover;
 }

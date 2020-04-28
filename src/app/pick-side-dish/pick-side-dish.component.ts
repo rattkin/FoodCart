@@ -1,10 +1,10 @@
-import { Component, OnInit, Optional, Inject } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { selectSideDishes } from '../state/selectors';
-import { addToOrder } from '../actions/order.actions';
+import { select, Store } from '@ngrx/store';
+import { addToOrderWithSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { selectSideDishes } from '../state/selectors';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -43,7 +43,7 @@ export class PickSideDishComponent implements OnInit {
 
   onSubmit() {
     if (!this.sideForm.valid) { return; } // stop here if form is invalid or pending
-    this.store.dispatch(addToOrder({ item: this.dish, sideDish: this.chosenSideDish }));
+    this.store.dispatch(addToOrderWithSideDish({ item: this.dish, sideDish: this.chosenSideDish }));
     this.DialogRef.close();
   }
 

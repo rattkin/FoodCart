@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
-import { Observable, of, EMPTY } from 'rxjs';
-import { catchError, concatMap, map, switchMap, tap, withLatestFrom, mergeMap } from 'rxjs/operators';
-import { confirmOrder, OrderFailed, OrderSuccess, pickSideDish, showOrder, removeFromOrder } from './actions/order.actions';
+import { EMPTY, Observable, of } from 'rxjs';
+import { catchError, concatMap, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { addToOrderWithoutSideDish, confirmOrder, OrderFailed, OrderSuccess, pickSideDish, removeFromOrder, showOrder } from './actions/order.actions';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
@@ -28,7 +28,11 @@ export class AppEffects {
   showSideDishDialog: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(pickSideDish),
     tap(action => {
-      this.sideDishDialogRef = this.SideDishDialog.open(PickSideDishComponent, { data: { dish: action.item } });
+      if (action.item.sideDish !== undefined) {
+        this.sideDishDialogRef = this.SideDishDialog.open(PickSideDishComponent, { data: { dish: action.item } });
+      } else {
+        this.store.dispatch(addToOrderWithoutSideDish({ item: action.item }));
+      }
     })
   ), { dispatch: false });
 
