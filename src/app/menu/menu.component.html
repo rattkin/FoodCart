@@ -19,8 +19,6 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button color="accent" (click)="pickSideDish(item)">Objednat</button>
-                    <button *ngIf="item.orderQuantity" mat-stroked-button (click)="remove(item.name)">Odstranit
-                    </button>
                 </mat-card-actions>
             </mat-card>
         </div>

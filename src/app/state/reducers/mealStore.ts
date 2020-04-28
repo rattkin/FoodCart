@@ -5,6 +5,7 @@ import { Soups } from 'src/app/interfaces/soups';
 import { environment } from '../../../environments/environment';
 import { Meal } from '../../interfaces/meal';
 import { Menu } from '../../interfaces/menu';
+const _ = require('lodash');
 
 export const mealFeatureKey = 'mealStore';
 
@@ -67,16 +68,7 @@ const mealReducer = createReducer(
   // TODO remove
   on(removeFromOrder, (state, { item: payload }) => ({
     ...state,
-    menu: [...state.menu.map(item => {
-
-      if (item.name !== payload) {
-        return item;
-      } else {
-        const quantity = item.orderQuantity - 1;
-        return { ...item, orderQuantity: quantity };
-      }
-    })
-    ]
+    order: state.order.filter(item => !_.isEqual(item, payload))
   })),
 );
 

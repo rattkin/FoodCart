@@ -25,8 +25,4 @@ export class MenuComponent implements OnInit {
   pickSideDish(orderItem: Meal) {
     this.store.dispatch(pickSideDish({ item: orderItem }));
   }
-
-  remove(orderItem: string) {
-    this.store.dispatch(removeFromOrder({ item: orderItem }));
-  }
 }
