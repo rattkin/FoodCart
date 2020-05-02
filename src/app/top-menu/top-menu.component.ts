@@ -18,7 +18,6 @@ export class TopMenuComponent implements OnInit {
 
   select(filter) {
     this.store.dispatch(changeMealFilter({ filterType: filter }));
-
   }
 
   ngOnInit(): void {

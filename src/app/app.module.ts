@@ -22,7 +22,7 @@ import { OrderTimeComponent } from './order-time/order-time.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import * as fromReducers from './state/reducers/mealStore';
 import { TopMenuComponent } from './top-menu/top-menu.component';
-
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
     OrderFailedComponent,
     OrderTimeComponent,
     TopMenuComponent,
+    SideMenuComponent,
   ],
   imports: [
     MaterialModule,

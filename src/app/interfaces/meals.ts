@@ -13,7 +13,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Chicken Rara',
-        description: 'Kuřecí kostky s jemně pálivou omáčkou, indická rýže nebo indické placky',
+        description: 'Kuřecí kostky s jemně pálivou omáčkou',
         allergen: '1,3,7',
         weight: '100g',
         price: 100,
@@ -25,7 +25,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Shahi Paneer',
-        description: 'Sýrové kostky s jemně pálivou omáčkou, indická rýže nebo indické placky',
+        description: 'Sýrové kostky s jemně pálivou omáčkou',
         allergen: '1,7',
         weight: '100g',
         price: 95,
@@ -37,7 +37,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Chicken Palak',
-        description: 'Kuřecí kostky se špenátem, indická rýže nebo indické placky',
+        description: 'Kuřecí kostky se špenátem',
         allergen: '1,7',
         weight: '100g',
         price: 100,
@@ -49,7 +49,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Chicken Korma',
-        description: 'Kuřecí kostky s jemnou omáčkou, indická rýže nebo indické placky',
+        description: 'Kuřecí kostky s jemnou omáčkou',
         allergen: '1,7,8',
         weight: '100g',
         price: 100,
@@ -61,7 +61,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Chicken Badam Pasanda',
-        description: 'Kuřecí kostky s jemnou omáčkou z kokosu a mandlemi, indická rýže nebo indické placky',
+        description: 'Kuřecí kostky s jemnou omáčkou z kokosu a mandlemi',
         allergen: '1,7,8',
         weight: '100g',
         price: 100,
@@ -73,7 +73,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Chicken Curry',
-        description: 'Kuřecí kostky na kari, indická rýže nebo indické placky',
+        description: 'Kuřecí kostky na kari',
         allergen: '1,7',
         weight: '100g',
         price: 100,
@@ -85,7 +85,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Pork Rara',
-        description: 'Vepřové kostky s jemnou pálivou omáčkou, indická rýže nebo indické placky',
+        description: 'Vepřové kostky s jemnou pálivou omáčkou',
         allergen: '1,3,7',
         weight: '100g',
         price: 100,
@@ -97,7 +97,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Palak Paneer',
-        description: 'Sýrové kostky se špenátem, indická rýže nebo indické placky',
+        description: 'Sýrové kostky se špenátem',
         allergen: '1,7',
         weight: '100g',
         price: 95,
@@ -109,7 +109,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Aloo Rajma',
-        description: 'Brambory s fazolemi a kari omáčkou, indická rýže nebo indické placky',
+        description: 'Brambory s fazolemi a kari omáčkou',
         allergen: '1,7',
         weight: '100g',
         price: 95,
@@ -121,7 +121,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Lamb Kadai',
-        description: 'Jehněčí kostky s jemně pálivou omáčkou, paprika, cibule, indická rýže nebo indické placky',
+        description: 'Jehněčí kostky s jemně pálivou omáčkou, paprika, cibule',
         allergen: '1,7',
         weight: '100g',
         price: 135,
@@ -133,7 +133,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Paneer Badam Pasanda',
-        description: 'Sýrové kostky s jemnou pálivou omáčkou z kokosu s mandlemi, indická rýže nebo indické placky',
+        description: 'Sýrové kostky s jemnou pálivou omáčkou z kokosu s mandlemi',
         allergen: '7,8',
         weight: '100g',
         price: 95,
@@ -145,7 +145,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Dal Makhani',
-        description: 'Indické národní jídlo – čočka, indická rýže nebo indické placky',
+        description: 'Indické národní jídlo – čočka',
         allergen: '1,7',
         weight: '100g',
         price: 95,
@@ -169,7 +169,7 @@ export const Meals: Meal[] = [
     },
     {
         name: 'Chicken Mango',
-        description: 'Kuřecí kostky s jemnou omáčkou z kokosu a manga, indická rýže nebo indické placky',
+        description: 'Kuřecí kostky s jemnou omáčkou z kokosu a manga',
         allergen: '1,7',
         weight: '100g',
         price: 100,
@@ -375,7 +375,7 @@ export const Meals: Meal[] = [
         class: 'tandoor',
     }, {
         name: 'Chicken Thali',
-        description: 'Kuřecí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr), rýže nebo placky',
+        description: 'Kuřecí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
         allergen: '1,7',
         weight: '200g',
         price: 170,
@@ -537,7 +537,7 @@ export const Meals: Meal[] = [
         class: 'lamb',
     }, {
         name: 'Lamb Thali',
-        description: 'Kořeněné jehněčí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr), rýže nebo placky',
+        description: 'Kořeněné jehněčí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
         allergen: '1,7',
         weight: '200g',
         price: 190,
@@ -681,7 +681,7 @@ export const Meals: Meal[] = [
         photo: 'assets/Rara.jpg',
     }, {
         name: 'Vegetarian Thali',
-        description: 'Indická čočka, špenát, míchaná zelenina (fazole, hrášek, květák, sýr, brambory, mrkev) rýže nebo placky',
+        description: 'Indická čočka, špenát, míchaná zelenina (fazole, hrášek, květák, sýr, brambory, mrkev)',
         allergen: '1,7',
         weight: '200g',
         price: 155,
@@ -1077,6 +1077,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 25,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Basmati Rice',
@@ -1085,6 +1086,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 35,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Tandoori Kulcha',
@@ -1093,6 +1095,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 50,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Jeera Chawal',
@@ -1101,6 +1104,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 35,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Peas Rice',
@@ -1109,6 +1113,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 35,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Tandoori Garlic Kulcha',
@@ -1117,6 +1122,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 50,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Tandoori Garlic Nan',
@@ -1125,6 +1131,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 40,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Tandoori Punjabi Nan',
@@ -1133,6 +1140,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 40,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Tandoori Protha',
@@ -1141,6 +1149,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 40,
         type: 'side',
+        class: 'side',
     },
     {
         name: 'Tandoori Nan',
@@ -1149,5 +1158,6 @@ export const Meals: Meal[] = [
         packaging: 5,
         price: 30,
         type: 'side',
+        class: 'side',
     }
 ];

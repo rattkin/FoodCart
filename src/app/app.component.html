@@ -1,4 +1,12 @@
-<mat-toolbar><app-top-menu></app-top-menu></mat-toolbar>
-<app-item-list></app-item-list>
-<app-order-button></app-order-button>
-<br>
+<button class="floatingTopLeft" mat-raised-button color='accent' (click)="snav.toggle()" >
+    <mat-icon>menu</mat-icon>
+</button>
+<mat-sidenav-container [class.example-is-mobile]="mobileQuery.matches">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" opened>
+        <app-side-menu></app-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-item-list></app-item-list>
+        <app-order-button></app-order-button>
+    </mat-sidenav-content>
+</mat-sidenav-container>

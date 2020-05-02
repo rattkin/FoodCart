@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+button {
+    margin: 0px 0 15px 0;
+}
+
+.active {
+    background-color: #ffd740;
+}
