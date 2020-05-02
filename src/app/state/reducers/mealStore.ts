@@ -1,32 +1,31 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
-import { addToOrderWithSideDish, confirmOrder, removeFromOrder, OrderSuccess, addToOrderWithoutSideDish } from 'src/app/actions/order.actions';
+import { addToOrderWithoutSideDish, addToOrderWithSideDish,  confirmOrder, OrderSuccess, removeFromOrder, changeMealFilter } from 'src/app/actions/order.actions';
 import { SideDishes } from 'src/app/interfaces/side-dishes';
-import { Soups } from 'src/app/interfaces/soups';
 import { environment } from '../../../environments/environment';
 import { Meal } from '../../interfaces/meal';
-import { Menu } from '../../interfaces/menu';
+import { Meals } from '../../interfaces/meals';
 
 export const mealFeatureKey = 'mealStore';
 
-export const initialState: State = {
+export const initialState: MealState = {
   date: new Date(),
-  menu: Menu,
+  meals: Meals,
   sideDishes: SideDishes,
-  soups: Soups,
   order: [],
   name: undefined,
   comment: undefined,
+  filterType: 'menu',
 };
 
-export interface State {
+export interface MealState {
   date: Date;
   // TODO restrict date
-  menu: Meal[];
+  meals: Meal[];
   sideDishes: Meal[];
-  soups: Meal[];
   order: Meal[];
   name: string;
   comment: string;
+  filterType: string;
 }
 
 const mealReducer = createReducer(
@@ -40,6 +39,11 @@ const mealReducer = createReducer(
   on(addToOrderWithoutSideDish, (state, { item: item, }) => ({
     ...state,
     order: [...state.order, { ...item }]
+  })),
+
+  on(changeMealFilter, (state, {filterType: filter}) => ({
+    ...state,
+    filterType: filter,
   })),
 
   on(confirmOrder, (state, { name: kdo, comment: text }) => ({
@@ -59,8 +63,11 @@ const mealReducer = createReducer(
   })),
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: MealState | undefined, action: Action) {
   return mealReducer(state, action);
 }
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<MealState>[] = !environment.production ? [] : [];
+
+export const getMealFilter = (state: MealState) => state.filterType;
+

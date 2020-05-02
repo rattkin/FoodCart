@@ -5,7 +5,7 @@
     <mat-dialog-content>
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="formSideRadio"
             [(ngModel)]="chosenSideDish">
-            <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes |async" [value]="side">
+            <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes where side.class === dish.class |async" [value]="side">
                 {{side.name}} ({{side.description}}) {{side.price}} Kč
                 <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
     
@@ -16,7 +16,7 @@
 
 <mat-dialog-actions>
     <button mat-raised-button color="accent" (click)="onSubmit()">
-        potvrdit
+        Potvrdit
     </button>
     <button mat-button (click)="checkClose()">
         Zrušit

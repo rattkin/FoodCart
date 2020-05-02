@@ -4,9 +4,9 @@ import { showOrder } from '../actions/order.actions';
 import { selectOrder, selectOrderTotal } from '../state/selectors';
 
 @Component({
-  selector: 'app-order-list',
-  templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.css']
+  selector: 'app-order-button',
+  templateUrl: './order-button.component.html',
+  styleUrls: ['./order-button.component.css']
 })
 export class OrderListComponent implements OnInit {
 

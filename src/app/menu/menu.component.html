@@ -2,26 +2,26 @@
     <div class="row">
         <div class="col-md-6 col-lg-4" *ngFor="let item of menu |async">
             <mat-card>
+                <div class="MealType" *ngIf="item.class === 'menu'">{{item.class}}</div>
                 <mat-card-header>
-                    <mat-card-title>{{item.name}}</mat-card-title>
+                    <mat-card-title>{{item.name}} </mat-card-title>
                     <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
                 </mat-card-header>
                 <img mat-card-image src="{{item.photo}}">
                 <mat-card-content>
-                        <div class="prices">
-                            Cena: {{item.price}} Kč
-                            <span *ngIf="item.packaging" class="packing"> + obal {{item.packaging}} Kč</span>
-                        </div>
+                    <div class="prices">
+                        Cena: {{item.price}} Kč
+                        <span *ngIf="item.packaging" class="packing"> + obal {{item.packaging}} Kč</span>
+                    </div>
 
-                        <div *ngIf="item.allergen" class="allergen">
-                            Alergen: {{item.allergen}}
-                        </div>
+                    <div *ngIf="item.allergen" class="allergen">
+                        Alergen: {{item.allergen}}
+                    </div>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button color="accent" (click)="pickSideDish(item)">Objednat</button>
+                    <button mat-raised-button color="accent" (click)="pickSideDish(item,item.type)">Objednat</button>
                 </mat-card-actions>
             </mat-card>
         </div>
     </div>
 </div>
-<app-order-list></app-order-list>

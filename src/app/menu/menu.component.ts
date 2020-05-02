@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { pickSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
-import { selectMenu } from '../state/selectors';
+import { selectMeals, selectFilteredMeals } from '../state/selectors';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -10,10 +10,10 @@ declare let gtag: Function;
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  public menu = this.store.pipe(select(selectMenu));
+  public menu = this.store.pipe(select(selectFilteredMeals));
 
   constructor(private store: Store<any>) { }
 
@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     gtag('send', 'pageview');
   }
 
-  pickSideDish(orderItem: Meal) {
-    this.store.dispatch(pickSideDish({ item: orderItem }));
+  pickSideDish(orderItem: Meal, type: string) {
+    this.store.dispatch(pickSideDish({ item: orderItem, itemType: type }));
   }
 }

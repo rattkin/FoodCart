@@ -8,5 +8,17 @@ export interface Meal {
     orderQuantity?: number;
     packaging?: number;
     sideDish?: Meal;
-    type?: 'menu' | 'side';
+    type?: 'meal' | 'side';
+    class?: 'menu' |
+    'chicken' |
+    'pork' |
+    'starter' |
+    'tandoor' |
+    'lamb' |
+    'pork' |
+    'vege' |
+    'fish' |
+    'biryani' |
+    'side'
+    ;
 }

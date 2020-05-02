@@ -3,11 +3,16 @@ import { Meal } from '../interfaces/meal';
 
 export const pickSideDish = createAction(
   'pickSideDish',
-  props<{ item: Meal; }>()
+  props<{ item: Meal; itemType: string }>()
 );
 
 export const showOrder = createAction(
   'showOrder',
+);
+
+export const changeMealFilter = createAction(
+  'changeMealFilter',
+  props<{ filterType: string; }>()
 );
 
 export const addToOrderWithSideDish = createAction(

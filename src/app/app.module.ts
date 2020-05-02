@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatDialogRef } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,14 +14,14 @@ import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { MaterialModule } from './material-module';
 import { MenuComponent } from './menu/menu.component';
-import { OrderListComponent } from './order-list/order-list.component';
+import { OrderDialogComponent } from './order-dialog/order-dialog.component';
+import { OrderFailedComponent } from './order-failed/order-failed.component';
+import { OrderListComponent } from './order-button/order-button.component';
+import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
+import { OrderTimeComponent } from './order-time/order-time.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import * as fromReducers from './state/reducers/mealStore';
-import { OrderDialogComponent } from './order-dialog/order-dialog.component';
-import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
-import { OrderFailedComponent } from './order-failed/order-failed.component';
-import { OrderTimeComponent } from './order-time/order-time.component';
-import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter';
     OrderSuccessfulComponent,
     OrderFailedComponent,
     OrderTimeComponent,
+    TopMenuComponent,
   ],
   imports: [
     MaterialModule,

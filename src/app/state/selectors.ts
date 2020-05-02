@@ -1,11 +1,17 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { mealFeatureKey, State } from './reducers/mealStore';
+import { mealFeatureKey, MealState, getMealFilter } from './reducers/mealStore';
 
-export const selectMealState = createFeatureSelector<State>(mealFeatureKey);
+export const selectMealState = createFeatureSelector<MealState>(mealFeatureKey);
 
-export const selectMenu = createSelector(
+
+export const selectMeals = createSelector(
     selectMealState,
-    (state) => state.menu
+    (state) => state.meals
+);
+
+export const selectFilteredMeals = createSelector(
+    selectMealState,
+    (state) => state.meals.filter(meal => meal.class === state.filterType)
 );
 
 export const selectSideDishes = createSelector(

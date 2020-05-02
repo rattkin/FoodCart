@@ -1,0 +1,20 @@
+<button mat-raised-button color="accent" [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>Jídelní lístek
+</button>
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="select('menu')">Menu</button>
+    <button mat-menu-item (click)="select('soup')">Polévky</button>
+    <button mat-menu-item (click)="select('starter')">Předkrmy</button>
+    <button mat-menu-item (click)="select('tandoor')">Indická pec</button>
+    <button mat-menu-item (click)="select('chicken')">Kuřecí</button>
+    <button mat-menu-item (click)="select('lamb')">Jehněčí</button>
+    <button mat-menu-item (click)="select('pork')">Vepřové</button>
+    <button mat-menu-item (click)="select('vege')">Vegetaritáni</button>
+    <button mat-menu-item (click)="select('fish')">Ryby, Krevety</button>
+    <button mat-menu-item (click)="select('biryani')">Biryani, rýže</button>
+    <button mat-menu-item (click)="select('side')">Přílohy</button>
+</mat-menu>
+
+<div class="by">
+    Problémy a připomínky: <a href="mailto:muller.jan@gmail.com">muller.jan@gmail.com</a>
+</div>
