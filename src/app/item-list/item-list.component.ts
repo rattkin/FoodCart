@@ -8,9 +8,9 @@ import { selectMeals, selectFilteredMeals } from '../state/selectors';
 declare let gtag: Function;
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-item-list',
+  templateUrl: './item-list.component.html',
+  styleUrls: ['./item-list.component.scss']
 })
 export class MenuComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));

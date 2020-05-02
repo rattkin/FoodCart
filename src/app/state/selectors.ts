@@ -16,7 +16,7 @@ export const selectFilteredMeals = createSelector(
 
 export const selectSideDishes = createSelector(
     selectMealState,
-    (state) => state.sideDishes
+    (state) => state.meals.filter(meal => meal.type === 'side')
 );
 
 export const selectOrder = createSelector(

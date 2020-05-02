@@ -10,6 +10,7 @@ export interface Meal {
     sideDish?: Meal;
     type?: 'meal' | 'side';
     class?: 'menu' |
+    'soup' |
     'chicken' |
     'pork' |
     'starter' |

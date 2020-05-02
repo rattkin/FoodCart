@@ -1,6 +1,5 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
-import { addToOrderWithoutSideDish, addToOrderWithSideDish,  confirmOrder, OrderSuccess, removeFromOrder, changeMealFilter } from 'src/app/actions/order.actions';
-import { SideDishes } from 'src/app/interfaces/side-dishes';
+import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder } from 'src/app/actions/order.actions';
 import { environment } from '../../../environments/environment';
 import { Meal } from '../../interfaces/meal';
 import { Meals } from '../../interfaces/meals';
@@ -10,7 +9,6 @@ export const mealFeatureKey = 'mealStore';
 export const initialState: MealState = {
   date: new Date(),
   meals: Meals,
-  sideDishes: SideDishes,
   order: [],
   name: undefined,
   comment: undefined,
@@ -21,7 +19,6 @@ export interface MealState {
   date: Date;
   // TODO restrict date
   meals: Meal[];
-  sideDishes: Meal[];
   order: Meal[];
   name: string;
   comment: string;
