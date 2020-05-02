@@ -414,6 +414,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/Lamb Kadai.jpg',
     }, {
         name: 'Chicken Jalfrezi',
         description: 'Kuřecí kostky s jemnou omáčkou s cibulí, paprikou a rajčaty',
@@ -434,6 +435,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/Palak.jpg',
     }, {
         name: 'Chicken Badam Pasanda',
         description: 'Kuřecí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -444,6 +446,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/Paneer Badam Pasanda.jpg',
     }, {
         name: 'Chicken Rara',
         description: 'Kuřecí kostky s jemně pálivou omáčkou',
@@ -485,6 +488,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/Korma.jpg',
     }, {
         name: 'Chicken Dal',
         description: 'Kuřecí kostky s kari čočkou',
@@ -556,6 +560,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/Lamb Kadai.jpg',
     }, {
         name: 'Lamb Palak',
         description: 'Jehněčí kostky se špenátem',
@@ -566,6 +571,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/Palak.jpg',
     }, {
         name: 'Lamb Badam Pasanda',
         description: 'Jehněčí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -576,6 +582,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/Paneer Badam Pasanda.jpg',
     }, {
         name: 'Lamb Vindaloo',
         description: 'Jehněčí kostky s bramborami a velmi ostrou omáčkou',
@@ -639,6 +646,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
+        photo: 'assets/Lamb Kadai.jpg',
     }, {
         name: 'Pork Mushroom',
         description: 'Vepřové kostky v houbové omáčce',
@@ -680,6 +688,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Paneer Badam Pasanda.jpg',
     }, {
         name: 'Shahi Paneer',
         description: 'Sýrové kostky s jemně pálivou omáčkou',
@@ -690,6 +699,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Shahi Paneer.jpg',
     }, {
         name: 'Palak Paneer',
         description: 'Sýrové kostky se špenátem',
@@ -700,6 +710,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Palak Paneer.jpg',
     }, {
         name: 'Paneer Korma',
         description: 'Sýrové kostky s jemnou omáčkou',
@@ -710,6 +721,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Korma.jpg',
     }, {
         name: 'Kadai Paneer',
         description: 'Sýrové kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
@@ -720,6 +732,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Lamb Kadai.jpg',
     }, {
         name: 'Dal Palak',
         description: 'Špenát se žlutým hrachem',
@@ -750,6 +763,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Aloo Rajma.jpg',
     }, {
         name: 'Vegetarian Vindaloo',
         description: 'Míchaná zelenina (fazole, květák, mrkev, sýr, brambory, hrášek) velmi ostrá omáčka s bramborami',
@@ -770,6 +784,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Korma.jpg',
     }, {
         name: 'Dal Makhani',
         description: 'Indické národní jídlo, čočka',
@@ -780,6 +795,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Dal Makhani.jpg',
     }, {
         name: 'Bombay Aloo',
         description: 'Brambory s indickým kořením',
@@ -800,6 +816,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Palak.jpg',
     }, {
         name: 'Plain Palak',
         description: 'Pikantní špenátem',
@@ -810,6 +827,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Palak.jpg',
     }, {
         name: 'Aloo Rajma',
         description: 'Brambory s fazolemi a kari omáčkou',
@@ -820,6 +838,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Aloo Rajma.jpg',
     }, {
         name: 'Mix Vegetables',
         description: 'Kořeněná míchaná zelenina (fazole, hrášek, květák, sýr, brambory, mrkev)',
@@ -840,6 +859,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Malai kofta.jpg',
     }, {
         name: 'Shahi kofta',
         description: 'Opečené mleté bramborové kuličky se sýrem, oříšky a pikantní omáčkou',
@@ -850,6 +870,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/Malai kofta.jpg',
     }, {
         name: 'Palak Kofta',
         description: 'Opečené mleté bramborové kuličky se sýrem, oříšky a špenátem',
@@ -922,6 +943,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Paneer Badam Pasanda.jpg',
     }, {
         name: 'Fish Korma',
         description: 'Ryba s jemnou omáčkou',
@@ -932,6 +954,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Korma.jpg',
     }, {
         name: 'Prawn Vindaloo',
         description: 'Krevety ve velmi ostré omáčce s bramborami',
@@ -962,6 +985,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Paneer Badam Pasanda.jpg',
     }, {
         name: 'Prawn Masala',
         description: 'Krevety s ostrou omáčkou',
@@ -993,6 +1017,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Lamb Kadai.jpg',
     }, {
         name: 'Lamb Biryani',
         description: 'Indická rýže s jehněčími kostkami',
