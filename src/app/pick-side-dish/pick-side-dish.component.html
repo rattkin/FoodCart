@@ -3,13 +3,17 @@
 
 <form [formGroup]="sideForm">
     <mat-dialog-content>
-        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="formSideRadio"
-            [(ngModel)]="chosenSideDish">
-            <mat-radio-button class="example-radio-button" *ngFor="let side of sideDishes where side.class === dish.class |async" [value]="side">
-                {{side.name}} ({{side.description}}) {{side.price}} Kč
-                <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
-    
-            </mat-radio-button>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            formControlName="formSideRadio" [(ngModel)]="chosenSideDish">
+            <span *ngFor="let side of sideDishes |async">
+                <mat-radio-button class="example-radio-button"
+                    *ngIf="(dish.class === 'menu' && side.class === 'menu') || (dish.class !== 'menu' && side.class !== 'menu')"
+                    [value]="side">
+                    {{side.name}} ({{side.description}}) {{side.price}} Kč
+                    <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
+
+                </mat-radio-button>
+            </span>
         </mat-radio-group>
     </mat-dialog-content>
 </form>

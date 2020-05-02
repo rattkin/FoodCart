@@ -463,6 +463,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/Rara.jpg',
     }, {
         name: 'Butter Chicken',
         description: 'Kuřecí kostky s pikantní máslovou omáčkou',
@@ -513,6 +514,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/Curry.jpg',
     }, {
         name: 'Labbader Chicken',
         description: 'Kuřecí kostky s kari omáčkou a jemně krájenou papričkou a kešu, NOVINKA! Specialita kuchaře',
@@ -603,6 +605,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/Curry.jpg',
     }, {
         name: 'Lamb Rara',
         description: 'Jehněčí kostky s jemně pálivou omáčkou',
@@ -610,6 +613,7 @@ export const Meals: Meal[] = [
         weight: '200g',
         price: 180,
         packaging: 5,
+        photo: 'assets/Rara.jpg',
         sideDish: {},
         type: 'meal',
         class: 'lamb',
@@ -633,6 +637,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
+        photo: 'assets/Curry.jpg',
     }, {
         name: 'Pork Kadai',
         description: 'Vepřové kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
@@ -663,6 +668,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
+        photo: 'assets/Rara.jpg',
     }, {
         name: 'Vegetarian Thali',
         description: 'Indická čočka, špenát, míchaná zelenina (fazole, hrášek, květák, sýr, brambory, mrkev) rýže nebo placky',
@@ -893,6 +899,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Curry.jpg',
     }, {
         name: 'Rara Fish',
         description: 'Ryba s jemně pálivou omáčkou',
@@ -903,6 +910,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Rara.jpg',
     }, {
         name: 'Fish Vindaloo',
         description: 'Ryba s velmi pálivou omáčkou a s bramborami',
@@ -983,6 +991,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/Curry.jpg',
     }, {
         name: 'Prawn Kadai',
         description: 'Krevety s jemně pálivou omáčkou Kadai, paprika, cibule',
