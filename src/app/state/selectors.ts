@@ -11,7 +11,17 @@ export const selectMeals = createSelector(
 
 export const selectFilteredMeals = createSelector(
     selectMealState,
-    (state) => state.meals.filter(meal => meal.class === state.filterType)
+    (state) => state.meals.filter(meal => {
+        if (meal.class === state.filterType) {
+            if (meal.class !== 'menu') {
+                return meal;
+            } else if (meal.type === 'meal') {
+                return meal;
+            } else {
+                return;
+            }
+        }
+    })
 );
 
 export const selectFilterType = createSelector(

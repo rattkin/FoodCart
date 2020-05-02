@@ -180,25 +180,6 @@ export const Meals: Meal[] = [
         class: 'menu',
     },
     {
-        name: 'Plain Rice',
-        description: 'Samotná indická rýže',
-        weight: '100g',
-        price: 25,
-        packaging: 5,
-        photo: 'assets/rice.jpg',
-        type: 'meal',
-        class: 'menu',
-    },
-    {
-        name: 'Tandoori Chapati',
-        description: 'Samotná indická placka',
-        allergen: '1',
-        price: 20,
-        photo: 'assets/Chapati.jpg',
-        type: 'meal',
-        class: 'menu',
-    },
-    {
         name: 'Tomato Soup',
         description: 'Rajčatová polévka',
         allergen: '1,7',
@@ -1061,6 +1042,8 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'side',
         class: 'menu',
+        photo: 'assets/rice.jpg',
+
     },
     {
         name: 'Tandoori Chapati',
@@ -1078,6 +1061,7 @@ export const Meals: Meal[] = [
         price: 25,
         type: 'side',
         class: 'side',
+        photo: 'assets/Chapati.jpg',
     },
     {
         name: 'Basmati Rice',
@@ -1087,6 +1071,7 @@ export const Meals: Meal[] = [
         price: 35,
         type: 'side',
         class: 'side',
+        photo: 'assets/rice.jpg',
     },
     {
         name: 'Tandoori Kulcha',
@@ -1132,6 +1117,7 @@ export const Meals: Meal[] = [
         price: 40,
         type: 'side',
         class: 'side',
+        photo: 'assets/Chapati.jpg',
     },
     {
         name: 'Tandoori Punjabi Nan',
@@ -1141,6 +1127,7 @@ export const Meals: Meal[] = [
         price: 40,
         type: 'side',
         class: 'side',
+        photo: 'assets/Chapati.jpg',
     },
     {
         name: 'Tandoori Protha',
@@ -1159,5 +1146,6 @@ export const Meals: Meal[] = [
         price: 30,
         type: 'side',
         class: 'side',
+        photo: 'assets/Chapati.jpg',
     }
 ];
