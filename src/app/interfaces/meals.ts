@@ -65,7 +65,7 @@ export const Meals: Meal[] = [
         allergen: '1,7,8',
         weight: '100g',
         price: 100,
-        photo: 'assets/Chicken Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
         packaging: 5,
         sideDish: {},
         type: 'meal',
@@ -89,11 +89,11 @@ export const Meals: Meal[] = [
         allergen: '1,3,7',
         weight: '100g',
         price: 100,
-        photo: 'assets/Pork Rara.jpg',
         packaging: 5,
         sideDish: {},
         type: 'meal',
         class: 'menu',
+        photo: 'assets/Rara.jpg',
     },
     {
         name: 'Palak Paneer',
@@ -137,7 +137,7 @@ export const Meals: Meal[] = [
         allergen: '7,8',
         weight: '100g',
         price: 95,
-        photo: 'assets/Paneer Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
         packaging: 5,
         sideDish: {},
         type: 'meal',
@@ -161,7 +161,6 @@ export const Meals: Meal[] = [
         allergen: '1,7',
         weight: '100g',
         price: 95,
-        photo: 'assets/Malai kofta.jpg',
         packaging: 5,
         sideDish: {},
         type: 'meal',
@@ -216,6 +215,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'starter',
+        photo: 'assets/onion bhaji.jpg',
     }, {
         name: 'Papadum',
         description: 'Křupavá placka chips, Indická specialita',
@@ -225,7 +225,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         class: 'starter',
     }, {
-        name: 'Thandori Mix grill',
+        name: 'Tandoori Mix grill',
         description: 'Grilované krevety, kuřecí a jehněčí maso a 2 druhy chutney',
         allergen: '',
         weight: '300g',
@@ -244,6 +244,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/lamb tikka.jpg',
     }, {
         name: 'Tandoori Gateway Of India',
         description: 'Grilované ostře kořeněné kuřecí kostky a stehno a 2 druhy chutney',
@@ -264,6 +265,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/tandori shish kebab.jpg',
     }, {
         name: 'Chicken Saslik',
         description: 'Grilované kuřecí kostky, grilovaná cibule a rajčata a 2 druhy chutney',
@@ -274,6 +276,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/chicken saslik.jpg',
     }, {
         name: 'Chicken Malaj Kebab',
         description: 'Kuřecí kostky marinované ve smetaně s kešu oříšky a 2 druhy chutney',
@@ -284,6 +287,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/chicken malaj kebab.jpg',
     }, {
         name: 'Chicken Kastoori Kebab',
         description: 'Jemně kořeněné a grilované kuřecí kostky a 2 druhy chutney',
@@ -304,6 +308,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/chicken tandoori.jpg',
     }, {
         name: 'Chicken Tikka',
         description: 'Ostře kořeněné a grilované kuřecí kostky a 2 druhy chutney',
@@ -314,6 +319,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/chicken tika.jpg',
     }, {
         name: 'Pork Saslik',
         description: 'Grilované vepřové kostky, grilovaná cibule a rajčata a 2 druhy chutney',
@@ -324,6 +330,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/chicken saslik.jpg',
     }, {
         name: 'Pork Tikka',
         description: 'Ostře kořeněné grilované vepřové kostky a 2 druhy chutney',
@@ -334,6 +341,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
+        photo: 'assets/pork tikka.jpg',
     }, {
         name: 'Green Chicken Tikka',
         description: 'Velmi ostře grilované zelené kuřecí kostky a 2 druhy chutney',
@@ -346,14 +354,15 @@ export const Meals: Meal[] = [
         class: 'tandoor',
     }, {
         name: 'Paneer Saslik',
-        description: 'Grilované sýrové kostky, grilovaná cibule a rajčata a 2 druhy chutney. NOVINKA! Specialitakuchaře pro vegetariány',
+        description: 'Grilované sýrové kostky, grilovaná cibule a rajčata a 2 druhy chutney. NOVINKA! Specialita kuchaře pro vegetariány',
         allergen: '7',
         weight: '200g',
         price: 145,
         packaging: 5,
         sideDish: {},
         type: 'meal',
-        class: 'tandoor',
+        class: 'vege',
+        photo: 'assets/chicken saslik.jpg',
     }, {
         name: 'Chicken Thali',
         description: 'Kuřecí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
@@ -364,6 +373,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/thali.jpg',
     }, {
         name: 'Chicken Mushroom',
         description: 'Kuřecí kostky se žampiony v omáčce',
@@ -394,6 +404,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/chana.jpg',
     }, {
         name: 'Chicken Dabal Maza',
         description: 'Kuřecí kostky s jemně kořeněnou restovanou zeleninou',
@@ -425,6 +436,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/chicken jalfrezi.jpg',
     }, {
         name: 'Chicken Palak',
         description: 'Kuřecí kostky se špenátem',
@@ -446,7 +458,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/Paneer Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
     }, {
         name: 'Chicken Rara',
         description: 'Kuřecí kostky s jemně pálivou omáčkou',
@@ -468,6 +480,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/butter chicken.jpg',
     }, {
         name: 'Chicken Vindaloo',
         description: 'Kuřecí kostky s bramborami a velmi ostrou omáčkou',
@@ -478,6 +491,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/vindaloo.jpg',
     }, {
         name: 'Chicken Korma',
         description: 'Kuřecí kostky s jemnou omáčkou',
@@ -530,6 +544,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/thali.jpg',
     }, {
         name: 'Lamb Mushroom',
         description: 'Jehněčí kostky v houbové omáčce',
@@ -550,6 +565,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/masala.jpg',
     }, {
         name: 'Lamb Kadai',
         description: 'Jehněčí kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
@@ -582,7 +598,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        photo: 'assets/Paneer Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
     }, {
         name: 'Lamb Vindaloo',
         description: 'Jehněčí kostky s bramborami a velmi ostrou omáčkou',
@@ -593,6 +609,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/vindaloo.jpg',
     }, {
         name: 'Lamb Curry',
         description: 'Jehněčí kostky s kari omáčkou',
@@ -625,6 +642,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
+        photo: 'assets/vindaloo.jpg',
     }, {
         name: 'Pork Curry',
         description: 'Vepřové kostky s kari omáčkou',
@@ -678,6 +696,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/thali.jpg',
     }, {
         name: 'Paneer Badam Pasanda',
         description: 'Sýrové kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -688,7 +707,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/Paneer Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
     }, {
         name: 'Shahi Paneer',
         description: 'Sýrové kostky s jemně pálivou omáčkou',
@@ -743,6 +762,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/dal palak.jpg',
     }, {
         name: 'Mattar Mushroom',
         description: 'Žampióny s hráškem ve velmi ostré omáčce',
@@ -754,7 +774,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         class: 'vege',
     }, {
-        name: 'Rajma Massala',
+        name: 'Rajma Masala',
         description: 'Indické fazole s ostrou omáčkou',
         allergen: '7',
         weight: '200g',
@@ -774,6 +794,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/vindaloo.jpg',
     }, {
         name: 'Vegetarian Korma',
         description: 'Míchaná zelenina (fazole, květák, mrkev, brambory hrášek, sýr) jemná omáčka s kokosem a kešu oříšky',
@@ -819,7 +840,7 @@ export const Meals: Meal[] = [
         photo: 'assets/Palak.jpg',
     }, {
         name: 'Plain Palak',
-        description: 'Pikantní špenátem',
+        description: 'Pikantní špenát',
         allergen: '7',
         weight: '200g',
         price: 135,
@@ -827,7 +848,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/Palak.jpg',
+        photo: 'assets/plain palak.jpg',
     }, {
         name: 'Aloo Rajma',
         description: 'Brambory s fazolemi a kari omáčkou',
@@ -859,7 +880,6 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/Malai kofta.jpg',
     }, {
         name: 'Shahi kofta',
         description: 'Opečené mleté bramborové kuličky se sýrem, oříšky a pikantní omáčkou',
@@ -870,7 +890,6 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/Malai kofta.jpg',
     }, {
         name: 'Palak Kofta',
         description: 'Opečené mleté bramborové kuličky se sýrem, oříšky a špenátem',
@@ -891,6 +910,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/chana.jpg',
     }, {
         name: 'Fish Masala',
         description: 'Kousky ryby v ostré omáčce',
@@ -901,6 +921,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/masala.jpg',
     }, {
         name: 'Fish Curry',
         description: 'Ryba s kari omáčkou',
@@ -933,6 +954,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/vindaloo.jpg',
     }, {
         name: 'Fish Badam Pasanda',
         description: 'Ryba s jemnou omáčkou z kokosu a s mandlemi',
@@ -943,7 +965,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/Paneer Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
     }, {
         name: 'Fish Korma',
         description: 'Ryba s jemnou omáčkou',
@@ -965,6 +987,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/vindaloo.jpg',
     }, {
         name: 'Lumbini Palau',
         description: 'Krevety, směs rýže a míchané zeleniny',
@@ -985,7 +1008,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/Paneer Badam Pasanda.jpg',
+        photo: 'assets/badam-pasanda.jpg',
     }, {
         name: 'Prawn Masala',
         description: 'Krevety s ostrou omáčkou',
@@ -996,6 +1019,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
+        photo: 'assets/masala.jpg',
     }, {
         name: 'Prawn Curry',
         description: 'Krevety s kari omáčkou',
@@ -1028,6 +1052,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
+        photo: 'assets/Chicken Birianes.jpg'
     }, {
         name: 'Pork Biryani',
         description: 'Indická rýže s vepřovými kostkami',
@@ -1038,6 +1063,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
+        photo: 'assets/Chicken Birianes.jpg'
     }, {
         name: 'Chicken Biryani',
         description: 'Indická rýže s kuřecími kostkami',
@@ -1048,6 +1074,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
+        photo: 'assets/Chicken Birianes.jpg'
     }, {
         name: 'Vegetarian Biryani',
         description: 'Indická rýže s míchanou zeleninou',
@@ -1058,6 +1085,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
+        photo: 'assets/Chicken Birianes.jpg'
     },
     {
         name: 'Plain Rice',
@@ -1106,6 +1134,7 @@ export const Meals: Meal[] = [
         price: 50,
         type: 'side',
         class: 'side',
+        photo: 'assets/kulcha.jpg',
     },
     {
         name: 'Jeera Chawal',
@@ -1115,6 +1144,7 @@ export const Meals: Meal[] = [
         price: 35,
         type: 'side',
         class: 'side',
+        photo: 'assets/jeera chawal.jpg',
     },
     {
         name: 'Peas Rice',
@@ -1124,6 +1154,7 @@ export const Meals: Meal[] = [
         price: 35,
         type: 'side',
         class: 'side',
+        photo: 'assets/peas rice.jpg',
     },
     {
         name: 'Tandoori Garlic Kulcha',
@@ -1133,6 +1164,7 @@ export const Meals: Meal[] = [
         price: 50,
         type: 'side',
         class: 'side',
+        photo: 'assets/kulcha.jpg',
     },
     {
         name: 'Tandoori Garlic Nan',
@@ -1142,7 +1174,7 @@ export const Meals: Meal[] = [
         price: 40,
         type: 'side',
         class: 'side',
-        photo: 'assets/Chapati.jpg',
+        photo: 'assets/tandori garlic nan.jpg',
     },
     {
         name: 'Tandoori Punjabi Nan',
@@ -1162,6 +1194,7 @@ export const Meals: Meal[] = [
         price: 40,
         type: 'side',
         class: 'side',
+        photo: 'assets/tandori protha.jpg',
     },
     {
         name: 'Tandoori Nan',

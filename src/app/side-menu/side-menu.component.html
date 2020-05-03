@@ -7,6 +7,12 @@
     Panská 95
 </h1>
 
+<p>
+    Otevřeno s sebou:
+    pondělí až sobota
+    10.30 - 20.00
+</p>
+
 <button [class.active]="(filterType |async) === 'menu'" mat-raised-button (click)="select('menu')">Polední menu</button>
 <button [class.active]="(filterType |async) === 'soup'" mat-raised-button (click)="select('soup')">Polévky</button>
 <button [class.active]="(filterType |async) === 'starter'" mat-raised-button (click)="select('starter')">Předkrmy</button>
