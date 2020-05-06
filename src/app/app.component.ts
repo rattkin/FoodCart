@@ -21,3 +21,5 @@ export class AppComponent implements OnDestroy {
     this.mobileQuery.removeListener(this.mobileQueryListener);
   }
 }
+
+// TODO deprecated

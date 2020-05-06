@@ -25,3 +25,7 @@ export class MenuComponent implements OnInit {
     this.store.dispatch(pickSideDish({ item: orderItem, itemType: type }));
   }
 }
+
+// TODO při menu napsat nahoře menu je od do a obsahuje přílohu
+// pití?
+
