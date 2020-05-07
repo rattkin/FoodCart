@@ -44,7 +44,7 @@ export class OrderDialogComponent implements OnInit {
       ]],
       phone: [''],
       comment: [''],
-    },
+    });
     //  { validators: this.matchTimes });
   }
 
@@ -90,12 +90,11 @@ export class OrderDialogComponent implements OnInit {
     // https://stackoverflow.com/questions/51605737/confirm-password-validation-in-angular-6
   }
 
-  // openPicker() {
-  //   if (!this.orderForm.get('timePicker').value) {
-  //     console.log('open picker');
-  //     this.picker.open();
-
-  //   }
+  openPicker() {
+    if (!this.orderForm.get('timePicker').value) {
+      console.log('open picker');
+      this.picker.open();
+    }
   }
 
   // TODO on mobile too big
