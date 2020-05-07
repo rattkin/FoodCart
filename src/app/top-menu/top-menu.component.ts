@@ -10,7 +10,9 @@ import { changeMealFilter } from '../actions/order.actions';
 })
 export class TopMenuComponent implements OnInit {
 
-  constructor(private store: Store<any>) { }
+  constructor(
+    private store: Store<any>
+  ) { }
 
 
   menuFilter = new FormControl();

@@ -76,8 +76,8 @@ export class AppEffects {
       return this.http.post('https://rattkin.info/mail/mail.php', { mailData: message, user: name })
         .pipe(
           map(res => {
-            console.log(res);
             if (res === 'OK') {
+              // TODO google analytics
               return OrderSuccess();
             } else {
               return OrderFailed();

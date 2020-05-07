@@ -41,7 +41,7 @@ export const selectOrder = createSelector(
 
 export const selectName = createSelector(
     selectMealState,
-    (state) => state.name
+    (state) => state.email
 );
 
 export const selectComment = createSelector(

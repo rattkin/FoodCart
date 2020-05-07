@@ -24,3 +24,11 @@ body {
 .mat-radio-label {
     white-space: normal !important;
  }
+
+ .timepicker-overlay {
+    z-index: 10000000 !important;
+}
+
+.timepicker-backdrop-overlay {
+    z-index: 10000000 !important;
+}

@@ -1,4 +1,17 @@
 <div class="container">
+
+    <mat-toolbar color="accent" *ngIf="isBeforeOpen">
+        <span>Zatím není otevřeno ale můžete si objednat s vyzvednutím později</span>
+    </mat-toolbar>
+
+    <mat-toolbar color="accent" *ngIf="isClosedDay">
+        <span>Dnes je zavřeno</span>
+    </mat-toolbar>
+
+    <mat-toolbar color="accent" *ngIf="isAfterClose">
+        <span>Dnes už je zavřeno</span>
+    </mat-toolbar>
+
     <div class="row">
         <div class="col-md-6 col-lg-4" *ngFor="let item of menu |async">
             <mat-card>

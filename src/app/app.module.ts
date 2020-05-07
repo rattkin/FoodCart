@@ -18,11 +18,11 @@ import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderListComponent } from './order-button/order-button.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
-import { OrderTimeComponent } from './order-time/order-time.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import * as fromReducers from './state/reducers/mealStore';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,6 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     OrderDialogComponent,
     OrderSuccessfulComponent,
     OrderFailedComponent,
-    OrderTimeComponent,
     TopMenuComponent,
     SideMenuComponent,
   ],
@@ -48,6 +47,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     StoreModule.forRoot(fromReducers.reducer,
       //  {      metaReducers    }
     ),
+    NgxMaterialTimepickerModule.setLocale('cs-CZ'),
     StoreModule.forFeature(fromReducers.mealFeatureKey, fromReducers.reducer),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({

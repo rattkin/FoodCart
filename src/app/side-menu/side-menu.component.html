@@ -8,17 +8,23 @@
 </h1>
 
 <p>
-    Otevřeno s sebou:<br>
+    <span [ngClass]="{'bold' : isOpen}">
+        Otevřeno
+    </span>
+    s sebou:<br>
     {{startDay}} až {{endDay}} <br>
     {{openingTime}} - {{closingTime}}
 </p>
 <p>
-    Polední menu: (mimo svátky) <br>
-     {{startMenuDay}} - {{endMenuDay}}, 
-    {{openingMenuTime}} - {{closingMenuTime}} 
+    <span [ngClass]="{'bold' : isMenu}">
+        Polední menu:
+    </span>
+    (mimo svátky) <br>
+    {{startMenuDay}} - {{endMenuDay}},
+    {{openingMenuTime}} - {{closingMenuTime}}
 </p>
 
-<button [class.active]="(filterType |async) === 'menu'" mat-raised-button (click)="select('menu')">Polední menu</button>
+<button [class.active]="(filterType |async) === 'menu'" mat-raised-button (click)="select('menu')" *ngIf="isUntilMenu">Polední menu</button>
 <button [class.active]="(filterType |async) === 'soup'" mat-raised-button (click)="select('soup')">Polévky</button>
 <button [class.active]="(filterType |async) === 'starter'" mat-raised-button
     (click)="select('starter')">Předkrmy</button>

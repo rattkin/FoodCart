@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import * as moment from 'moment';
 import { pickSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
-import { selectMeals, selectFilteredMeals } from '../state/selectors';
+import { selectFilteredMeals, selectFilterType } from '../state/selectors';
+import { isMenu, isOpen, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -14,6 +16,10 @@ declare let gtag: Function;
 })
 export class MenuComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));
+
+  public isBeforeOpen = isBeforeOpen(moment());
+  public isClosedDay = isClosedDay(moment());
+  public isAfterClose = isAfterClose(moment());
 
   constructor(private store: Store<any>) { }
 

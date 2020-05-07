@@ -2,7 +2,7 @@
 
 <mat-dialog-content>
     <p>
-        Poznímka: Polední menu je dostupné pouze Po-Pá: 10:30 - 15:00 (mimo svátky)
+        <!-- TODO Poznámka: Polední menu je dostupné pouze Po-Pá: 10:30 - 15:00 (mimo svátky) -->
     </p>
     <p>
         <mat-chip-list #chipList class="mat-chip-list" ngClass="orderItems" aria-label="Seznam objednávaného jídla:">
@@ -15,23 +15,68 @@
 </mat-dialog-content>
 
 
-<p>
-    Jídlo které si objednáte si můžete vyzvednout až vám pošleme e-mail zpět. Vyplňte prosím Váš e-mail:
-</p>
+<form [formGroup]="orderForm">
 
-<form [formGroup]="usernameForm">
-    <mat-form-field class="example-full-width">
-        <mat-label>Váš email</mat-label>
-        <input type="email" matInput formControlName="formUsername" placeholder="E-mail" autocomplete="username email">
-    </mat-form-field>
-    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                Jídlo chcete vyzvednout:
+                <mat-error *ngIf="orderForm.errors?.pickTimeError">Zadejte čas
+                </mat-error>
+            </div>
+        </div>
 
-    
+        <div class="row">
+            <div class="col">
+                <mat-form-field floatLabel="always" appearance="none">
+                    <mat-checkbox formControlName="timeNow" (click)="openPicker()">Co nejdřív</mat-checkbox>
+                    <textarea matInput hidden></textarea>
+                </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-        <mat-label>Poznámka (vyplňte, pokud nechcete jídlo hned, ale později)</mat-label>
-        <input matInput formControlName="formComment">
-    </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Později:</mat-label>
+                    <input matInput [ngxTimepicker]="picker" [format]="24" min="10:30 am" max="08:0 pm" formControlName="timePicker">
+                </mat-form-field>
+                <ngx-material-timepicker #picker [minutesGap]="5"></ngx-material-timepicker>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                Vyplňte prosím Váš e-mail a/nebo telefon aby jsme Vás mohli v případě potřeby kontaktovat
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <mat-form-field appearance="outline" class="wide">
+                    <mat-label>E-mail </mat-label>
+                    <input type="email" matInput formControlName="email" autocomplete="username email" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="wide">
+                    <mat-label>Telefon</mat-label>
+                    <input type="email" matInput formControlName="phone">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="wide">
+                    <mat-label>Poznámka </mat-label>
+                    <input matInput formControlName="comment">
+                </mat-form-field>
+            </div>
+        </div>
+
+    </div>
+
 
 
     <mat-dialog-actions>

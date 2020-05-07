@@ -11,3 +11,6 @@ button {
 .active {
     background-color: #ffd740;
 }
+.bold {
+    font-weight: bold;
+}

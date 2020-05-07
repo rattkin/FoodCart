@@ -32,7 +32,12 @@ export const removeFromOrder = createAction(
 
 export const confirmOrder = createAction(
   'confirmOrder',
-  props<{ name: string; comment: string; }>(),
+  props<{
+    name: string;
+    phone: string;
+    time: string;
+    comment: string;
+  }>(),
 );
 
 export const sendOrder = createAction(

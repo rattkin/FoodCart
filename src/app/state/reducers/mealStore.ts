@@ -7,20 +7,21 @@ import { Meals } from '../../interfaces/meals';
 export const mealFeatureKey = 'mealStore';
 
 export const initialState: MealState = {
-  date: new Date(),
+  time: '',
   meals: Meals,
   order: [],
-  name: undefined,
+  email: undefined,
+  phone: undefined,
   comment: undefined,
   filterType: 'menu',
 };
 
 export interface MealState {
-  date: Date;
-  // TODO restrict date
+  time: string;
   meals: Meal[];
   order: Meal[];
-  name: string;
+  email: string;
+  phone: string;
   comment: string;
   filterType: string;
 }
@@ -38,15 +39,14 @@ const mealReducer = createReducer(
     order: [...state.order, { ...item }]
   })),
 
-  on(changeMealFilter, (state, {filterType: filter}) => ({
+  on(changeMealFilter, (state, { filterType: filter }) => ({
     ...state,
     filterType: filter,
   })),
 
   on(confirmOrder, (state, { name: kdo, comment: text }) => ({
     ...state,
-    // date: Date.now(),
-    name: kdo,
+    email: kdo,
     comment: text,
   })),
 

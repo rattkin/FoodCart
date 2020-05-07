@@ -3,7 +3,9 @@ import { Store, select } from '@ngrx/store';
 import { changeMealFilter } from '../actions/order.actions';
 import { selectFilterType } from '../state/selectors';
 import * as moment from 'moment';
-import { openingTime, timeFormat, closingTime, startDay, dayFormat, endDay, openingMenuTime, closingMenuTime, startMenuDay, endMenuDay } from '../config';
+// tslint:disable-next-line: max-line-length
+import { startTime, timeFormat, endTime, startDay, dayFormat, endDay, startMenuTime, endMenuTime, startMenuDay, endMenuDay } from '../config';
+import { isOpen, isMenu, isUntilMenu } from '../utils/date';
 
 @Component({
   selector: 'app-side-menu',
@@ -14,14 +16,17 @@ export class SideMenuComponent implements OnInit {
 
   constructor(private store: Store<any>) { }
   public filterType = this.store.pipe(select(selectFilterType));
-  public openingTime = moment(openingTime).format(timeFormat);
-  public closingTime = moment(closingTime).format(timeFormat);
-  public openingMenuTime = moment(openingMenuTime).format(timeFormat);
-  public closingMenuTime = moment(closingMenuTime).format(timeFormat);
+  public openingTime = moment(startTime).format(timeFormat);
+  public closingTime = moment(endTime).format(timeFormat);
+  public openingMenuTime = moment(startMenuTime).format(timeFormat);
+  public closingMenuTime = moment(endMenuTime).format(timeFormat);
   public startDay = moment(startDay).format(dayFormat);
   public endDay = moment(endDay).format(dayFormat);
   public startMenuDay = moment(startMenuDay).format('dd');
   public endMenuDay = moment(endMenuDay).format('dd');
+  public isOpen = isOpen(moment());
+  public isMenu = isMenu(moment());
+  public isUntilMenu = isUntilMenu(moment());
 
   ngOnInit(): void {
   }
