@@ -8,22 +8,34 @@
 </h1>
 
 <p>
-    Otevřeno s sebou:
-    pondělí až sobota
-    10.30 - 20.00
+    Otevřeno s sebou:<br>
+    {{startDay}} až {{endDay}} <br>
+    {{openingTime}} - {{closingTime}}
+</p>
+<p>
+    Polední menu: (mimo svátky) <br>
+     {{startMenuDay}} - {{endMenuDay}}, 
+    {{openingMenuTime}} - {{closingMenuTime}} 
 </p>
 
 <button [class.active]="(filterType |async) === 'menu'" mat-raised-button (click)="select('menu')">Polední menu</button>
 <button [class.active]="(filterType |async) === 'soup'" mat-raised-button (click)="select('soup')">Polévky</button>
-<button [class.active]="(filterType |async) === 'starter'" mat-raised-button (click)="select('starter')">Předkrmy</button>
-<button [class.active]="(filterType |async) === 'tandoor'" mat-raised-button (click)="select('tandoor')">Indická pec Tandoor</button>
-<button [class.active]="(filterType |async) === 'chicken'" mat-raised-button (click)="select('chicken')">Kuřecí maso</button>
+<button [class.active]="(filterType |async) === 'starter'" mat-raised-button
+    (click)="select('starter')">Předkrmy</button>
+<button [class.active]="(filterType |async) === 'tandoor'" mat-raised-button (click)="select('tandoor')">Indická pec
+    Tandoor</button>
+<button [class.active]="(filterType |async) === 'chicken'" mat-raised-button (click)="select('chicken')">Kuřecí
+    maso</button>
 <button [class.active]="(filterType |async) === 'lamb'" mat-raised-button (click)="select('lamb')">Jehněčí maso</button>
 <button [class.active]="(filterType |async) === 'pork'" mat-raised-button (click)="select('pork')">Vepřové maso</button>
-<button [class.active]="(filterType |async) === 'vege'" mat-raised-button (click)="select('vege')">Vegetaritánské</button>
-<button [class.active]="(filterType |async) === 'fish'" mat-raised-button (click)="select('fish')">Ryby, Krevety</button>
-<button [class.active]="(filterType |async) === 'biryani'" mat-raised-button (click)="select('biryani')">Biryani, rýže</button>
-<button [class.active]="(filterType |async) === 'side'" mat-raised-button (click)="select('side')">Samotné přílohy</button>
+<button [class.active]="(filterType |async) === 'vege'" mat-raised-button
+    (click)="select('vege')">Vegetaritánské</button>
+<button [class.active]="(filterType |async) === 'fish'" mat-raised-button (click)="select('fish')">Ryby,
+    Krevety</button>
+<button [class.active]="(filterType |async) === 'biryani'" mat-raised-button (click)="select('biryani')">Biryani,
+    rýže</button>
+<button [class.active]="(filterType |async) === 'side'" mat-raised-button (click)="select('side')">Samotné
+    přílohy</button>
 
 <p>
     <a href="https://indickarestaurace.cz/viewpage.php?page_id=20">indickarestaurace.cz</a>
