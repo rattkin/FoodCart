@@ -1,77 +1,99 @@
 <h1 mat-dialog-title>Objednávka na osobní odběr</h1>
 
 <mat-dialog-content>
-    <p>
-        <!-- TODO Poznámka: Polední menu je dostupné pouze Po-Pá: 10:30 - 15:00 (mimo svátky) -->
-    </p>
-    <p>
-        <mat-chip-list #chipList class="mat-chip-list" ngClass="orderItems" aria-label="Seznam objednávaného jídla:">
-            <mat-chip *ngFor="let item of order |async; let i = index" (removed)="remove(i)">{{item.name}}
-                <mat-icon matChipRemove>cancel</mat-icon>
-            </mat-chip>
-        </mat-chip-list>
-    </p>
-
-</mat-dialog-content>
-
-
-<form [formGroup]="orderForm">
-
     <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>
+                    Rekapitulace:
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>
+                    <mat-chip-list #chipList class="mat-chip-list-stacked" ngClass="orderItems"
+                        aria-label="Rekapitulace objednávaného jídla:">
+                        <span *ngFor="let item of order |async; let i = index">
+                            <mat-chip *ngIf="item.class==='menu'" (removed)="remove(i)" color="accent">{{item.name}} (menu)
+                                <mat-icon matChipRemove>cancel</mat-icon>
+                            </mat-chip>
+                            <mat-chip *ngIf="item.class!=='menu'" (removed)="remove(i)">{{item.name}}
+                                <mat-icon matChipRemove>cancel</mat-icon>
+                            </mat-chip>
+                        </span>
+                    </mat-chip-list>
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col">
-                <mat-form-field appearance="outline">
-                    <mat-label>Jídlo si vyzvednou:</mat-label>
-                    <input matInput [ngxTimepicker]="picker" [format]="24" min="10:30 am" max="08:0 pm"
-                        formControlName="timePicker">
-                </mat-form-field>
-                <ngx-material-timepicker #picker [minutesGap]="5"></ngx-material-timepicker>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col">
-                Vyplňte prosím Váš e-mail a/nebo telefon aby jsme Vás mohli v případě potřeby kontaktovat
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-
-                <mat-form-field appearance="outline" class="wide">
-                    <mat-label>E-mail </mat-label>
-                    <input type="email" matInput formControlName="email" autocomplete="username email" required>
-                </mat-form-field>
-            </div>
-
-            <div class="col-md-6">
-                <mat-form-field appearance="outline" class="wide">
-                    <mat-label>Telefon</mat-label>
-                    <input type="email" matInput formControlName="phone">
-                </mat-form-field>
+                <p>
+                    <mat-divider></mat-divider>
+                </p>
             </div>
         </div>
 
 
-        <div class="row">
-            <div class="col-md-6">
-                <mat-form-field appearance="outline" class="wide">
-                    <mat-label>Poznámka </mat-label>
-                    <input matInput formControlName="comment">
-                </mat-form-field>
+        <form [formGroup]="orderForm">
+
+
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Jídlo si vyzvednou:</mat-label>
+                        <input matInput [ngxTimepicker]="picker" [format]="24" min="{{startTime}}" max="{{endTime}}"
+                            formControlName="timePicker">
+                    </mat-form-field>
+                    <ngx-material-timepicker #picker [minutesGap]="5"></ngx-material-timepicker>
+                </div>
+
             </div>
-        </div>
+
+            <div class="row">
+                <div class="col">
+                    Vyplňte prosím Váš e-mail a/nebo telefon aby jsme Vás mohli v případě potřeby kontaktovat
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <mat-form-field appearance="fill" class="wide">
+                        <mat-label>E-mail </mat-label>
+                        <input type="email" matInput formControlName="email" autocomplete="username email" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field appearance="fill" class="wide">
+                        <mat-label>Telefon</mat-label>
+                        <input type="email" matInput formControlName="phone">
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="fill" class="wide">
+                        <mat-label>Poznámka </mat-label>
+                        <input matInput formControlName="comment">
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </form>
 
     </div>
 
+</mat-dialog-content>
 
-
-    <mat-dialog-actions>
-        <button mat-button [disabled]="!(order |async).length" (click)="onSubmit()">Objednat</button>
-        <button mat-button (click)="checkClose()">
-            Zrušit
-        </button>
-    </mat-dialog-actions>
-</form>
+<mat-dialog-actions>
+    <button mat-button [disabled]="!(order |async).length" (click)="onSubmit()">Objednat</button>
+    <button mat-button (click)="checkClose()">
+        Zrušit
+    </button>
+</mat-dialog-actions>
