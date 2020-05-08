@@ -49,7 +49,7 @@
                         <input matInput [ngxTimepicker]="picker" [format]="24" min="{{pickSoonest}}"
                             max="{{pickLatest}}" formControlName="timePicker">
                     </mat-form-field>
-                    <ngx-material-timepicker #picker [minutesGap]="5"></ngx-material-timepicker>
+                    <ngx-material-timepicker #picker [minutesGap]="5" [cancelBtnTmpl]="cancelBtn" [confirmBtnTmpl]="okBtn"></ngx-material-timepicker>
                 </div>
 
             </div>
@@ -99,3 +99,10 @@
         Zrušit
     </button>
 </mat-dialog-actions>
+
+<ng-template #cancelBtn>
+    <button mat-raised-button>Zrušit</button> &nbsp;
+</ng-template>
+<ng-template #okBtn>
+    <button mat-raised-button color="accent">OK</button>
+</ng-template>
