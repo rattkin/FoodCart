@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
 import { confirmOrder, removeFromOrder } from '../actions/order.actions';
-import { startTime, timeFormat, timeToPrepareOrder } from '../config';
+import { startTime, timeFormat, timeToPrepareOrder, endTime, roundingFactor } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
 import { selectOrder, selectOrderTotal } from '../state/selectors';
 
@@ -22,6 +22,8 @@ export class OrderDialogComponent implements OnInit {
   public orderForm: FormGroup;
   public order = this.store.pipe(select(selectOrder));
   public total = this.store.pipe(select(selectOrderTotal));
+  public startTime: string;
+  public endTime = endTime.format(timeFormat).toString();
 
   constructor(
     private store: Store<any>,
@@ -36,10 +38,13 @@ export class OrderDialogComponent implements OnInit {
       moment().add(timeToPrepareOrder, 'minutes'),
       moment(startTime).add(timeToPrepareOrder, 'minutes'),
     );
-    console.log(OrderTime.format(timeFormat).toString());
+    console.log(OrderTime.format('LLLL'));
+
+    const roundedTime = moment().minute(Math.ceil(moment(OrderTime).minute() / roundingFactor) * roundingFactor).second(0);
+    this.startTime = roundedTime.format(timeFormat).toString();
 
     this.orderForm = this.formBuilder.group({
-      timePicker: [OrderTime.format(timeFormat).toString()],
+      timePicker: [this.startTime],
       email: ['', [
         Validators.required,
         Validators.email,
@@ -76,26 +81,6 @@ export class OrderDialogComponent implements OnInit {
 
   remove(orderItem: number) {
     this.store.dispatch(removeFromOrder({ item: orderItem }));
-  }
-
-
-  matchTimes: ValidatorFn = (group: FormGroup): ValidationErrors | null => {
-    const timePicker = group.get('timePicker');
-    const timeNow = group.get('timeNow');
-
-    if (timeNow.value || (timePicker.value !== '')) {
-      return null;
-    } else {
-      return { pickTimeError: true };
-    }
-    // https://stackoverflow.com/questions/51605737/confirm-password-validation-in-angular-6
-  }
-
-  openPicker() {
-    if (!this.orderForm.get('timePicker').value) {
-      console.log('open picker');
-      this.picker.open();
-    }
   }
 
   // TODO on mobile too big

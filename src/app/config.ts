@@ -5,7 +5,8 @@ moment.locale('cs');
 export const timeFormat = 'H:mm';
 export const dayFormat = 'dddd';
 
-export const timeToPrepareOrder = 15;
+export const timeToPrepareOrder = 10;
+export const roundingFactor = 5;
 
 export const startTime = moment('10:30', timeFormat);
 export const endTime = moment('20:30', timeFormat);
