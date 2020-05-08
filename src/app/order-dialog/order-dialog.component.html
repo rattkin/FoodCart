@@ -6,16 +6,18 @@
             <div class="col">
                 <p>
                     Rekapitulace:
+                    <span *ngIf="isMenuPresent | async">(menu)</span>
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <p>
-                    <mat-chip-list #chipList class="mat-chip-list-stacked" ngClass="orderItems"
+                    <mat-chip-list #chipList class="mat-chip-list-stacked"
                         aria-label="Rekapitulace objednávaného jídla:">
                         <span *ngFor="let item of order |async; let i = index">
-                            <mat-chip *ngIf="item.class==='menu'" (removed)="remove(i)" color="accent">{{item.name}} (menu)
+                            <mat-chip *ngIf="item.class==='menu'" (removed)="remove(i)" color="accent">{{item.name}}
+                                (menu)
                                 <mat-icon matChipRemove>cancel</mat-icon>
                             </mat-chip>
                             <mat-chip *ngIf="item.class!=='menu'" (removed)="remove(i)">{{item.name}}
@@ -44,8 +46,8 @@
                 <div class="col">
                     <mat-form-field appearance="fill">
                         <mat-label>Jídlo si vyzvednou:</mat-label>
-                        <input matInput [ngxTimepicker]="picker" [format]="24" min="{{startTime}}" max="{{endTime}}"
-                            formControlName="timePicker">
+                        <input matInput [ngxTimepicker]="picker" [format]="24" min="{{pickSoonest}}"
+                            max="{{pickLatest}}" formControlName="timePicker">
                     </mat-form-field>
                     <ngx-material-timepicker #picker [minutesGap]="5"></ngx-material-timepicker>
                 </div>

@@ -76,4 +76,17 @@ export const selectOrderTotal = createSelector(
     }
 );
 
+export const selectIsMenuItemPresent = createSelector(
+    selectMealState,
+    (state) => {
+        let menuPresent = false;
+        state.order.forEach(item => {
+            if (item.class === 'menu') {
+                menuPresent = true;
+            }
+        });
+        return menuPresent;
+    }
+);
+
 
