@@ -5,7 +5,7 @@ import { selectFilterType } from '../state/selectors';
 import * as moment from 'moment';
 // tslint:disable-next-line: max-line-length
 import { startTime, timeFormat, endTime, startDay, dayFormat, endDay, startMenuTime, endMenuTime, startMenuDay, endMenuDay } from '../config';
-import { isOpen, isMenu, isUntilMenu } from '../utils/date';
+import { isOpen, isMenu, isUntilMenuEnd } from '../utils/date';
 
 @Component({
   selector: 'app-side-menu',
@@ -26,7 +26,7 @@ export class SideMenuComponent implements OnInit {
   public endMenuDay = moment(endMenuDay).format('dd');
   public isOpen = isOpen(moment());
   public isMenu = isMenu(moment());
-  public isUntilMenu = isUntilMenu(moment());
+  public isUntilMenu = isUntilMenuEnd(moment());
 
   ngOnInit(): void {
   }

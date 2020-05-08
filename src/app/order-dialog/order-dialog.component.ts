@@ -1,15 +1,13 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ValidatorFn, ValidationErrors } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { select, Store } from '@ngrx/store';
+import * as moment from 'moment';
+import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
 import { confirmOrder, removeFromOrder } from '../actions/order.actions';
+import { startTime, timeFormat, timeToPrepareOrder } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
 import { selectOrder, selectOrderTotal } from '../state/selectors';
-import { Meal } from '../interfaces/meal';
-import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
-import * as moment from 'moment';
-import { startTime, endTime, timeFormat } from '../config';
-import { isOpen } from '../utils/date';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -34,10 +32,14 @@ export class OrderDialogComponent implements OnInit {
   ngOnInit(): void {
     gtag('send', 'pageview');
 
+    const OrderTime = moment.max(
+      moment().add(timeToPrepareOrder, 'minutes'),
+      moment(startTime).add(timeToPrepareOrder, 'minutes'),
+    );
+    console.log(OrderTime.format(timeFormat).toString());
 
     this.orderForm = this.formBuilder.group({
-      timePicker: [''],
-      // timeNow: [isOpen(moment())],
+      timePicker: [OrderTime.format(timeFormat).toString()],
       email: ['', [
         Validators.required,
         Validators.email,
@@ -45,7 +47,6 @@ export class OrderDialogComponent implements OnInit {
       phone: [''],
       comment: [''],
     });
-    //  { validators: this.matchTimes });
   }
 
   onSubmit() {

@@ -18,24 +18,13 @@
 <form [formGroup]="orderForm">
 
     <div class="container">
-        <div class="row">
-            <div class="col">
-                Jídlo chcete vyzvednout:
-                <mat-error *ngIf="orderForm.errors?.pickTimeError">Zadejte čas
-                </mat-error>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col">
-                <mat-form-field floatLabel="always" appearance="none">
-                    <mat-checkbox formControlName="timeNow" (click)="openPicker()">Co nejdřív</mat-checkbox>
-                    <textarea matInput hidden></textarea>
-                </mat-form-field>
-
                 <mat-form-field appearance="outline">
-                    <mat-label>Později:</mat-label>
-                    <input matInput [ngxTimepicker]="picker" [format]="24" min="10:30 am" max="08:0 pm" formControlName="timePicker">
+                    <mat-label>Jídlo si vyzvednou:</mat-label>
+                    <input matInput [ngxTimepicker]="picker" [format]="24" min="10:30 am" max="08:0 pm"
+                        formControlName="timePicker">
                 </mat-form-field>
                 <ngx-material-timepicker #picker [minutesGap]="5"></ngx-material-timepicker>
             </div>

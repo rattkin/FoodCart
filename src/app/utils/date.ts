@@ -2,8 +2,8 @@ import { startTime, endTime, startDay, endDay, startMenuTime, endMenuTime, start
 
 export function isOpen(time: moment.Moment) {
     if (
-        time.isBetween(startTime, endTime) &&
-        time.isBetween(startDay, endDay)
+        time.isBetween(startTime, endTime, 'minute', '[]') &&
+        time.isBetween(startDay, endDay, 'day', '[]')
     ) {
         return true;
     } else {
@@ -13,8 +13,8 @@ export function isOpen(time: moment.Moment) {
 
 export function isMenu(time: moment.Moment) {
     if (
-        time.isBetween(startMenuTime, endMenuTime) &&
-        time.isBetween(startMenuDay, endMenuDay)
+        time.isBetween(startMenuTime, endMenuTime, 'minute', '[]') &&
+        time.isBetween(startMenuDay, endMenuDay, 'day', '[]')
     ) {
         return true;
     } else {
@@ -25,7 +25,7 @@ export function isMenu(time: moment.Moment) {
 export function isBeforeOpen(time: moment.Moment) {
     if (
         time.isBefore(startTime) &&
-        time.isBetween(startDay, endDay)
+        time.isBetween(startDay, endDay, 'day', '[]')
     ) {
         return true;
     } else {
@@ -36,7 +36,7 @@ export function isBeforeOpen(time: moment.Moment) {
 export function isAfterClose(time: moment.Moment) {
     if (
         time.isAfter(endTime) &&
-        time.isBetween(startDay, endDay)
+        time.isBetween(startDay, endDay, 'day', '[]')
     ) {
         return true;
     } else {
@@ -47,7 +47,7 @@ export function isAfterClose(time: moment.Moment) {
 export function isClosedDay(time: moment.Moment) {
     if (
         !
-        time.isBetween(startDay, endDay)
+        time.isBetween(startDay, endDay, 'day', '[]')
     ) {
         return true;
     } else {
@@ -55,9 +55,9 @@ export function isClosedDay(time: moment.Moment) {
     }
 }
 
-export function isUntilMenu(time: moment.Moment) {
+export function isUntilMenuEnd(time: moment.Moment) {
     if (
-        time.isBetween(startMenuDay, endMenuDay) &&
+        time.isBetween(startMenuDay, endMenuDay, 'day', '[]') &&
         time.isBefore(endMenuTime)
     ) {
         return true;
