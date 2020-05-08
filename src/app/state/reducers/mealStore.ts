@@ -13,7 +13,7 @@ export const initialState: MealState = {
   email: undefined,
   phone: undefined,
   comment: undefined,
-  filterType: 'menu',
+  filterType: 'soup',
 };
 
 export interface MealState {

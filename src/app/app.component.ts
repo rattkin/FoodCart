@@ -32,10 +32,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (
-      !
       isUntilMenuEnd(moment())
     ) {
-      this.store.dispatch(changeMealFilter({ filterType: 'soup' }));
+      this.store.dispatch(changeMealFilter({ filterType: 'menu' }));
 
     }
 
