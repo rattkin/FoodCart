@@ -33,7 +33,7 @@
                     </div>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button color="accent" (click)="pickSideDish(item,item.type)" [disabled]="!isOpen">Objednat</button>
+                    <button mat-raised-button color="accent" (click)="pickSideDish(item,item.type)" [disabled]="isAfterClose">Objednat</button>
                 </mat-card-actions>
             </mat-card>
         </div>
