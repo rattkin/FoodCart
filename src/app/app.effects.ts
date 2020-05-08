@@ -70,9 +70,9 @@ export class AppEffects {
     switchMap(([action, name, comment, order, total]) => {
       let message = name + ' chce:\n';
       order.forEach(item => message = message + item.name + '\n');
-      message = message + 'Celkem: ' + total + ' Kč';
-      message = message + 'Čas: ' + action.time + ' \n';
-      if (action.phone) { message = message + '\nTelefon: ' + action.phone; }
+      message = message + 'Celkem: ' + total + ' Kč\n';
+      message = message + 'Čas: ' + action.time + '\n';
+      if (action.phone) { message = message + 'Telefon: ' + action.phone + '\n'; }
       if (comment) { message = message + '\nKomentář: ' + comment; }
 
       return this.http.post('https://rattkin.info/mail/mail.php', { mailData: message, user: name })
