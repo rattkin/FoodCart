@@ -48,7 +48,7 @@ export class OrderDialogComponent implements OnInit {
       moment(startTime).add(timeToPrepareOrder, 'minutes'),
     );
 
-    const roundedTime = moment().minute(Math.ceil(moment(OrderTime).minute() / roundingFactor) * roundingFactor).second(0);
+    const roundedTime = moment(OrderTime).minute(Math.ceil(moment(OrderTime).minute() / roundingFactor) * roundingFactor).second(0);
     this.pickSoonest = roundedTime.format(timeFormat).toString();
 
     this.orderForm = this.formBuilder.group({
