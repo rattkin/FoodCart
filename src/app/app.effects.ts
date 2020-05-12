@@ -105,7 +105,14 @@ export class AppEffects {
       });
 
       let message = name + ' chce:\n';
-      order.forEach(item => message = message + item.name + '\n');
+      order.forEach(item => {
+        message = message + item.name;
+        if (item.weight) {
+          message = message + ' ' + item.weight;
+        }
+        message = message + '\n';
+
+      });
       message = message + 'Celkem: ' + total + ' Kč\n';
       message = message + 'Čas: ' + action.time + '\n';
       if (action.phone) { message = message + 'Telefon: ' + action.phone + '\n'; }
