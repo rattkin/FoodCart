@@ -5,7 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
 import { EMPTY, Observable, of } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { addToOrderWithoutSideDish, confirmOrder, OrderFailed, OrderSuccess, pickSideDish, removeFromOrder, showOrder } from './actions/order.actions';
+import { addToOrderWithoutSideDish, confirmOrder, OrderFailed, OrderSuccess, pickSideDish, removeFromOrder, showOrder, changeMealFilter } from './actions/order.actions';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
@@ -44,6 +44,27 @@ export class AppEffects {
     ofType(showOrder),
     tap(action => {
       this.orderDialogRef = this.orderDialog.open(OrderDialogComponent);
+      gtag('config', googleAnalytics, {
+        page_path: '/showOrder'
+      });
+    })
+  ), { dispatch: false });
+
+  addToOrder: Observable<Action> = createEffect(() => this.actions.pipe(
+    ofType(addToOrderWithoutSideDish, addToOrderWithoutSideDish),
+    tap(action => {
+      gtag('config', googleAnalytics, {
+        page_path: '/addToOrder/' + action.item.name
+      });
+    })
+  ), { dispatch: false });
+
+  changeMealFilter: Observable<Action> = createEffect(() => this.actions.pipe(
+    ofType(changeMealFilter),
+    tap(action => {
+      gtag('config', googleAnalytics, {
+        page_path: '/changeMealFilter/' + action.filterType
+      });
     })
   ), { dispatch: false });
 
@@ -90,14 +111,13 @@ export class AppEffects {
       if (action.phone) { message = message + 'Telefon: ' + action.phone + '\n'; }
       if (comment) { message = message + '\nKomentář: ' + comment; }
 
-      // TODO testing
+      // Testing
       // return of(OrderSuccess());
 
       return this.http.post('https://rattkin.info/mail/mail.php', { mailData: message, user: name })
         .pipe(
           map(res => {
             if (res === 'OK') {
-              // TODO google analytics
               return OrderSuccess();
             } else {
               return OrderFailed();
