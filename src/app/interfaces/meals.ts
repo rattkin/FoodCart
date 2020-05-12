@@ -1160,6 +1160,15 @@ export const Meals: Meal[] = [
         photo: 'assets/kulcha.jpg',
     },
     {
+        name: 'Tandoori Garlic Kulcha',
+        description: 'Placka plněná směsí brambor a sýra s česnekem',
+        allergen: '1',
+        price: 25,
+        type: 'side',
+        class: 'menu',
+        photo: 'assets/kulcha.jpg',
+    },
+    {
         name: 'Tandoori Chapati',
         description: 'Indická základní placka',
         allergen: '1',
