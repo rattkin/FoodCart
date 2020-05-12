@@ -398,7 +398,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         class: 'chicken',
     }, {
-        name: 'Chicken Tikka Massala',
+        name: 'Chicken Tikka Masala',
         description: 'Grilované kuřecí kostky  s ostrou omáčkou',
         heat: 1,
         allergen: '7',
@@ -574,7 +574,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         class: 'lamb',
     }, {
-        name: 'Lamb Massala',
+        name: 'Lamb Masala',
         description: 'Jehněčí kostky s ostrou omáčkou',
         heat: 1,
         allergen: '7',
