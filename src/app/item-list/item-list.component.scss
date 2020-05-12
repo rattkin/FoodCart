@@ -15,18 +15,28 @@ mat-toolbar {
 }
 
 .mat-card-content {
-    display: flex;
+    display: flex !important;
     width: 100%;
     justify-content: space-between;
+}
+
+.mat-card-subtitle, .mat-card-content {
+    margin-bottom: 0 !important;
 }
 
 .mat-card-header {
     min-height: 100px;
 }
+.mat-card-header-text {
+    margin: 0 !important;
+}
 
 .mat-card-image {
+    position: relative;
     height: 200px;
-    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .packing {
@@ -39,4 +49,13 @@ mat-toolbar {
     right: 4px;
     background-color: #ffd740;
     padding: 0 5px;
+}
+
+.heat {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    svg {
+        height: 30px;
+    }
 }

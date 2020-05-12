@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { pickSideDish } from '../actions/order.actions';
@@ -13,7 +13,8 @@ declare let gtag: Function;
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
-  styleUrls: ['./item-list.component.scss']
+  styleUrls: ['./item-list.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ItemListComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));
