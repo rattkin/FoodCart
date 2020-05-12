@@ -5,6 +5,8 @@ export interface Meal {
     weight?: string;
     price?: number;
     photo?: string;
+    heat?: number;
+    chosenHeat?: number;
     orderQuantity?: number;
     packaging?: number;
     sideDish?: Meal;

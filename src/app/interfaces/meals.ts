@@ -14,6 +14,7 @@ export const Meals: Meal[] = [
     {
         name: 'Chicken Rara',
         description: 'Kuřecí kostky s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '1,3,7',
         weight: '100g',
         price: 100,
@@ -26,6 +27,7 @@ export const Meals: Meal[] = [
     {
         name: 'Shahi Paneer',
         description: 'Sýrové kostky s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '1,7',
         weight: '100g',
         price: 95,
@@ -74,6 +76,7 @@ export const Meals: Meal[] = [
     {
         name: 'Chicken Curry',
         description: 'Kuřecí kostky na kari',
+        heat: 1,
         allergen: '1,7',
         weight: '100g',
         price: 100,
@@ -86,6 +89,7 @@ export const Meals: Meal[] = [
     {
         name: 'Pork Rara',
         description: 'Vepřové kostky s jemnou pálivou omáčkou',
+        heat: 1,
         allergen: '1,3,7',
         weight: '100g',
         price: 100,
@@ -110,6 +114,7 @@ export const Meals: Meal[] = [
     {
         name: 'Aloo Rajma',
         description: 'Brambory s fazolemi a kari omáčkou',
+        heat: 1,
         allergen: '1,7',
         weight: '100g',
         price: 95,
@@ -122,6 +127,7 @@ export const Meals: Meal[] = [
     {
         name: 'Lamb Kadai',
         description: 'Jehněčí kostky s jemně pálivou omáčkou, paprika, cibule',
+        heat: 1,
         allergen: '1,7',
         weight: '100g',
         price: 135,
@@ -191,6 +197,7 @@ export const Meals: Meal[] = [
     {
         name: 'Chicken Pakora',
         description: 'Ostře kořeněné smažené kuřecí nugety',
+        heat: 1,
         allergen: '1',
         weight: '120g',
         price: 75,
@@ -237,6 +244,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Lamb Tikka',
         description: 'Grilované ostře kořeněné jehněčí kostky a 2 druhy chutney',
+        heat: 1,
         allergen: '',
         weight: '220g',
         price: 215,
@@ -248,6 +256,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Tandoori Gateway Of India',
         description: 'Grilované ostře kořeněné kuřecí kostky a stehno a 2 druhy chutney',
+        heat: 1,
         allergen: '',
         weight: '220g',
         price: 170,
@@ -301,6 +310,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Tandoori',
         description: 'Grilované ostře kořeněné kuřecí stehno a prsa a 2 druhy chutney',
+        heat: 1,
         allergen: '',
         weight: '220g',
         price: 165,
@@ -312,6 +322,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Tikka',
         description: 'Ostře kořeněné a grilované kuřecí kostky a 2 druhy chutney',
+        heat: 1,
         allergen: '',
         weight: '220g',
         price: 165,
@@ -334,6 +345,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Pork Tikka',
         description: 'Ostře kořeněné grilované vepřové kostky a 2 druhy chutney',
+        heat: 1,
         allergen: '',
         weight: '220g',
         price: 165,
@@ -345,6 +357,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Green Chicken Tikka',
         description: 'Velmi ostře grilované zelené kuřecí kostky a 2 druhy chutney',
+        heat: 2,
         allergen: '',
         weight: '200g',
         price: 165,
@@ -387,6 +400,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Tikka Massala',
         description: 'Grilované kuřecí kostky  s ostrou omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 155,
@@ -418,6 +432,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Kadai',
         description: 'Kuřecí kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 155,
@@ -462,6 +477,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Rara',
         description: 'Kuřecí kostky s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '3,7',
         weight: '200g',
         price: 155,
@@ -484,6 +500,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Vindaloo',
         description: 'Kuřecí kostky s bramborami a velmi ostrou omáčkou',
+        heat: 3,
         allergen: '',
         weight: '200g',
         price: 155,
@@ -516,6 +533,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chicken Curry',
         description: 'Kuřecí kostky s kari omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 155,
@@ -558,6 +576,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Lamb Massala',
         description: 'Jehněčí kostky s ostrou omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 180,
@@ -569,6 +588,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Lamb Kadai',
         description: 'Jehněčí kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 180,
@@ -602,6 +622,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Lamb Vindaloo',
         description: 'Jehněčí kostky s bramborami a velmi ostrou omáčkou',
+        heat: 3,
         allergen: '',
         weight: '200g',
         price: 180,
@@ -613,6 +634,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Lamb Curry',
         description: 'Jehněčí kostky s kari omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 180,
@@ -624,6 +646,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Lamb Rara',
         description: 'Jehněčí kostky s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '3,7',
         weight: '200g',
         price: 180,
@@ -635,6 +658,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Pork Vindaloo',
         description: 'Vepřové kostky s bramborami a velmi ostrou omáčkou',
+        heat: 3,
         allergen: '',
         weight: '200g',
         price: 160,
@@ -646,6 +670,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Pork Curry',
         description: 'Vepřové kostky s kari omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 160,
@@ -657,6 +682,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Pork Kadai',
         description: 'Vepřové kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 160,
@@ -678,6 +704,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Pork Rara',
         description: 'Vepřové kostky s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '3,7',
         weight: '200g',
         price: 160,
@@ -711,6 +738,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Shahi Paneer',
         description: 'Sýrové kostky s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 145,
@@ -744,6 +772,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Kadai Paneer',
         description: 'Sýrové kostky s jemně pálivou omáčkou Kadai, paprika, cibule',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 145,
@@ -766,6 +795,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Mattar Mushroom',
         description: 'Žampióny s hráškem ve velmi ostré omáčce',
+        heat: 2,
         allergen: '7',
         weight: '200g',
         price: 135,
@@ -776,6 +806,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Rajma Masala',
         description: 'Indické fazole s ostrou omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 135,
@@ -787,6 +818,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Vegetarian Vindaloo',
         description: 'Míchaná zelenina (fazole, květák, mrkev, sýr, brambory, hrášek) velmi ostrá omáčka s bramborami',
+        heat: 3,
         allergen: '',
         weight: '200g',
         price: 135,
@@ -841,6 +873,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Plain Palak',
         description: 'Pikantní špenát',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 135,
@@ -852,6 +885,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Aloo Rajma',
         description: 'Brambory s fazolemi a kari omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 135,
@@ -883,6 +917,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Shahi kofta',
         description: 'Opečené mleté bramborové kuličky se sýrem, oříšky a pikantní omáčkou',
+        heat: 1,
         allergen: '7,8',
         weight: '200g',
         price: 145,
@@ -903,6 +938,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Chana Masala',
         description: 'Cizrna s pikantní omáčkou',
+        heat: 1,
         allergen: '7,8',
         weight: '200g',
         price: 135,
@@ -914,6 +950,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Fish Masala',
         description: 'Kousky ryby v ostré omáčce',
+        heat: 1,
         allergen: '4,7',
         weight: '200g',
         price: 155,
@@ -925,6 +962,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Fish Curry',
         description: 'Ryba s kari omáčkou',
+        heat: 1,
         allergen: '4,7',
         weight: '200g',
         price: 155,
@@ -936,6 +974,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Rara Fish',
         description: 'Ryba s jemně pálivou omáčkou',
+        heat: 1,
         allergen: '3,4,7',
         weight: '200g',
         price: 155,
@@ -947,6 +986,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Fish Vindaloo',
         description: 'Ryba s velmi pálivou omáčkou a s bramborami',
+        heat: 3,
         allergen: '4',
         weight: '200g',
         price: 155,
@@ -980,6 +1020,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Prawn Vindaloo',
         description: 'Krevety ve velmi ostré omáčce s bramborami',
+        heat: 3,
         allergen: '',
         weight: '200g',
         price: 175,
@@ -1012,6 +1053,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Prawn Masala',
         description: 'Krevety s ostrou omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 175,
@@ -1023,6 +1065,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Prawn Curry',
         description: 'Krevety s kari omáčkou',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 175,
@@ -1034,6 +1077,7 @@ export const Meals: Meal[] = [
     }, {
         name: 'Prawn Kadai',
         description: 'Krevety s jemně pálivou omáčkou Kadai, paprika, cibule',
+        heat: 1,
         allergen: '7',
         weight: '200g',
         price: 175,
