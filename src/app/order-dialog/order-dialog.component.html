@@ -38,7 +38,7 @@
         </div>
 
 
-        <form [formGroup]="orderForm">
+        <form [formGroup]="orderForm" (keydown.enter)="onSubmit()">
 
 
 

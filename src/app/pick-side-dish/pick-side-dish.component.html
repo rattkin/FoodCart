@@ -1,10 +1,10 @@
 <h1 mat-dialog-title>Vyberte si přílohu</h1>
 
 
-<form [formGroup]="sideForm">
+<form [formGroup]="sideForm" (keydown.enter)="onSubmit()">
     <mat-dialog-content>
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-            formControlName="formSideRadio" >
+            formControlName="formSideRadio">
             <span *ngFor="let side of sideDishes |async">
                 <mat-radio-button class="example-radio-button"
                     *ngIf="(dish.class === 'menu' && side.class === 'menu') || (dish.class !== 'menu' && side.class !== 'menu')"

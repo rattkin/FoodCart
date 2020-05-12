@@ -26,6 +26,7 @@ export class OrderDialogComponent implements OnInit {
   public pickSoonest: string;
   public pickLatest: string;
 
+
   constructor(
     private store: Store<any>,
     public DialogRef: MatDialogRef<PickSideDishComponent>,
@@ -65,7 +66,6 @@ export class OrderDialogComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO enter key causes problems
     if (!this.orderForm.valid) { return; }
 
     this.store.dispatch(confirmOrder({
