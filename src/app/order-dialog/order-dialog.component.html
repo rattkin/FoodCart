@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Objednávka na osobní odběr</h1>
 
-<mat-dialog-content>
+<div mat-dialog-content>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -49,7 +49,8 @@
                         <input matInput [ngxTimepicker]="picker" [format]="24" min="{{pickSoonest}}"
                             max="{{pickLatest}}" formControlName="timePicker">
                     </mat-form-field>
-                    <ngx-material-timepicker #picker [minutesGap]="5" [cancelBtnTmpl]="cancelBtn" [confirmBtnTmpl]="okBtn"></ngx-material-timepicker>
+                    <ngx-material-timepicker #picker [minutesGap]="5" [cancelBtnTmpl]="cancelBtn"
+                        [confirmBtnTmpl]="okBtn"></ngx-material-timepicker>
                 </div>
 
             </div>
@@ -91,14 +92,14 @@
 
     </div>
 
-</mat-dialog-content>
+</div>
 
-<mat-dialog-actions>
-    <button mat-button [disabled]="!(order |async).length" (click)="onSubmit()">Objednat</button>
+<div mat-dialog-actions>
+    <button mat-raised-button [disabled]="!(order |async).length" color="accent" (click)="onSubmit()">Objednat</button>
     <button mat-button (click)="checkClose()">
         Zrušit
     </button>
-</mat-dialog-actions>
+</div>
 
 <ng-template #cancelBtn>
     <button mat-raised-button>Zrušit</button> &nbsp;
