@@ -2,6 +2,8 @@ import * as moment from 'moment';
 
 moment.locale('cs');
 
+export const googleAnalytics = 'UA-8333732-11';
+
 export const timeFormat = 'H:mm';
 export const dayFormat = 'dddd';
 

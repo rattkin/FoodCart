@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
 import { confirmOrder, removeFromOrder } from '../actions/order.actions';
-import { endTime, roundingFactor, startTime, timeFormat, timeToPrepareOrder, endMenuTime } from '../config';
+import { endTime, roundingFactor, startTime, timeFormat, timeToPrepareOrder, endMenuTime, googleAnalytics } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
 import { selectOrder, selectOrderTotal, selectIsMenuItemPresent } from '../state/selectors';
 
@@ -33,7 +33,9 @@ export class OrderDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    gtag('send', 'pageview');
+    gtag('config', googleAnalytics, {
+      page_path: '/OrderDialogComponent'
+    });
 
     this.isMenuPresent.subscribe(isMenu => {
       if (isMenu) {

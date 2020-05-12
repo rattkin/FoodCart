@@ -1,3 +1,7 @@
+mat-toolbar {
+    margin-left: 64px;
+}
+
 .mat-card {
     margin-top: 30px;
 }
@@ -29,7 +33,7 @@
     color: #aaa;
 }
 
-.MealType{
+.MealType {
     position: absolute;
     transform: rotate(45deg);
     right: 4px;

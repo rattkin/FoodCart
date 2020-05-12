@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { isUntilMenuEnd, isBeforeOpen, isOpen, isMenu, isAfterClose, isClosedDay } from './utils/date';
-import * as moment from 'moment';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import * as moment from 'moment';
 import { changeMealFilter } from './actions/order.actions';
-import { endMenuDay, startMenuDay } from './config';
+import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
 
 @Component({
   selector: 'app-root',

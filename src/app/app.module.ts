@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { MaterialModule } from './material-module';
-import { MenuComponent } from './item-list/item-list.component';
+import { ItemListComponent } from './item-list/item-list.component';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderListComponent } from './order-button/order-button.component';
@@ -27,7 +27,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    ItemListComponent,
     PickSideDishComponent,
     OrderListComponent,
     OrderDialogComponent,

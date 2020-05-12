@@ -11,6 +11,10 @@ import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import { selectComment, selectName, selectOrder, selectOrderTotal } from './state/selectors';
+import { googleAnalytics } from './config';
+
+declare let gtag: Function;
+
 
 @Injectable()
 export class AppEffects {
@@ -68,12 +72,26 @@ export class AppEffects {
       )
     )),
     switchMap(([action, name, comment, order, total]) => {
+
+      gtag('config', googleAnalytics, {
+        page_path: '/confirmOrder'
+      });
+
+      gtag('event', 'purchase', {
+        transaction_id: Math.random(),
+        value: total,
+        currency: 'CZK',
+      });
+
       let message = name + ' chce:\n';
       order.forEach(item => message = message + item.name + '\n');
       message = message + 'Celkem: ' + total + ' Kč\n';
       message = message + 'Čas: ' + action.time + '\n';
       if (action.phone) { message = message + 'Telefon: ' + action.phone + '\n'; }
       if (comment) { message = message + '\nKomentář: ' + comment; }
+
+      // TODO testing
+      // return of(OrderSuccess());
 
       return this.http.post('https://rattkin.info/mail/mail.php', { mailData: message, user: name })
         .pipe(
