@@ -12,12 +12,13 @@ export const roundingFactor = 5; // minutes
 
 export const startTime = moment('10:30', timeFormat);
 // Testing
-// export const endTime = moment('23:30', timeFormat);
+// export const endTime = moment('23:59', timeFormat);
 export const endTime = moment('20:30', timeFormat);
 export const startDay = moment().day('pondělí');
 export const endDay = moment().day('sobota');
 
 export const startMenuTime = moment('10:30', timeFormat);
 export const endMenuTime = moment('15:00', timeFormat);
+// export const endMenuTime = moment('23:59', timeFormat);
 export const startMenuDay = moment().day('pondělí');
 export const endMenuDay = moment().day('pátek');
