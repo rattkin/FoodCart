@@ -110,6 +110,9 @@ export class AppEffects {
         if (item.weight) {
           message = message + ' ' + item.weight;
         }
+        if (item.class === 'menu') {
+          message = message + ' ' + '(menu)';
+        }
         message = message + '\n';
 
       });
