@@ -10,6 +10,7 @@ export interface Meal {
     orderQuantity?: number;
     packaging?: number;
     sideDish?: Meal;
+    tags?: string[];
     type?: 'meal' | 'side';
     class?: 'menu' |
     'soup' |
