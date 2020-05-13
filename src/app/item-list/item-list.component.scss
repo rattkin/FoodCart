@@ -20,7 +20,8 @@ mat-toolbar {
     justify-content: space-between;
 }
 
-.mat-card-subtitle, .mat-card-content {
+.mat-card-subtitle,
+.mat-card-content {
     margin-bottom: 0 !important;
 }
 
@@ -37,6 +38,10 @@ mat-toolbar {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    img {
+        flex-grow: 1;
+        object-fit: cover;
+    }
 }
 
 .packing {
