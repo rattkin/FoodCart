@@ -3,7 +3,12 @@ import { Meal } from '../interfaces/meal';
 
 export const pickSideDish = createAction(
   'pickSideDish',
-  props<{ item: Meal; itemType: string }>()
+  props<{ item: Meal }>()
+);
+
+export const pickHeat = createAction(
+  'pickHeat',
+  props<{ item: Meal }>()
 );
 
 export const showOrder = createAction(

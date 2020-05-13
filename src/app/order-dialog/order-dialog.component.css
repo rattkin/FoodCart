@@ -5,3 +5,11 @@
 .mat-standard-chip {
     height: auto;
 }
+
+.chilliUp {
+    color: red;
+}
+
+.chilliDown {
+    color: blue;
+}

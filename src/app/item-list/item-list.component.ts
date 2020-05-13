@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
-import { pickSideDish } from '../actions/order.actions';
+import { pickSideDish, pickHeat } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
 import { selectFilteredMeals } from '../state/selectors';
 import { isAfterClose, isBeforeOpen, isClosedDay, isOpen } from '../utils/date';
@@ -33,7 +33,11 @@ export class ItemListComponent implements OnInit {
     });
   }
 
-  pickSideDish(orderItem: Meal, type: string) {
-    this.store.dispatch(pickSideDish({ item: orderItem, itemType: type }));
+  pickSideDish(orderItem: Meal) {
+    this.store.dispatch(pickSideDish({ item: orderItem }));
+  }
+
+  pickHeat(orderItem: Meal) {
+    this.store.dispatch(pickHeat({ item: orderItem }));
   }
 }

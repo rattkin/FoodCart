@@ -5,13 +5,14 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
 import { EMPTY, Observable, of } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { addToOrderWithoutSideDish, confirmOrder, OrderFailed, OrderSuccess, pickSideDish, removeFromOrder, showOrder, changeMealFilter } from './actions/order.actions';
+import { addToOrderWithoutSideDish, confirmOrder, OrderFailed, OrderSuccess, pickSideDish, removeFromOrder, showOrder, changeMealFilter, pickHeat } from './actions/order.actions';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import { selectComment, selectName, selectOrder, selectOrderTotal } from './state/selectors';
 import { googleAnalytics } from './config';
+import { PickHeatComponent } from './pick-heat/pick-heat.component';
 
 declare let gtag: Function;
 
@@ -24,6 +25,8 @@ export class AppEffects {
     private store: Store<any>,
     private SideDishDialog: MatDialog,
     private sideDishDialogRef: MatDialogRef<PickSideDishComponent>,
+    private HeatDialog: MatDialog,
+    private heatDialogRef: MatDialogRef<PickHeatComponent>,
     private orderDialog: MatDialog,
     private orderDialogRef: MatDialogRef<OrderDialogComponent>,
     private http: HttpClient,
@@ -37,6 +40,13 @@ export class AppEffects {
       } else {
         this.store.dispatch(addToOrderWithoutSideDish({ item: action.item }));
       }
+    })
+  ), { dispatch: false });
+
+  showHeatDialog: Observable<Action> = createEffect(() => this.actions.pipe(
+    ofType(pickHeat),
+    tap(action => {
+      this.heatDialogRef = this.HeatDialog.open(PickHeatComponent, { data: { dish: action.item } });
     })
   ), { dispatch: false });
 
@@ -113,6 +123,13 @@ export class AppEffects {
         if (item.class === 'menu') {
           message = message + ' ' + '(menu)';
         }
+        if (item.chosenHeat) {
+          if (item.chosenHeat > 0) {
+            message = message + ', Chilli +' + item.chosenHeat;
+          } else {
+            message = message + ', Chilli ' + item.chosenHeat;
+          }
+        }
         message = message + '\n';
 
       });
@@ -121,8 +138,7 @@ export class AppEffects {
       if (action.phone) { message = message + 'Telefon: ' + action.phone + '\n'; }
       if (comment) { message = message + '\nKomentář: ' + comment; }
 
-      // Testing
-      // return of(OrderSuccess());
+      console.log(message);
 
       return this.http.post('https://rattkin.info/mail/mail.php', { mailData: message, user: name })
         .pipe(

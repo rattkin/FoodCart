@@ -97,8 +97,11 @@
                 </div>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button color="accent" (click)="pickSideDish(item,item.type)"
+                <button mat-raised-button color="accent" (click)="pickSideDish(item)"
                     [disabled]="isAfterClose">Objednat</button>
+                <span class="grow"></span>
+                <button mat-raised-button color="accent" (click)="pickHeat(item)"
+                    [disabled]="isAfterClose">Změnit pálivost</button>
             </mat-card-actions>
         </mat-card>
     </div>

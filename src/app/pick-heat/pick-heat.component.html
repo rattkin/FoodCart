@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Změnit pálivost</h1>
+<div mat-dialog-content>
+    <p>Kuchař podle množností přidá nebo odebere chilli.</p>
+    <p>Není možné pro všechny jídla.</p>
+    <p>
+        <button mat-mini-fab color="accent" (click)="heat('-')" [disabled]="chosenHeat < -1">-</button>
+        &nbsp;
+        Pálivost:
+        <span *ngIf="chosenHeat === 0">
+            dle receptury
+        </span>
+        <span *ngIf="chosenHeat > 0">
+            zvýšená
+        </span>
+        <span *ngIf="chosenHeat < 0">
+            snížená
+        </span>
+
+        (<span *ngIf="chosenHeat > 0">
+            +
+        </span>
+        {{chosenHeat}} )
+        &nbsp;
+        <button mat-mini-fab color="accent" (click)="heat('+')" [disabled]="chosenHeat > 1">+</button>
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="order()">Objednat</button>
+    <button mat-raised-button (click)="cancel()">Zrušit</button>
+</div>

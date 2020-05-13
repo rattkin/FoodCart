@@ -20,7 +20,12 @@
                                 (menu)
                                 <mat-icon matChipRemove>cancel</mat-icon>
                             </mat-chip>
-                            <mat-chip *ngIf="item.class!=='menu'" (removed)="remove(i)">{{item.name}}
+                            <mat-chip *ngIf="item.class!=='menu'" (removed)="remove(i)">
+                                {{item.name}}
+                                <span class="chilliDown" *ngIf="item.chosenHeat <0">&nbsp;Chilli:
+                                    {{item.chosenHeat}}</span>
+                                <span class="chilliUp" *ngIf="item.chosenHeat >0">&nbsp;Chilli:
+                                    +{{item.chosenHeat}}</span>
                                 <mat-icon matChipRemove>cancel</mat-icon>
                             </mat-chip>
                         </span>
@@ -39,8 +44,6 @@
 
 
         <form [formGroup]="orderForm" (keydown.enter)="onSubmit()">
-
-
 
             <div class="row">
                 <div class="col">
