@@ -16,12 +16,11 @@
                     <mat-chip-list #chipList class="mat-chip-list-stacked"
                         aria-label="Rekapitulace objednávaného jídla:">
                         <span *ngFor="let item of order |async; let i = index">
-                            <mat-chip *ngIf="item.class==='menu'" (removed)="remove(i)" color="accent">{{item.name}}
-                                (menu)
-                                <mat-icon matChipRemove>cancel</mat-icon>
-                            </mat-chip>
-                            <mat-chip *ngIf="item.class!=='menu'" (removed)="remove(i)">
+                            <mat-chip (removed)="remove(i)">
                                 {{item.name}}
+                                <span *ngIf="item.class==='menu'">
+                                    (menu)
+                                </span>
                                 <span class="chilliDown" *ngIf="item.chosenHeat <0">&nbsp;Chilli:
                                     {{item.chosenHeat}}</span>
                                 <span class="chilliUp" *ngIf="item.chosenHeat >0">&nbsp;Chilli:
