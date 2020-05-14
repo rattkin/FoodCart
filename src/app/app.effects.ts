@@ -104,16 +104,6 @@ export class AppEffects {
     )),
     switchMap(([action, name, comment, order, total]) => {
 
-      gtag('config', googleAnalytics, {
-        page_path: '/confirmOrder'
-      });
-
-      gtag('event', 'purchase', {
-        transaction_id: Math.random(),
-        value: total,
-        currency: 'CZK',
-      });
-
       let message = name + ' chce:\n';
       order.forEach(item => {
         message = message + item.name;
@@ -156,6 +146,44 @@ export class AppEffects {
       return of(OrderFailed());
     })
   ));
+
+  sendOrderAnalytics = createEffect(() => this.actions.pipe(
+    ofType(confirmOrder),
+    concatMap(action => of(action).pipe(
+      withLatestFrom(
+        this.store.pipe(select(selectOrder)),
+        this.store.pipe(select(selectOrderTotal)),
+      )
+    )),
+    tap(([action, order, total]) => {
+
+      gtag('config', googleAnalytics, {
+        page_path: '/confirmOrder'
+      });
+
+      const reportItems = [];
+
+      order.forEach(item => {
+        reportItems.push({
+          id: item.name,
+          name: item.name,
+          category: item.class,
+          quantity: 1,
+          price: item.price
+        });
+      });
+
+      const report = {
+        transaction_id: Math.random(),
+        value: total,
+        currency: 'CZK',
+        items: reportItems,
+      };
+      console.log(report);
+      gtag('event', 'purchase', report);
+    }
+    ),
+  ), { dispatch: false });
 
   OrderSuccess: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(OrderSuccess),
