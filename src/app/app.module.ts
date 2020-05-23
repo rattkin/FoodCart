@@ -24,6 +24,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { PickHeatComponent } from './pick-heat/pick-heat.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AreYouSureComponent } from './are-you-sure/are-you-sure.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { PickHeatComponent } from './pick-heat/pick-heat.component';
     TopMenuComponent,
     SideMenuComponent,
     PickHeatComponent,
+    HomePageComponent,
+    AreYouSureComponent,
   ],
   imports: [
     MaterialModule,

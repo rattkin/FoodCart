@@ -1,8 +1,10 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { pickSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
+import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
+import { AreYouSureComponent } from '../are-you-sure/are-you-sure.component';
 
 @Component({
   selector: 'app-pick-heat',
@@ -15,7 +17,9 @@ export class PickHeatComponent implements OnInit {
   public dish: Meal;
   constructor(
     private store: Store<any>,
-    public DialogRef: MatDialogRef<PickHeatComponent>,
+    public parentDialogRef: MatDialogRef<PickHeatComponent>,
+    public childDialogRef: MatDialogRef<AreYouSureComponent>,
+    private areYouSure: MatDialog,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.dish = data.dish;
@@ -26,19 +30,28 @@ export class PickHeatComponent implements OnInit {
 
   heat(direction: string) {
     if (direction === '+') {
-      this.chosenHeat = this.chosenHeat + 1;
+      if (this.chosenHeat < 1) {
+        this.chosenHeat = this.chosenHeat + 1;
+      } else {
+        const childDialogRef = this.areYouSure.open(AreYouSureComponent);
+        childDialogRef.afterClosed().subscribe(result => {
+          this.chosenHeat = this.chosenHeat + 1;
+        });
+      }
     } else {
       this.chosenHeat = this.chosenHeat - 1;
     }
   }
 
+
+
   cancel() {
-    this.DialogRef.close();
+    this.parentDialogRef.close();
   }
 
   order() {
     this.store.dispatch(pickSideDish({ item: { ...this.dish, chosenHeat: this.chosenHeat } }));
-    this.DialogRef.close();
+    this.parentDialogRef.close();
   }
 
 }
