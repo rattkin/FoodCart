@@ -26,3 +26,8 @@ export interface Meal {
     'side'
     ;
 }
+
+export interface MealClass {
+    code: string;
+    name: string;
+}
