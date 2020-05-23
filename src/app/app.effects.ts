@@ -5,14 +5,15 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
 import { EMPTY, Observable, of } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { addToOrderWithoutSideDish, confirmOrder, OrderFailed, OrderSuccess, pickSideDish, removeFromOrder, showOrder, changeMealFilter, pickHeat } from './actions/order.actions';
+// tslint:disable-next-line: max-line-length
+import { addToOrderWithoutSideDish, changeMealFilter, confirmOrder, OrderFailed, OrderSuccess, pickHeat, pickSideDish, removeFromOrder, showOrder } from './actions/order.actions';
+import { googleAnalytics } from './config';
 import { OrderDialogComponent } from './order-dialog/order-dialog.component';
 import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
+import { PickHeatComponent } from './pick-heat/pick-heat.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import { selectComment, selectName, selectOrder, selectOrderTotal } from './state/selectors';
-import { googleAnalytics } from './config';
-import { PickHeatComponent } from './pick-heat/pick-heat.component';
 
 declare let gtag: Function;
 
@@ -24,11 +25,9 @@ export class AppEffects {
     private actions: Actions,
     private store: Store<any>,
     private SideDishDialog: MatDialog,
-    private sideDishDialogRef: MatDialogRef<PickSideDishComponent>,
     private HeatDialog: MatDialog,
-    private heatDialogRef: MatDialogRef<PickHeatComponent>,
     private orderDialog: MatDialog,
-    private orderDialogRef: MatDialogRef<OrderDialogComponent>,
+    private dialogRef: MatDialogRef<PickSideDishComponent | PickHeatComponent | OrderDialogComponent>,
     private http: HttpClient,
   ) { }
 
@@ -36,7 +35,7 @@ export class AppEffects {
     ofType(pickSideDish),
     tap(action => {
       if (action.item.sideDish !== undefined) {
-        this.sideDishDialogRef = this.SideDishDialog.open(PickSideDishComponent, { data: { dish: action.item } });
+        this.dialogRef = this.SideDishDialog.open(PickSideDishComponent, { data: { dish: action.item } });
       } else {
         this.store.dispatch(addToOrderWithoutSideDish({ item: action.item }));
       }
@@ -46,14 +45,14 @@ export class AppEffects {
   showHeatDialog: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(pickHeat),
     tap(action => {
-      this.heatDialogRef = this.HeatDialog.open(PickHeatComponent, { data: { dish: action.item } });
+      this.dialogRef = this.HeatDialog.open(PickHeatComponent, { data: { dish: action.item } });
     })
   ), { dispatch: false });
 
   showOrder: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(showOrder),
     tap(action => {
-      this.orderDialogRef = this.orderDialog.open(OrderDialogComponent);
+      this.dialogRef = this.orderDialog.open(OrderDialogComponent);
       gtag('config', googleAnalytics, {
         page_path: '/showOrder'
       });
@@ -85,7 +84,7 @@ export class AppEffects {
     )),
     switchMap(([action, order]) => {
       if (!order.length) {
-        this.orderDialogRef.close();
+        this.dialogRef.close();
       }
       return EMPTY;
     })
