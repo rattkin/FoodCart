@@ -48,6 +48,11 @@ export const selectComment = createSelector(
     (state) => state.comment
 );
 
+export const selectOrderMethod = createSelector(
+    selectMealState,
+    (state) => state.orderMethod
+);
+
 export const selectOrderTotal = createSelector(
     selectMealState,
     getOrderMethod,
