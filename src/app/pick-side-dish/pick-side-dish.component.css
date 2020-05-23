@@ -7,6 +7,11 @@
   .example-radio-button {
     margin: 5px;
   }
+  
   .packing {
     color: #aaa;
+}
+
+.mat-error {
+  position: absolute;
 }

@@ -45,10 +45,12 @@ export class PickSideDishComponent implements OnInit {
     if (!this.sideForm.valid) { return; } // stop here if form is invalid or pending
     this.store.dispatch(addToOrderWithSideDish({
       item: this.dish,
-      sideDish: this.sideForm.get('formSideRadio').value,
+      sideDish: this.formSideRadio.value,
     }));
     this.DialogRef.close();
   }
+
+  public get formSideRadio() { return this.sideForm.get('formSideRadio'); }
 
   checkClose() {
     this.DialogRef.close();

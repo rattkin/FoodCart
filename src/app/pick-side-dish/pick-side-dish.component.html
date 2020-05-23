@@ -3,6 +3,7 @@
 
 <form [formGroup]="sideForm" (keydown.enter)="onSubmit()">
     <mat-dialog-content>
+        <mat-error *ngIf="formSideRadio.invalid && (formSideRadio.dirty || formSideRadio.touched)">Prosím vyberte:</mat-error>
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
             formControlName="formSideRadio">
             <span *ngFor="let side of sideDishes |async">
