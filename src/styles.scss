@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap-grid";
-
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "./theme.scss";
 
 html,
 body {
@@ -34,4 +33,12 @@ body {
 
 .timepicker-backdrop-overlay {
     z-index: 10000000 !important;
+}
+
+.hot {
+    color: #ff5023;
+}
+
+.cold {
+    color: #66f;
 }
