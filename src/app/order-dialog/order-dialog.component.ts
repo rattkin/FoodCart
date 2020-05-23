@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
-import { confirmOrder, removeFromOrder } from '../actions/order.actions';
+import { confirmOrder, removeFromOrder, changeOrderMethod } from '../actions/order.actions';
 import { endTime, roundingFactor, startTime, timeFormat, timeToPrepareOrder, endMenuTime, googleAnalytics } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
 import { selectOrder, selectOrderTotal, selectIsMenuItemPresent } from '../state/selectors';
@@ -66,6 +66,10 @@ export class OrderDialogComponent implements OnInit {
       phone: [''],
       comment: [''],
     });
+  }
+
+  methodChange() {
+    this.store.dispatch(changeOrderMethod({ orderMethod: this.orderMethod.value }))
   }
 
   onSubmit() {

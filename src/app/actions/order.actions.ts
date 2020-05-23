@@ -20,6 +20,11 @@ export const changeMealFilter = createAction(
   props<{ filterType: string; }>()
 );
 
+export const changeOrderMethod = createAction(
+  'changeOrderMethod',
+  props<{ orderMethod: string; }>()
+);
+
 export const addToOrderWithSideDish = createAction(
   'addToOrderWithSideDish',
   props<{ item: Meal; sideDish: Meal; }>()

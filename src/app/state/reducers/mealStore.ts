@@ -1,5 +1,6 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
-import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder } from 'src/app/actions/order.actions';
+// tslint:disable-next-line: max-line-length
+import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder, changeOrderMethod } from 'src/app/actions/order.actions';
 import { environment } from '../../../environments/environment';
 import { Meal } from '../../interfaces/meal';
 import { Meals } from '../../interfaces/meals';
@@ -41,6 +42,11 @@ const mealReducer = createReducer(
     order: [...state.order, { ...item }]
   })),
 
+  on(changeOrderMethod, (state, { orderMethod: method, }) => ({
+    ...state,
+    orderMethod: method,
+  })),
+
   on(changeMealFilter, (state, { filterType: filter }) => ({
     ...state,
     filterType: filter,
@@ -70,4 +76,5 @@ export function reducer(state: MealState | undefined, action: Action) {
 export const metaReducers: MetaReducer<MealState>[] = !environment.production ? [] : [];
 
 export const getMealFilter = (state: MealState) => state.filterType;
+export const getOrderMethod = (state: MealState) => state.orderMethod;
 

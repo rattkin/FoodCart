@@ -1,8 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { mealFeatureKey, MealState, getMealFilter } from './reducers/mealStore';
+import { mealFeatureKey, MealState, getMealFilter, getOrderMethod } from './reducers/mealStore';
 
 export const selectMealState = createFeatureSelector<MealState>(mealFeatureKey);
-
 
 export const selectMeals = createSelector(
     selectMealState,
@@ -51,6 +50,7 @@ export const selectComment = createSelector(
 
 export const selectOrderTotal = createSelector(
     selectMealState,
+    getOrderMethod,
     (state) => {
         let total = 0;
         state.order.forEach(item => {
@@ -59,7 +59,7 @@ export const selectOrderTotal = createSelector(
                 total = total + item.price;
             }
 
-            if (item.packaging && !Number.isNaN(item.packaging)) {
+            if (state.orderMethod === 'takeout' && item.packaging && !Number.isNaN(item.packaging)) {
                 total = total + item.packaging;
             }
 
@@ -67,10 +67,9 @@ export const selectOrderTotal = createSelector(
                 total = total + item.sideDish.price;
             }
 
-            if (item.sideDish && item.sideDish.packaging) {
+            if (state.orderMethod === 'takeout' && item.sideDish && item.sideDish.packaging) {
                 total = total + item.sideDish.packaging;
             }
-
         });
         return total;
     }
@@ -88,5 +87,3 @@ export const selectIsMenuItemPresent = createSelector(
         return menuPresent;
     }
 );
-
-
