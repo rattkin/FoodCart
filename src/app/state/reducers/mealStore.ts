@@ -10,6 +10,7 @@ export const initialState: MealState = {
   time: '',
   meals: Meals,
   order: [],
+  orderMethod: undefined,
   email: undefined,
   phone: undefined,
   comment: undefined,
@@ -20,6 +21,7 @@ export interface MealState {
   time: string;
   meals: Meal[];
   order: Meal[];
+  orderMethod: 'takeout' | 'restaurant';
   email: string;
   phone: string;
   comment: string;
@@ -44,10 +46,11 @@ const mealReducer = createReducer(
     filterType: filter,
   })),
 
-  on(confirmOrder, (state, { name: kdo, comment: text }) => ({
+  on(confirmOrder, (state, { name: kdo, comment: text, orderMethod: method }) => ({
     ...state,
     email: kdo,
     comment: text,
+    orderMethod: method,
   })),
 
   on(OrderSuccess, () => (

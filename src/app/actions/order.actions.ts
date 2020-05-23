@@ -42,6 +42,7 @@ export const confirmOrder = createAction(
     phone: string;
     time: string;
     comment: string;
+    orderMethod: string;
   }>(),
 );
 

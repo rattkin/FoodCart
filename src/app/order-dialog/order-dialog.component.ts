@@ -15,7 +15,7 @@ declare let gtag: Function;
 @Component({
   selector: 'app-order-dialog',
   templateUrl: './order-dialog.component.html',
-  styleUrls: ['./order-dialog.component.css']
+  styleUrls: ['./order-dialog.component.scss']
 })
 export class OrderDialogComponent implements OnInit {
   @ViewChild('picker') picker: NgxMaterialTimepickerComponent;
@@ -56,6 +56,9 @@ export class OrderDialogComponent implements OnInit {
 
     this.orderForm = this.formBuilder.group({
       timePicker: [this.pickSoonest],
+      orderMethod: ['', [
+        Validators.required,
+      ]],
       email: ['', [
         Validators.required,
         Validators.email,
@@ -67,18 +70,23 @@ export class OrderDialogComponent implements OnInit {
 
   onSubmit() {
     if (!this.orderForm.valid) { return; }
-
     this.store.dispatch(confirmOrder({
-      name: this.orderForm.get('email').value,
-      time: this.orderForm.get('timePicker').value,
-      phone: this.orderForm.get('phone').value,
-      comment: this.orderForm.get('comment').value,
-
+      name: this.email.value,
+      time: this.timePicker.value,
+      phone: this.phone.value,
+      comment: this.comment.value,
+      orderMethod: this.orderMethod.value,
     }
     ));
     this.DialogRef.close();
     return false;
   }
+
+  public get orderMethod() { return this.orderForm.get('orderMethod'); }
+  public get email() { return this.orderForm.get('email'); }
+  public get timePicker() { return this.orderForm.get('timePicker'); }
+  public get phone() { return this.orderForm.get('phone'); }
+  public get comment() { return this.orderForm.get('comment'); }
 
   checkClose() {
     this.DialogRef.close();

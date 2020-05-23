@@ -1,98 +1,93 @@
-<h1 mat-dialog-title>Objednávka na osobní odběr</h1>
+<h1 mat-dialog-title>Objednávka:</h1>
 
 <div mat-dialog-content>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <p>
-                    Rekapitulace:
-                    <span *ngIf="isMenuPresent | async">(menu)</span>
-                </p>
-            </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                <mat-chip-list #chipList class="mat-chip-list-stacked" aria-label="Rekapitulace objednávaného jídla:">
+                    <span *ngFor="let item of order |async; let i = index">
+                        <mat-chip (removed)="remove(i)">
+                            {{item.name}}
+                            <span *ngIf="item.class==='menu'">
+                                (menu)
+                            </span>
+                            <span class="cold" *ngIf="item.chosenHeat <0">&nbsp;Chilli:
+                                {{item.chosenHeat}}</span>
+                            <span class="hot" *ngIf="item.chosenHeat >0">&nbsp;Chilli:
+                                +{{item.chosenHeat}}</span>
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                    </span>
+                </mat-chip-list>
+            </p>
         </div>
-        <div class="row">
-            <div class="col">
-                <p>
-                    <mat-chip-list #chipList class="mat-chip-list-stacked"
-                        aria-label="Rekapitulace objednávaného jídla:">
-                        <span *ngFor="let item of order |async; let i = index">
-                            <mat-chip (removed)="remove(i)">
-                                {{item.name}}
-                                <span *ngIf="item.class==='menu'">
-                                    (menu)
-                                </span>
-                                <span class="chilliDown" *ngIf="item.chosenHeat <0">&nbsp;Chilli:
-                                    {{item.chosenHeat}}</span>
-                                <span class="chilliUp" *ngIf="item.chosenHeat >0">&nbsp;Chilli:
-                                    +{{item.chosenHeat}}</span>
-                                <mat-icon matChipRemove>cancel</mat-icon>
-                            </mat-chip>
-                        </span>
-                    </mat-chip-list>
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <p>
-                    <mat-divider></mat-divider>
-                </p>
-            </div>
-        </div>
-
-
-        <form [formGroup]="orderForm" (keydown.enter)="onSubmit()">
-
-            <div class="row">
-                <div class="col">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Jídlo si vyzvednu:</mat-label>
-                        <input matInput [ngxTimepicker]="picker" [format]="24" min="{{pickSoonest}}"
-                            max="{{pickLatest}}" formControlName="timePicker">
-                    </mat-form-field>
-                    <ngx-material-timepicker #picker [minutesGap]="5" [cancelBtnTmpl]="cancelBtn"
-                        [confirmBtnTmpl]="okBtn"></ngx-material-timepicker>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    Vyplňte prosím Váš e-mail a/nebo telefon aby jsme Vás mohli v případě potřeby kontaktovat
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-
-                    <mat-form-field appearance="fill" class="wide">
-                        <mat-label>E-mail </mat-label>
-                        <input type="email" matInput formControlName="email" autocomplete="username email" required>
-                    </mat-form-field>
-                </div>
-
-                <div class="col-md-6">
-                    <mat-form-field appearance="fill" class="wide">
-                        <mat-label>Telefon</mat-label>
-                        <input type="email" matInput formControlName="phone">
-                    </mat-form-field>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col">
-                    <mat-form-field appearance="fill" class="wide">
-                        <mat-label>Poznámka </mat-label>
-                        <input matInput formControlName="comment">
-                    </mat-form-field>
-                </div>
-            </div>
-
-        </form>
-
     </div>
+
+    <div class="row">
+        <div class="col">
+            <p>
+                <mat-divider></mat-divider>
+            </p>
+        </div>
+    </div>
+
+
+    <form [formGroup]="orderForm" (keydown.enter)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-radio-group formControlName="orderMethod">
+                    <mat-error *ngIf="orderMethod.invalid && (orderMethod.dirty || orderMethod.touched)">Prosím vyberte:</mat-error>
+                    <mat-radio-button value="takeout">s sebou</mat-radio-button>
+                    <mat-radio-button value="restaurant">v restauraci</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="fill" class="wide">
+                    <mat-label>Čas:</mat-label>
+                    <input matInput [ngxTimepicker]="picker" [format]="24" min="{{pickSoonest}}" max="{{pickLatest}}"
+                        formControlName="timePicker">
+                </mat-form-field>
+                <ngx-material-timepicker #picker [minutesGap]="5" [cancelBtnTmpl]="cancelBtn" [confirmBtnTmpl]="okBtn">
+                </ngx-material-timepicker>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                Vyplňte prosím Váš e-mail a/nebo telefon aby jsme Vás mohli v případě potřeby kontaktovat
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <mat-form-field appearance="fill" class="wide">
+                    <mat-label>E-mail </mat-label>
+                    <input type="email" matInput formControlName="email" autocomplete="username email" required>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="fill" class="wide">
+                    <mat-label>Telefon</mat-label>
+                    <input type="email" matInput formControlName="phone">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="fill" class="wide">
+                    <mat-label>Poznámka </mat-label>
+                    <input matInput formControlName="comment">
+                </mat-form-field>
+            </div>
+        </div>
+
+    </form>
 
 </div>
 

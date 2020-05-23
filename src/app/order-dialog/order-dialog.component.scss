@@ -1,0 +1,21 @@
+.wide {
+    width: 100% !important;
+}
+
+.mat-standard-chip {
+    height: auto;
+}
+
+.mat-radio-button {
+    line-height: 51px;
+    vertical-align: middle;
+}
+mat-radio-group {
+    .mat-error {
+        position: absolute;
+    }
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}
