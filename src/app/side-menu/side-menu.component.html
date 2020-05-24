@@ -24,7 +24,8 @@
     {{openingMenuTime}} - {{closingMenuTime}}
 </p>
 
-<button [class.active]="(filterType |async) === 'menu'" mat-raised-button (click)="select('menu')" *ngIf="isUntilMenu">Polední menu</button>
+<button [class.active]="(filterType |async) === 'menu'" mat-raised-button (click)="select('menu')"
+    *ngIf="isUntilMenu">Polední menu</button>
 <button [class.active]="(filterType |async) === 'soup'" mat-raised-button (click)="select('soup')">Polévky</button>
 <button [class.active]="(filterType |async) === 'starter'" mat-raised-button
     (click)="select('starter')">Předkrmy</button>

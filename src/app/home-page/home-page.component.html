@@ -1,5 +1,5 @@
 <img src="../../assets/header.jpg" class="header">
+<div class="buttons">
 
-<mat-card *ngFor="let class of mealClasses">
-    {{class.name}}
-</mat-card>
+    <button *ngFor="let class of mealClasses" mat-raised-button (click)="select(class.code)">{{class.name}}</button>
+</div>

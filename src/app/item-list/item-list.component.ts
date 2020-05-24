@@ -18,10 +18,6 @@ declare let gtag: Function;
 })
 export class ItemListComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));
-
-  public isOpen = isOpen(moment());
-  public isBeforeOpen = isBeforeOpen(moment());
-  public isClosedDay = isClosedDay(moment());
   public isAfterClose = isAfterClose(moment());
 
   constructor(private store: Store<any>) { }

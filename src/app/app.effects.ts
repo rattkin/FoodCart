@@ -14,9 +14,9 @@ import { OrderSuccessfulComponent } from './order-successful/order-successful.co
 import { PickHeatComponent } from './pick-heat/pick-heat.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import { selectComment, selectName, selectOrder, selectOrderTotal, selectOrderMethod } from './state/selectors';
+import { Router } from '@angular/router';
 
 declare let gtag: Function;
-
 
 @Injectable()
 export class AppEffects {
@@ -29,6 +29,7 @@ export class AppEffects {
     private orderDialog: MatDialog,
     private dialogRef: MatDialogRef<PickSideDishComponent | PickHeatComponent | OrderDialogComponent>,
     private http: HttpClient,
+    private router: Router,
   ) { }
 
   showSideDishDialog: Observable<Action> = createEffect(() => this.actions.pipe(
@@ -71,6 +72,7 @@ export class AppEffects {
   changeMealFilter: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(changeMealFilter),
     tap(action => {
+      this.router.navigate(['/meal/' ]);
       gtag('config', googleAnalytics, {
         page_path: '/changeMealFilter/' + action.filterType
       });

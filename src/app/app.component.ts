@@ -14,6 +14,10 @@ export class AppComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
 
   private mobileQueryListener: () => void;
+  public isOpen = isOpen(moment());
+  public isBeforeOpen = isBeforeOpen(moment());
+  public isClosedDay = isClosedDay(moment());
+  public isAfterClose = isAfterClose(moment());
 
   constructor(
     changeDetectorRef: ChangeDetectorRef,

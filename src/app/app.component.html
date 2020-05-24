@@ -1,4 +1,4 @@
-<button class="floatingTopLeft" mat-raised-button color='primary' (click)="snav.toggle()" >
+<button class="floatingTopLeft" mat-raised-button color='primary' (click)="snav.toggle()">
     <mat-icon>menu</mat-icon>
 </button>
 <mat-sidenav-container [class.example-is-mobile]="mobileQuery.matches">
@@ -6,7 +6,15 @@
         <app-side-menu></app-side-menu>
     </mat-sidenav>
     <mat-sidenav-content>
-        <app-item-list></app-item-list>
+
+        <mat-card class="storeInfo" color="primary" *ngIf="isBeforeOpen">Zatím není otevřeno ale můžete si objednat s
+            vyzvednutím později</mat-card>
+
+        <mat-card class="storeInfo" color="primary" *ngIf="isClosedDay">Dnes je zavřeno</mat-card>
+
+        <mat-card class="storeInfo" color="primary" *ngIf="isAfterClose">Dnes už je zavřeno</mat-card>
+
+        <router-outlet></router-outlet>
         <app-order-button></app-order-button>
     </mat-sidenav-content>
 </mat-sidenav-container>
