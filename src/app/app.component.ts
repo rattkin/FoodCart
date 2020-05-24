@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { changeMealFilter } from './actions/order.actions';
 import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
     private store: Store<any>,
+    private router: Router,
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -34,12 +36,9 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if (
-      isUntilMenuEnd(moment())
-    ) {
-      this.store.dispatch(changeMealFilter({ filterType: 'menu' }));
 
-    }
+    this.router.navigate(['/']);
+
 
     // debug
     console.log('now', moment().format('LLLL'));
