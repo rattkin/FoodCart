@@ -6,7 +6,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
-  { path: 'meal', component: ItemListComponent },
+  { path: 'meal/:MealClass', component: ItemListComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

@@ -15,7 +15,7 @@ export const initialState: MealState = {
   email: undefined,
   phone: undefined,
   comment: undefined,
-  filterType: 'soup',
+  filterType: undefined,
 };
 
 export interface MealState {

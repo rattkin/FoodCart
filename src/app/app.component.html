@@ -2,7 +2,7 @@
     <mat-icon>menu</mat-icon>
 </button>
 <mat-sidenav-container [class.example-is-mobile]="mobileQuery.matches">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" opened>
+    <mat-sidenav #snav>
         <app-side-menu></app-side-menu>
     </mat-sidenav>
     <mat-sidenav-content>

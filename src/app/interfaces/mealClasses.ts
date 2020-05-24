@@ -11,6 +11,10 @@ export const MealClasses: MealClass[] = [
         name: 'Polévky'
     },
     {
+        code: 'starter',
+        name: 'Předkrmy'
+    },
+    {
         code: 'chicken',
         name: 'Kuřecí maso'
     },
@@ -19,20 +23,12 @@ export const MealClasses: MealClass[] = [
         name: 'Vepřové maso'
     },
     {
-        code: 'starter',
-        name: 'Předkrmy'
-    },
-    {
         code: 'tandoor',
         name: 'Indická pec Tandoor'
     },
     {
         code: 'lamb',
         name: 'Jehněčí maso'
-    },
-    {
-        code: 'pork',
-        name: 'Vepřové maso'
     },
     {
         code: 'vege',

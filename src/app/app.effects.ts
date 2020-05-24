@@ -72,10 +72,14 @@ export class AppEffects {
   changeMealFilter: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(changeMealFilter),
     tap(action => {
-      this.router.navigate(['/meal/' ]);
-      gtag('config', googleAnalytics, {
-        page_path: '/changeMealFilter/' + action.filterType
-      });
+      if (action.filterType === 'home') {
+        this.router.navigate(['/']);
+      } else {
+        this.router.navigate(['/meal/' + action.filterType]);
+        gtag('config', googleAnalytics, {
+          page_path: '/changeMealFilter/' + action.filterType
+        });
+      }
     })
   ), { dispatch: false });
 
