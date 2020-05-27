@@ -19,16 +19,14 @@
         {{openingMenuTime}} - {{closingMenuTime}}
     </p>
     <br>
+    <div class="buttons">
+
+        <button *ngFor="let class of mealClasses" mat-raised-button (click)="select(class.code)">{{class.name}}</button>
+    </div>
+
+    <p>
+        <a href="https://indickarestaurace.cz/viewpage.php?page_id=20">indickarestaurace.cz</a>
+
+        Problémy a připomínky: <a href="mailto:muller.jan@gmail.com">muller.jan@gmail.com</a>
+    </p>
 </div>
-
-<div class="buttons">
-
-    <button *ngFor="let class of mealClasses" mat-raised-button (click)="select(class.code)">{{class.name}}</button>
-</div>
-
-<p>
-    <a href="https://indickarestaurace.cz/viewpage.php?page_id=20">indickarestaurace.cz</a>
-</p>
-<p>
-    Problémy a připomínky: <br> <a href="mailto:muller.jan@gmail.com">muller.jan@gmail.com</a>
-</p>
