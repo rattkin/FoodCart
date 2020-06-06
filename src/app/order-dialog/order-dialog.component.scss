@@ -6,14 +6,15 @@
     height: auto;
 }
 
-.mat-radio-button {
-    line-height: 51px;
-    vertical-align: middle;
-}
 mat-radio-group {
     .mat-error {
         position: absolute;
     }
+}
+
+.mat-radio-button {
+    line-height: 51px;
+    vertical-align: middle;
 }
 
 .mat-radio-button ~ .mat-radio-button {

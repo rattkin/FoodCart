@@ -1,4 +1,5 @@
-:host, .background {
+:host,
+.background {
     background-color: #fbe9b7;
     text-align: center;
     margin: 0 auto;
@@ -18,4 +19,13 @@
         width: 200px;
         margin: 10px auto;
     }
+}
+
+.mat-radio-button {
+    line-height: 51px;
+    vertical-align: middle;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
 }

@@ -6,26 +6,37 @@
 
     <p>
         <span [ngClass]="{'bold' : isOpen}">
-            Otevřeno
+            Otevřeno:
         </span>
-        s sebou: {{startDay}} až {{endDay}} {{openingTime}} - {{closingTime}}
+        {{startDay}} až {{endDay}} {{openingTime}} - {{closingTime}}
         <br>
 
         <span [ngClass]="{'bold' : isMenu}">
             Polední menu:
         </span>
-        (mimo svátky)
-        {{startMenuDay}} - {{endMenuDay}},
-        {{openingMenuTime}} - {{closingMenuTime}}
-
-        <span class="storeInfo" *ngIf="isBeforeOpen"><br>Zatím není otevřeno ale můžete si objednat s
-            vyzvednutím později</span>
-
-        <span class="storeInfo" *ngIf="isClosedDay"><br>Dnes je zavřeno</span>
-
-        <span class="storeInfo" *ngIf="isAfterClose"><br>Dnes už je zavřeno</span>
+        (mimo svátky) {{startMenuDay}} - {{endMenuDay}}, {{openingMenuTime}} - {{closingMenuTime}}
     </p>
-    <br>
+
+    <span class="storeInfo" *ngIf="isBeforeOpen">
+        <p>Zatím není otevřeno ale můžete si objednat s
+            vyzvednutím později</p>
+    </span>
+
+    <span class="storeInfo" *ngIf="isClosedDay">
+        <p>Dnes je zavřeno</p>
+    </span>
+
+    <span class="storeInfo" *ngIf="isAfterClose">
+        <p>Dnes už je zavřeno</p>
+    </span>
+
+    <form [formGroup]="orderForm" *ngIf="! isClosedDay || !isAfterClose">
+        Chcete si objednat:
+        <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
+            <mat-radio-button value="takeout">s sebou</mat-radio-button>
+            <mat-radio-button value="restaurant">v restauraci</mat-radio-button>
+        </mat-radio-group>
+    </form>
     <div class="buttons">
 
         <button *ngFor="let class of mealClasses |async" mat-raised-button

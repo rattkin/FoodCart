@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
-import { changeMealFilter } from '../actions/order.actions';
+import { changeMealFilter, changeOrderMethod } from '../actions/order.actions';
 import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat } from '../config';
 import { selectFilterType, selectMealClasses } from '../state/selectors';
 import { isMenu, isOpen, isUntilMenuEnd, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
@@ -29,11 +30,23 @@ export class HomePageComponent implements OnInit {
   public isBeforeOpen = isBeforeOpen(moment());
   public isClosedDay = isClosedDay(moment());
   public isAfterClose = isAfterClose(moment());
+  public orderForm: FormGroup = this.formBuilder.group({
+    orderMethod: ['']
+  });
+
+  public get orderMethod() { return this.orderForm.get('orderMethod'); }
+
   constructor(
-    private store: Store<any>
+    private store: Store<any>,
+    private formBuilder: FormBuilder,
   ) { }
   ngOnInit(): void {
   }
+
+  methodChange() {
+    this.store.dispatch(changeOrderMethod({ orderMethod: this.orderMethod.value }))
+  }
+
 
   select(filter) {
     this.store.dispatch(changeMealFilter({ filterType: filter }));
