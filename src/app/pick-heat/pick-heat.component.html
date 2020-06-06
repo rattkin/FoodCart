@@ -2,7 +2,7 @@
 <div mat-dialog-content>
     <p>Kuchař podle množností přidá nebo odebere chilli.<br> Není možné pro všechny jídla.</p>
     <p class="flex">
-        <button mat-mini-fab color="primary" (click)="heat('-')" [disabled]="chosenHeat < -1">-</button>
+        <button mat-mini-fab color="accent" (click)="heat('-')" [disabled]="chosenHeat < -1">-</button>
 
         <span>
             Chilli:
@@ -26,6 +26,6 @@
     </p>
 </div>
 <div mat-dialog-actions>
-    <button mat-raised-button color="accent" (click)="order()">Objednat</button>
+    <button mat-raised-button color="primary" (click)="order()">Objednat</button>
     <button mat-raised-button (click)="cancel()">Zrušit</button>
 </div>
