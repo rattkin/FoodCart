@@ -1,10 +1,12 @@
-import { MediaMatcher } from '@angular/cdk/layout';
+import { MediaMatcher, BreakpointState, Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as moment from 'moment';
-import { changeMealFilter } from './actions/order.actions';
-import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
 import { Router } from '@angular/router';
+import { Store, select } from '@ngrx/store';
+import * as moment from 'moment';
+import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
+import { selectSideNavOpened, selectMobileQuery } from './state/selectors';
+import { sideNavToggle, updateMediaQuery } from './actions/order.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,33 +14,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  mobileQuery: MediaQueryList;
 
-  private mobileQueryListener: () => void;
-  public isOpen = isOpen(moment());
-  public isBeforeOpen = isBeforeOpen(moment());
-  public isClosedDay = isClosedDay(moment());
-  public isAfterClose = isAfterClose(moment());
+  public sideNavOpened = this.store.pipe(select(selectSideNavOpened));
+  public mobileQuery = this.store.pipe(select(selectMobileQuery));
+  public isMobile: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.XSmall);
 
   constructor(
-    changeDetectorRef: ChangeDetectorRef,
-    media: MediaMatcher,
     private store: Store<any>,
     private router: Router,
+    private breakpointObserver: BreakpointObserver,
   ) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this.mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this.mobileQueryListener);
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this.mobileQueryListener);
   }
 
   ngOnInit(): void {
-
     this.router.navigate(['/']);
 
+    this.isMobile.subscribe(result => {
+      this.store.dispatch(updateMediaQuery({ mediaQuery: result.matches }));
+    });
 
     // debug
     console.log('now', moment().format('LLLL'));
@@ -49,6 +45,10 @@ export class AppComponent implements OnInit, OnDestroy {
     console.log('isClosedDay', isClosedDay(moment()));
     console.log('isUntilMenuEnd', isUntilMenuEnd(moment()));
 
+  }
+
+  sideNavToggle() {
+    this.store.dispatch(sideNavToggle());
   }
 }
 

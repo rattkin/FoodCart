@@ -9,19 +9,27 @@
             Otevřeno
         </span>
         s sebou: {{startDay}} až {{endDay}} {{openingTime}} - {{closingTime}}
-    </p>
-    <p>
+        <br>
+
         <span [ngClass]="{'bold' : isMenu}">
             Polední menu:
         </span>
         (mimo svátky)
         {{startMenuDay}} - {{endMenuDay}},
         {{openingMenuTime}} - {{closingMenuTime}}
+
+        <span class="storeInfo" *ngIf="isBeforeOpen"><br>Zatím není otevřeno ale můžete si objednat s
+            vyzvednutím později</span>
+
+        <span class="storeInfo" *ngIf="isClosedDay"><br>Dnes je zavřeno</span>
+
+        <span class="storeInfo" *ngIf="isAfterClose"><br>Dnes už je zavřeno</span>
     </p>
     <br>
     <div class="buttons">
 
-        <button *ngFor="let class of mealClasses" mat-raised-button (click)="select(class.code)">{{class.name}}</button>
+        <button *ngFor="let class of mealClasses |async" mat-raised-button
+            (click)="select(class.code)">{{class.name}}</button>
     </div>
 
     <p>

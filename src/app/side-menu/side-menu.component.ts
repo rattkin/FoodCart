@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { changeMealFilter } from '../actions/order.actions';
-import { MealClasses } from '../interfaces/mealClasses';
-import { selectFilterType } from '../state/selectors';
+import { selectFilterType, selectMealClasses } from '../state/selectors';
 
 @Component({
   selector: 'app-side-menu',
@@ -10,7 +9,7 @@ import { selectFilterType } from '../state/selectors';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent implements OnInit {
-  public mealClasses = MealClasses;
+  public mealClasses = this.store.pipe(select(selectMealClasses));
 
   constructor(private store: Store<any>) { }
   public filterType = this.store.pipe(select(selectFilterType));

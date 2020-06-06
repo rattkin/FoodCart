@@ -1,14 +1,17 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
 // tslint:disable-next-line: max-line-length
-import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder, changeOrderMethod } from 'src/app/actions/order.actions';
+import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder, changeOrderMethod, sideNavToggle, sideNavOpen, sideNavClose, updateMediaQuery } from 'src/app/actions/order.actions';
 import { environment } from '../../../environments/environment';
-import { Meal } from '../../interfaces/meal';
+import { Meal, MealClass } from '../../interfaces/meal';
 import { Meals } from '../../interfaces/meals';
+import { MealClasses } from 'src/app/interfaces/mealClasses';
 
 export const mealFeatureKey = 'mealStore';
 
 export const initialState: MealState = {
   time: '',
+  sideNavOpened: false,
+  mobileQuery: undefined,
   meals: Meals,
   order: [],
   orderMethod: undefined,
@@ -16,10 +19,13 @@ export const initialState: MealState = {
   phone: undefined,
   comment: undefined,
   filterType: undefined,
+  mealClasses: MealClasses,
 };
 
 export interface MealState {
   time: string;
+  sideNavOpened: boolean;
+  mobileQuery: boolean;
   meals: Meal[];
   order: Meal[];
   orderMethod: 'takeout' | 'restaurant';
@@ -27,36 +33,57 @@ export interface MealState {
   phone: string;
   comment: string;
   filterType: string;
+  mealClasses: MealClass[];
 }
 
 const mealReducer = createReducer(
   initialState,
 
-  on(addToOrderWithSideDish, (state, { item: item, sideDish: sideDish }) => ({
+  on(addToOrderWithSideDish, (state, { item, sideDish }) => ({
     ...state,
     order: [...state.order, { ...item, name: item.name + ' (' + sideDish.name + ')', sideDish: { ...sideDish } }]
   })),
 
-  on(addToOrderWithoutSideDish, (state, { item: item, }) => ({
+  on(addToOrderWithoutSideDish, (state, { item, }) => ({
     ...state,
     order: [...state.order, { ...item }]
   })),
 
-  on(changeOrderMethod, (state, { orderMethod: method, }) => ({
+  on(changeOrderMethod, (state, { orderMethod }) => ({
     ...state,
-    orderMethod: method,
+    orderMethod,
   })),
 
-  on(changeMealFilter, (state, { filterType: filter }) => ({
+  on(updateMediaQuery, (state, { mediaQuery }) => ({
     ...state,
-    filterType: filter,
+    mobileQuery: mediaQuery
   })),
 
-  on(confirmOrder, (state, { name: kdo, comment: text, orderMethod: method }) => ({
+  on(sideNavToggle, (state) => ({
     ...state,
-    email: kdo,
-    comment: text,
-    orderMethod: method,
+    sideNavOpened: !state.sideNavOpened
+  })),
+
+  on(sideNavOpen, (state) => ({
+    ...state,
+    sideNavOpened: true
+  })),
+
+  on(sideNavClose, (state) => ({
+    ...state,
+    sideNavOpened: false
+  })),
+
+  on(changeMealFilter, (state, { filterType }) => ({
+    ...state,
+    filterType
+  })),
+
+  on(confirmOrder, (state, { name, comment, orderMethod }) => ({
+    ...state,
+    email: name,
+    comment,
+    orderMethod,
   })),
 
   on(OrderSuccess, () => (
@@ -75,6 +102,7 @@ export function reducer(state: MealState | undefined, action: Action) {
 
 export const metaReducers: MetaReducer<MealState>[] = !environment.production ? [] : [];
 
-export const getMealFilter = (state: MealState) => state.filterType;
-export const getOrderMethod = (state: MealState) => state.orderMethod;
-
+export const getterMealFilter = (state: MealState) => state.filterType;
+export const getterOrderMethod = (state: MealState) => state.orderMethod;
+export const getterSideNavOpened = (state: MealState) => state.sideNavOpened;
+export const getterMealClasses = (state: MealState) => state.mealClasses;

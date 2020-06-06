@@ -3,9 +3,8 @@ import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { changeMealFilter } from '../actions/order.actions';
 import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat } from '../config';
-import { MealClasses } from '../interfaces/mealClasses';
-import { selectFilterType } from '../state/selectors';
-import { isMenu, isOpen, isUntilMenuEnd } from '../utils/date';
+import { selectFilterType, selectMealClasses } from '../state/selectors';
+import { isMenu, isOpen, isUntilMenuEnd, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
 
 @Component({
   selector: 'app-home-page',
@@ -14,7 +13,7 @@ import { isMenu, isOpen, isUntilMenuEnd } from '../utils/date';
 })
 export class HomePageComponent implements OnInit {
 
-  public mealClasses = MealClasses;
+  public mealClasses = this.store.pipe(select(selectMealClasses));
   public filterType = this.store.pipe(select(selectFilterType));
   public openingTime = moment(startTime).format(timeFormat);
   public closingTime = moment(endTime).format(timeFormat);
@@ -27,11 +26,12 @@ export class HomePageComponent implements OnInit {
   public isOpen = isOpen(moment());
   public isMenu = isMenu(moment());
   public isUntilMenu = isUntilMenuEnd(moment());
-
+  public isBeforeOpen = isBeforeOpen(moment());
+  public isClosedDay = isClosedDay(moment());
+  public isAfterClose = isAfterClose(moment());
   constructor(
     private store: Store<any>
   ) { }
-
   ngOnInit(): void {
   }
 

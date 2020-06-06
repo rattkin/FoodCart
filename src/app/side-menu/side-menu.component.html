@@ -4,5 +4,5 @@
 
 <button mat-raised-button (click)="select('home')">Hlavní stránka</button>
 
-<button *ngFor="let class of mealClasses" mat-raised-button [class.active]="(filterType |async) === class.code"
+<button *ngFor="let class of mealClasses |async" mat-raised-button [class.active]="(filterType |async) === class.code"
     (click)="select(class.code)">{{class.name}}</button>

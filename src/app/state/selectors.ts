@@ -1,5 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { mealFeatureKey, MealState, getMealFilter, getOrderMethod } from './reducers/mealStore';
+import { mealFeatureKey, MealState, getterMealFilter, getterOrderMethod, getterSideNavOpened, getterMealClasses } from './reducers/mealStore';
+import { isUntilMenuEnd } from '../utils/date';
+import * as moment from 'moment';
 
 export const selectMealState = createFeatureSelector<MealState>(mealFeatureKey);
 
@@ -23,14 +25,32 @@ export const selectFilteredMeals = createSelector(
     })
 );
 
+
 export const selectFilterType = createSelector(
     selectMealState,
     (state) => state.filterType
 );
 
+export const selectMealClasses = createSelector(
+    selectMealState,
+    (state) => state.mealClasses.filter(mealClass => {
+        if (mealClass.code !== 'menu') {
+            return true;
+        } else if (isUntilMenuEnd(moment())) {
+            return true;
+        }
+    })
+
+);
+
 export const selectSideDishes = createSelector(
     selectMealState,
     (state) => state.meals.filter(meal => meal.type === 'side')
+);
+
+export const selectMobileQuery = createSelector(
+    selectMealState,
+    (state) => state.mobileQuery
 );
 
 export const selectOrder = createSelector(
@@ -55,7 +75,7 @@ export const selectOrderMethod = createSelector(
 
 export const selectOrderTotal = createSelector(
     selectMealState,
-    getOrderMethod,
+    getterOrderMethod,
     (state) => {
         let total = 0;
         state.order.forEach(item => {
@@ -77,6 +97,17 @@ export const selectOrderTotal = createSelector(
             }
         });
         return total;
+    }
+);
+
+export const selectSideNavOpened = createSelector(
+    selectMealState,
+    (state) => {
+        if (!state.mobileQuery) {
+            return true;
+        } else {
+            return state.sideNavOpened;
+        }
     }
 );
 

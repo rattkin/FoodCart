@@ -15,6 +15,23 @@ export const showOrder = createAction(
   'showOrder',
 );
 
+export const sideNavToggle = createAction(
+  'sideNavToggle',
+);
+
+export const sideNavOpen = createAction(
+  'sideNavOpen',
+);
+
+export const sideNavClose = createAction(
+  'sideNavClose',
+);
+
+export const updateMediaQuery = createAction(
+  'updateMediaQuery',
+  props<{ mediaQuery: boolean; }>()
+);
+
 export const changeMealFilter = createAction(
   'changeMealFilter',
   props<{ filterType: string; }>()
