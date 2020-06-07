@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
+import * as moment from 'moment';
 import { EMPTY, Observable, of } from 'rxjs';
 import { catchError, concatMap, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 // tslint:disable-next-line: max-line-length
@@ -13,8 +15,7 @@ import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
 import { PickHeatComponent } from './pick-heat/pick-heat.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
-import { selectComment, selectName, selectOrder, selectOrderTotal, selectOrderMethod } from './state/selectors';
-import { Router } from '@angular/router';
+import { selectComment, selectName, selectOrder, selectOrderMethod, selectOrderTotal } from './state/selectors';
 
 declare let gtag: Function;
 
@@ -133,6 +134,7 @@ export class AppEffects {
       message = message + 'Čas: ' + action.time + '\n';
       if (action.phone) { message = message + 'Telefon: ' + action.phone + '\n'; }
       if (comment) { message = message + '\nKomentář: ' + comment; }
+      message = message + '\nObjednávka odeslána ' + moment().format();
 
       console.log(message);
 
