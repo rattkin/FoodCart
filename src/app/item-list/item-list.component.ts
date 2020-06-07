@@ -5,7 +5,7 @@ import * as moment from 'moment';
 import { changeMealFilter, pickHeat, pickSideDish } from '../actions/order.actions';
 import { googleAnalytics } from '../config';
 import { Meal } from '../interfaces/meal';
-import { selectFilteredMeals } from '../state/selectors';
+import { selectFilteredMeals, selectShowPackaging } from '../state/selectors';
 import { isAfterClose, isClosedDay } from '../utils/date';
 
 // declare ga as a function to set and sent the events
@@ -19,6 +19,7 @@ declare let gtag: Function;
 })
 export class ItemListComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));
+  public showPackaging = this.store.pipe(select(selectShowPackaging));
   public isAfterClose = isAfterClose(moment());
   public isClosedDay = isClosedDay(moment());
 

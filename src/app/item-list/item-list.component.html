@@ -82,7 +82,8 @@
             <mat-card-content>
                 <div class="prices">
                     Cena: {{item.price}} Kč
-                    <span *ngIf="item.packaging" class="packing"> + obal {{item.packaging}} Kč</span>
+                    <span *ngIf="item.packaging && (showPackaging |async)" class="packing"> + obal {{item.packaging}}
+                        Kč</span>
                 </div>
 
                 <div *ngIf="item.allergen" class="allergen">

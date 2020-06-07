@@ -73,6 +73,17 @@ export const selectOrderMethod = createSelector(
     (state) => state.orderMethod
 );
 
+export const selectShowPackaging = createSelector(
+    selectMealState,
+    (state) => {
+        if (state.orderMethod === 'restaurant') {
+            return false;
+        } else {
+            return true;
+        }
+    }
+);
+
 export const selectOrderTotal = createSelector(
     selectMealState,
     getterOrderMethod,
