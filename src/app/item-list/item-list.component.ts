@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
-import { pickSideDish, pickHeat } from '../actions/order.actions';
+import { changeMealFilter, pickHeat, pickSideDish } from '../actions/order.actions';
+import { googleAnalytics } from '../config';
 import { Meal } from '../interfaces/meal';
 import { selectFilteredMeals } from '../state/selectors';
-import { isAfterClose, isBeforeOpen, isClosedDay, isOpen } from '../utils/date';
-import { googleAnalytics } from '../config';
+import { isAfterClose } from '../utils/date';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -20,12 +21,19 @@ export class ItemListComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));
   public isAfterClose = isAfterClose(moment());
 
-  constructor(private store: Store<any>) { }
+  constructor(
+    private store: Store<any>,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
 
     gtag('config', googleAnalytics, {
       page_path: '/ItemListComponent'
+    });
+
+    this.route.url.subscribe(params => {
+      this.store.dispatch(changeMealFilter({ filterType: params[1].path }));
     });
   }
 
