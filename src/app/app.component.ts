@@ -31,8 +31,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['/']);
-
     this.isMobile.subscribe(result => {
       this.store.dispatch(updateMediaQuery({ mediaQuery: result.matches }));
     });
