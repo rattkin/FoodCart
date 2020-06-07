@@ -85,7 +85,7 @@ export const Meals: Meal[] = [
         allergen: '1,7',
         weight: '100g',
         price: 100,
-        photo: 'assets/Curry.jpg',
+        photo: 'assets/curry-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: ['Indická placka v ceně'],
