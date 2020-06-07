@@ -37,14 +37,15 @@
         <div class="row">
             <div class="col-md-6">
                 <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
-                    <mat-error *ngIf="orderMethod.invalid && (orderMethod.dirty || orderMethod.touched)">Prosím vyberte:</mat-error>
+                    <mat-error *ngIf="orderMethod.invalid && (orderMethod.dirty || orderMethod.touched)">Prosím vyberte:
+                    </mat-error>
                     <mat-radio-button value="takeout">s sebou</mat-radio-button>
                     <mat-radio-button value="restaurant">v restauraci</mat-radio-button>
                 </mat-radio-group>
             </div>
 
             <div class="col-md-6">
-                <mat-form-field appearance="fill" class="wide">
+                <mat-form-field appearance="fill" class="wide" color="accent">
                     <mat-label>Čas:</mat-label>
                     <input matInput [ngxTimepicker]="picker" [format]="24" min="{{pickSoonest}}" max="{{pickLatest}}"
                         formControlName="timePicker">
@@ -63,14 +64,14 @@
         <div class="row">
             <div class="col-md-6">
 
-                <mat-form-field appearance="fill" class="wide">
+                <mat-form-field appearance="fill" class="wide" color="accent">
                     <mat-label>E-mail </mat-label>
                     <input type="email" matInput formControlName="email" autocomplete="username email" required>
                 </mat-form-field>
             </div>
 
             <div class="col-md-6">
-                <mat-form-field appearance="fill" class="wide">
+                <mat-form-field appearance="fill" class="wide" color="accent">
                     <mat-label>Telefon</mat-label>
                     <input type="email" matInput formControlName="phone">
                 </mat-form-field>
@@ -80,7 +81,7 @@
 
         <div class="row">
             <div class="col">
-                <mat-form-field appearance="fill" class="wide">
+                <mat-form-field appearance="fill" class="wide" color="accent">
                     <mat-label>Poznámka </mat-label>
                     <input matInput formControlName="comment">
                 </mat-form-field>
