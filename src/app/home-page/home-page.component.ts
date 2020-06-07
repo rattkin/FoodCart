@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { changeMealFilter, changeOrderMethod } from '../actions/order.actions';
 import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat } from '../config';
-import { selectFilterType, selectMealClasses } from '../state/selectors';
+import { selectFilterType, selectMealClasses, selectOrderMethod } from '../state/selectors';
 import { isMenu, isOpen, isUntilMenuEnd, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
 
   public mealClasses = this.store.pipe(select(selectMealClasses));
   public filterType = this.store.pipe(select(selectFilterType));
+  public selectOrderMethod = this.store.pipe(select(selectOrderMethod));
   public openingTime = moment(startTime).format(timeFormat);
   public closingTime = moment(endTime).format(timeFormat);
   public openingMenuTime = moment(startMenuTime).format(timeFormat);
@@ -41,12 +42,14 @@ export class HomePageComponent implements OnInit {
     private formBuilder: FormBuilder,
   ) { }
   ngOnInit(): void {
+    this.selectOrderMethod.subscribe(method =>
+      this.orderForm.controls.orderMethod.setValue(method)
+    );
   }
 
   methodChange() {
-    this.store.dispatch(changeOrderMethod({ orderMethod: this.orderMethod.value }))
+    this.store.dispatch(changeOrderMethod({ orderMethod: this.orderMethod.value }));
   }
-
 
   select(filter) {
     this.store.dispatch(changeMealFilter({ filterType: filter }));
