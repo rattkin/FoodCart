@@ -43,7 +43,10 @@ export class PickSideDishComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.sideForm.valid) { return; } // stop here if form is invalid or pending
+    if (!this.sideForm.valid) {
+      this.sideForm.markAllAsTouched();
+      return;
+    } // stop here if form is invalid or pending
     this.store.dispatch(addToOrderWithSideDish({
       item: this.dish,
       sideDish: this.formSideRadio.value,

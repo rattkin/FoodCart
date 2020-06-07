@@ -78,7 +78,10 @@ export class OrderDialogComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.orderForm.valid) { return; }
+    if (!this.orderForm.valid) {
+      this.orderForm.markAllAsTouched();
+      return;
+    }
     this.store.dispatch(confirmOrder({
       name: this.email.value,
       time: this.timePicker.value,
