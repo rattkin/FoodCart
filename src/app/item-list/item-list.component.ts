@@ -6,7 +6,7 @@ import { changeMealFilter, pickHeat, pickSideDish } from '../actions/order.actio
 import { googleAnalytics } from '../config';
 import { Meal } from '../interfaces/meal';
 import { selectFilteredMeals } from '../state/selectors';
-import { isAfterClose } from '../utils/date';
+import { isAfterClose, isClosedDay } from '../utils/date';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -20,6 +20,7 @@ declare let gtag: Function;
 export class ItemListComponent implements OnInit {
   public menu = this.store.pipe(select(selectFilteredMeals));
   public isAfterClose = isAfterClose(moment());
+  public isClosedDay = isClosedDay(moment());
 
   constructor(
     private store: Store<any>,

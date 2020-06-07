@@ -18,16 +18,15 @@
     </p>
 
     <span class="storeInfo" *ngIf="isBeforeOpen">
-        <p>Zatím není otevřeno ale můžete si objednat s
-            vyzvednutím později</p>
+        <p>Zatím není otevřeno ale můžete si objednat</p>
     </span>
 
     <span class="storeInfo" *ngIf="isClosedDay">
-        <p>Dnes je zavřeno</p>
+        <p>Dnes je zavřeno, ale můžete si prohlédnout nabídku</p>
     </span>
 
     <span class="storeInfo" *ngIf="isAfterClose">
-        <p>Dnes už je zavřeno</p>
+        <p>Dnes už je zavřeno, ale můžete si prohlédnout nabídku</p>
     </span>
 
     <form [formGroup]="orderForm" *ngIf="! isClosedDay || !isAfterClose">
