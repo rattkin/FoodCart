@@ -7,7 +7,7 @@ export const googleAnalytics = 'UA-8333732-11';
 export const timeFormat = 'H:mm';
 export const dayFormat = 'dddd';
 
-export const timeToPrepareOrder = 10; // minutes
+export const timeToPrepareOrder = 15; // minutes
 export const roundingFactor = 5; // minutes
 
 export const startTime = moment('10:30', timeFormat);
