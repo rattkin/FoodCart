@@ -53,5 +53,3 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store.dispatch(sideNavToggle());
   }
 }
-
-// TODO deprecated

@@ -99,7 +99,4 @@ export class OrderDialogComponent implements OnInit {
   remove(orderItem: number) {
     this.store.dispatch(removeFromOrder({ item: orderItem }));
   }
-
-  // TODO on mobile too big
-
 }
