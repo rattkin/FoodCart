@@ -6,9 +6,9 @@ html,
 body {
     height: 100%;
 }
+
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .cdk-overlay-pane {
@@ -20,7 +20,8 @@ body {
 }
 
 .orderButton .mat-button-wrapper {
-    line-height: 11px !important;
+    line-height: 14px !important;
+    padding: 14px 0 !important;
 }
 
 .mat-radio-label {
