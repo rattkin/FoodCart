@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { select, Store } from '@ngrx/store';
 import { addToOrderWithSideDish } from '../actions/order.actions';
 import { Meal } from '../interfaces/meal';
-import { selectSideDishes } from '../state/selectors';
+import { selectShowPackaging, selectSideDishes } from '../state/selectors';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -16,6 +16,7 @@ declare let gtag: Function;
 })
 export class PickSideDishComponent implements OnInit {
   public sideDishes = this.store.pipe(select(selectSideDishes));
+  public showPackaging = this.store.pipe(select(selectShowPackaging));
   public chosenSideDish: Meal;
   public dish: Meal;
   public sideForm: FormGroup;

@@ -3,7 +3,8 @@
 
 <form [formGroup]="sideForm" (keydown.enter)="onSubmit()">
     <mat-dialog-content>
-        <mat-error *ngIf="formSideRadio.invalid && (formSideRadio.dirty || formSideRadio.touched)">Prosím vyberte:</mat-error>
+        <mat-error *ngIf="formSideRadio.invalid && (formSideRadio.dirty || formSideRadio.touched)">Prosím vyberte:
+        </mat-error>
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
             formControlName="formSideRadio">
             <span *ngFor="let side of sideDishes |async">
@@ -11,7 +12,8 @@
                     *ngIf="(dish.class === 'menu' && side.class === 'menu') || (dish.class !== 'menu' && side.class !== 'menu')"
                     [value]="side">
                     {{side.name}} ({{side.description}}) {{side.price}} Kč
-                    <span *ngIf="side.packaging" class="packing"> + obal {{side.packaging}} Kč</span>
+                    <span *ngIf="side.packaging && (showPackaging |async)" class="packing"> + obal {{side.packaging}}
+                        Kč</span>
 
                 </mat-radio-button>
             </span>
