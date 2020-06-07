@@ -4,10 +4,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
-import { confirmOrder, removeFromOrder, changeOrderMethod } from '../actions/order.actions';
-import { endTime, roundingFactor, startTime, timeFormat, timeToPrepareOrder, endMenuTime, googleAnalytics } from '../config';
+import { changeOrderMethod, confirmOrder, removeFromOrder } from '../actions/order.actions';
+import { endMenuTime, endTime, googleAnalytics, roundingFactor, startTime, timeFormat, timeToPrepareOrder } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
-import { selectOrder, selectOrderTotal, selectIsMenuItemPresent } from '../state/selectors';
+import { selectIsMenuItemPresent, selectOrder, selectOrderMethod, selectOrderTotal } from '../state/selectors';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -23,6 +23,7 @@ export class OrderDialogComponent implements OnInit {
   public order = this.store.pipe(select(selectOrder));
   public total = this.store.pipe(select(selectOrderTotal));
   public isMenuPresent = this.store.pipe(select(selectIsMenuItemPresent));
+  public selectOrderMethod = this.store.pipe(select(selectOrderMethod));
   public pickSoonest: string;
   public pickLatest: string;
 
@@ -66,6 +67,10 @@ export class OrderDialogComponent implements OnInit {
       phone: [''],
       comment: [''],
     });
+
+    this.selectOrderMethod.subscribe(method =>
+      this.orderForm.controls.orderMethod.setValue(method)
+    );
   }
 
   methodChange() {
