@@ -1,4 +1,8 @@
-
+.page {
+    background-image: url("/assets/background2.png");
+    background-color: #f2d38f;
+    min-height: 100%;
+}
 .list {
     display: flex;
     flex-wrap: wrap;
@@ -7,6 +11,14 @@
 .list-item {
     width: 350px;
     margin: 10px;
+}
+
+.mat-card {
+    border: 1px #e3b880 solid;
+
+    .mat-card-subtitle {
+        color: #000 !important;
+    }
 }
 
 .tags {

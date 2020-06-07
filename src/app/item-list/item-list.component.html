@@ -1,102 +1,108 @@
-<div class="list">
-    <div class="list-item" *ngFor="let item of menu |async">
-        <mat-card>
-            <span class='heat' *ngIf="item.heat">
-                <svg version="1.1" viewBox="0 0 116 320" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
-                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                    <g transform="translate(-102)">
-                        <path
-                            d="m161 109v-63c0-8.8 7.2-16 16-16h9c8.3 0 15-6.7 15-15s-6.7-15-15-15h-9c-25 0-46 21-46 46v63z"
-                            fill="#4b905e" />
-                        <path
-                            d="m206 297c-20-2.2-34-20-32-40 0 0 16-129 16-152s-20-44-44-44-44 20-44 44 7.6 123 12 160c3.2 31 22 55 54 55 20 0 38-9.1 50-23-3.8 0.85-7.8 1.1-12 0.66z"
-                            fill="#ff5023" />
-                        <path
-                            d="m146 61c-0.029-1e-3 -0.058-3e-3 -0.087-3e-3 -24 0-44 20-44 44s7.6 123 12 160c2.4 23 13 42 32 50z"
-                            fill="#bd3c1a" />
-                        <path
-                            d="m179 71c-10-10-24-11-33-11-8.9-0.24-0.63 41 0 40 0.63 0.77 1.3 1.5 2 2.2 15 15 41 10 41 10s5.2-26-10-41z"
-                            fill="#91dc5a" />
-                        <path
-                            d="m146 60c-8.9-0.24-23 1.2-33 11-16 16-10 41-10 41s26 4.7 41-10c0.72-0.72 1.4-1.5 2-2.2v-40z"
-                            fill="#64c37d" />
-                    </g>
-                </svg>
+<div class="page">
+    <div class="list">
+        <div class="list-item" *ngFor="let item of menu |async">
+            <mat-card>
+                <span class='heat' *ngIf="item.heat">
+                    <svg version="1.1" viewBox="0 0 116 320" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                        <g transform="translate(-102)">
+                            <path
+                                d="m161 109v-63c0-8.8 7.2-16 16-16h9c8.3 0 15-6.7 15-15s-6.7-15-15-15h-9c-25 0-46 21-46 46v63z"
+                                fill="#4b905e" />
+                            <path
+                                d="m206 297c-20-2.2-34-20-32-40 0 0 16-129 16-152s-20-44-44-44-44 20-44 44 7.6 123 12 160c3.2 31 22 55 54 55 20 0 38-9.1 50-23-3.8 0.85-7.8 1.1-12 0.66z"
+                                fill="#ff5023" />
+                            <path
+                                d="m146 61c-0.029-1e-3 -0.058-3e-3 -0.087-3e-3 -24 0-44 20-44 44s7.6 123 12 160c2.4 23 13 42 32 50z"
+                                fill="#bd3c1a" />
+                            <path
+                                d="m179 71c-10-10-24-11-33-11-8.9-0.24-0.63 41 0 40 0.63 0.77 1.3 1.5 2 2.2 15 15 41 10 41 10s5.2-26-10-41z"
+                                fill="#91dc5a" />
+                            <path
+                                d="m146 60c-8.9-0.24-23 1.2-33 11-16 16-10 41-10 41s26 4.7 41-10c0.72-0.72 1.4-1.5 2-2.2v-40z"
+                                fill="#64c37d" />
+                        </g>
+                    </svg>
 
-                <svg *ngIf="item.heat > 1" version="1.1" viewBox="0 0 116 320" xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
-                    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                    <g transform="translate(-102)">
-                        <path
-                            d="m161 109v-63c0-8.8 7.2-16 16-16h9c8.3 0 15-6.7 15-15s-6.7-15-15-15h-9c-25 0-46 21-46 46v63z"
-                            fill="#4b905e" />
-                        <path
-                            d="m206 297c-20-2.2-34-20-32-40 0 0 16-129 16-152s-20-44-44-44-44 20-44 44 7.6 123 12 160c3.2 31 22 55 54 55 20 0 38-9.1 50-23-3.8 0.85-7.8 1.1-12 0.66z"
-                            fill="#ff5023" />
-                        <path
-                            d="m146 61c-0.029-1e-3 -0.058-3e-3 -0.087-3e-3 -24 0-44 20-44 44s7.6 123 12 160c2.4 23 13 42 32 50z"
-                            fill="#bd3c1a" />
-                        <path
-                            d="m179 71c-10-10-24-11-33-11-8.9-0.24-0.63 41 0 40 0.63 0.77 1.3 1.5 2 2.2 15 15 41 10 41 10s5.2-26-10-41z"
-                            fill="#91dc5a" />
-                        <path
-                            d="m146 60c-8.9-0.24-23 1.2-33 11-16 16-10 41-10 41s26 4.7 41-10c0.72-0.72 1.4-1.5 2-2.2v-40z"
-                            fill="#64c37d" />
-                    </g>
-                </svg>
-                <svg *ngIf="item.heat > 2" version="1.1" viewBox="0 0 116 320" xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
-                    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                    <g transform="translate(-102)">
-                        <path
-                            d="m161 109v-63c0-8.8 7.2-16 16-16h9c8.3 0 15-6.7 15-15s-6.7-15-15-15h-9c-25 0-46 21-46 46v63z"
-                            fill="#4b905e" />
-                        <path
-                            d="m206 297c-20-2.2-34-20-32-40 0 0 16-129 16-152s-20-44-44-44-44 20-44 44 7.6 123 12 160c3.2 31 22 55 54 55 20 0 38-9.1 50-23-3.8 0.85-7.8 1.1-12 0.66z"
-                            fill="#ff5023" />
-                        <path
-                            d="m146 61c-0.029-1e-3 -0.058-3e-3 -0.087-3e-3 -24 0-44 20-44 44s7.6 123 12 160c2.4 23 13 42 32 50z"
-                            fill="#bd3c1a" />
-                        <path
-                            d="m179 71c-10-10-24-11-33-11-8.9-0.24-0.63 41 0 40 0.63 0.77 1.3 1.5 2 2.2 15 15 41 10 41 10s5.2-26-10-41z"
-                            fill="#91dc5a" />
-                        <path
-                            d="m146 60c-8.9-0.24-23 1.2-33 11-16 16-10 41-10 41s26 4.7 41-10c0.72-0.72 1.4-1.5 2-2.2v-40z"
-                            fill="#64c37d" />
-                    </g>
-                </svg>
-            </span>
-            <mat-card-header>
-                <mat-card-title>{{item.name}} </mat-card-title>
-                <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
-            </mat-card-header>
-            <div class="mat-card-image">
-                <div class="tags" *ngIf="item.tags">
-                    <span *ngFor="let tag of item.tags">{{tag}}</span>
-                </div>
+                    <svg *ngIf="item.heat > 1" version="1.1" viewBox="0 0 116 320" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                        <g transform="translate(-102)">
+                            <path
+                                d="m161 109v-63c0-8.8 7.2-16 16-16h9c8.3 0 15-6.7 15-15s-6.7-15-15-15h-9c-25 0-46 21-46 46v63z"
+                                fill="#4b905e" />
+                            <path
+                                d="m206 297c-20-2.2-34-20-32-40 0 0 16-129 16-152s-20-44-44-44-44 20-44 44 7.6 123 12 160c3.2 31 22 55 54 55 20 0 38-9.1 50-23-3.8 0.85-7.8 1.1-12 0.66z"
+                                fill="#ff5023" />
+                            <path
+                                d="m146 61c-0.029-1e-3 -0.058-3e-3 -0.087-3e-3 -24 0-44 20-44 44s7.6 123 12 160c2.4 23 13 42 32 50z"
+                                fill="#bd3c1a" />
+                            <path
+                                d="m179 71c-10-10-24-11-33-11-8.9-0.24-0.63 41 0 40 0.63 0.77 1.3 1.5 2 2.2 15 15 41 10 41 10s5.2-26-10-41z"
+                                fill="#91dc5a" />
+                            <path
+                                d="m146 60c-8.9-0.24-23 1.2-33 11-16 16-10 41-10 41s26 4.7 41-10c0.72-0.72 1.4-1.5 2-2.2v-40z"
+                                fill="#64c37d" />
+                        </g>
+                    </svg>
+                    <svg *ngIf="item.heat > 2" version="1.1" viewBox="0 0 116 320" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                        <g transform="translate(-102)">
+                            <path
+                                d="m161 109v-63c0-8.8 7.2-16 16-16h9c8.3 0 15-6.7 15-15s-6.7-15-15-15h-9c-25 0-46 21-46 46v63z"
+                                fill="#4b905e" />
+                            <path
+                                d="m206 297c-20-2.2-34-20-32-40 0 0 16-129 16-152s-20-44-44-44-44 20-44 44 7.6 123 12 160c3.2 31 22 55 54 55 20 0 38-9.1 50-23-3.8 0.85-7.8 1.1-12 0.66z"
+                                fill="#ff5023" />
+                            <path
+                                d="m146 61c-0.029-1e-3 -0.058-3e-3 -0.087-3e-3 -24 0-44 20-44 44s7.6 123 12 160c2.4 23 13 42 32 50z"
+                                fill="#bd3c1a" />
+                            <path
+                                d="m179 71c-10-10-24-11-33-11-8.9-0.24-0.63 41 0 40 0.63 0.77 1.3 1.5 2 2.2 15 15 41 10 41 10s5.2-26-10-41z"
+                                fill="#91dc5a" />
+                            <path
+                                d="m146 60c-8.9-0.24-23 1.2-33 11-16 16-10 41-10 41s26 4.7 41-10c0.72-0.72 1.4-1.5 2-2.2v-40z"
+                                fill="#64c37d" />
+                        </g>
+                    </svg>
+                </span>
+                <mat-card-header>
+                    <mat-card-title>{{item.name}} </mat-card-title>
+                    <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+                </mat-card-header>
+                <div class="mat-card-image">
+                    <div class="tags" *ngIf="item.tags">
+                        <span *ngFor="let tag of item.tags">{{tag}}</span>
+                    </div>
 
-                <img src="{{item.photo}}" *ngIf="item.photo">
-                <img src="assets/noPhoto.jpg" *ngIf="!item.photo">
-            </div>
-            <mat-card-content>
-                <div class="prices">
-                    Cena: {{item.price}} Kč
-                    <span *ngIf="item.packaging && (showPackaging |async)" class="packing"> + obal {{item.packaging}}
-                        Kč</span>
+                    <img src="{{item.photo}}" *ngIf="item.photo">
+                    <img src="assets/noPhoto.jpg" *ngIf="!item.photo">
                 </div>
+                <mat-card-content>
+                    <div class="prices">
+                        Cena: {{item.price}} Kč
+                        <span *ngIf="item.packaging && (showPackaging |async)" class="packing"> + obal
+                            {{item.packaging}}
+                            Kč</span>
+                    </div>
 
-                <div *ngIf="item.allergen" class="allergen">
-                    Alergen: {{item.allergen}}
-                </div>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-raised-button color="primary" (click)="pickSideDish(item)"
-                    [disabled]="!isOrderPossible">Objednat</button>
-                <span class="grow"></span>
-                <button mat-raised-button color="primary" (click)="pickHeat(item)" [disabled]="!isOrderPossible">Změnit
-                    pálivost</button>
-            </mat-card-actions>
-        </mat-card>
+                    <div *ngIf="item.allergen" class="allergen">
+                        Alergen: {{item.allergen}}
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="pickSideDish(item)"
+                        [disabled]="!isOrderPossible">Objednat</button>
+                    <span class="grow"></span>
+                    <button mat-raised-button color="primary" (click)="pickHeat(item)"
+                        [disabled]="!isOrderPossible">Změnit
+                        pálivost</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </div>
 </div>

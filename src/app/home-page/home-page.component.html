@@ -1,50 +1,52 @@
-<div class="background">
-    <img src="assets/header.jpg" class="header">
-    <h1>
-        Indická restaurace Jindřichův Hradec Panská 95
-    </h1>
+<div class="page">
+    <div class="background">
+        <img src="assets/header.jpg" class="header">
+        <h1>
+            Indická restaurace Jindřichův Hradec Panská 95
+        </h1>
 
-    <p>
-        <span [ngClass]="{'bold' : isOpen}">
-            Otevřeno:
+        <p>
+            <span [ngClass]="{'bold' : isOpen}">
+                Otevřeno:
+            </span>
+            {{startDay}} až {{endDay}} {{openingTime}} - {{closingTime}}
+            <br>
+
+            <span [ngClass]="{'bold' : isMenu}">
+                Polední menu:
+            </span>
+            (mimo svátky) {{startMenuDay}} - {{endMenuDay}}, {{openingMenuTime}} - {{closingMenuTime}}
+        </p>
+
+        <span class="storeInfo" *ngIf="isBeforeOpen">
+            <p>Zatím není otevřeno ale můžete si objednat</p>
         </span>
-        {{startDay}} až {{endDay}} {{openingTime}} - {{closingTime}}
-        <br>
 
-        <span [ngClass]="{'bold' : isMenu}">
-            Polední menu:
+        <span class="storeInfo" *ngIf="isClosedDay">
+            <p>Dnes je zavřeno, ale můžete si prohlédnout nabídku</p>
         </span>
-        (mimo svátky) {{startMenuDay}} - {{endMenuDay}}, {{openingMenuTime}} - {{closingMenuTime}}
-    </p>
 
-    <span class="storeInfo" *ngIf="isBeforeOpen">
-        <p>Zatím není otevřeno ale můžete si objednat</p>
-    </span>
+        <span class="storeInfo" *ngIf="isAfterClose">
+            <p>Dnes už je zavřeno, ale můžete si prohlédnout nabídku</p>
+        </span>
 
-    <span class="storeInfo" *ngIf="isClosedDay">
-        <p>Dnes je zavřeno, ale můžete si prohlédnout nabídku</p>
-    </span>
+        <form [formGroup]="orderForm" *ngIf="! isClosedDay || !isAfterClose">
+            Chcete si objednat:
+            <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
+                <mat-radio-button value="takeout">s sebou</mat-radio-button>
+                <mat-radio-button value="restaurant">v restauraci</mat-radio-button>
+            </mat-radio-group>
+        </form>
+        <div class="buttons">
 
-    <span class="storeInfo" *ngIf="isAfterClose">
-        <p>Dnes už je zavřeno, ale můžete si prohlédnout nabídku</p>
-    </span>
+            <button *ngFor="let class of mealClasses |async" mat-raised-button
+                (click)="select(class.code)">{{class.name}}</button>
+        </div>
 
-    <form [formGroup]="orderForm" *ngIf="! isClosedDay || !isAfterClose">
-        Chcete si objednat:
-        <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
-            <mat-radio-button value="takeout">s sebou</mat-radio-button>
-            <mat-radio-button value="restaurant">v restauraci</mat-radio-button>
-        </mat-radio-group>
-    </form>
-    <div class="buttons">
+        <p>
+            <a href="https://indickarestaurace.cz/viewpage.php?page_id=20">indickarestaurace.cz</a>
 
-        <button *ngFor="let class of mealClasses |async" mat-raised-button
-            (click)="select(class.code)">{{class.name}}</button>
+            Problémy a připomínky: <a href="mailto:muller.jan@gmail.com">muller.jan@gmail.com</a>
+        </p>
     </div>
-
-    <p>
-        <a href="https://indickarestaurace.cz/viewpage.php?page_id=20">indickarestaurace.cz</a>
-
-        Problémy a připomínky: <a href="mailto:muller.jan@gmail.com">muller.jan@gmail.com</a>
-    </p>
 </div>
