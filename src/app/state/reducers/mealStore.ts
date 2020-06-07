@@ -18,7 +18,7 @@ export const initialState: MealState = {
   email: undefined,
   phone: undefined,
   comment: undefined,
-  filterType: undefined,
+  filterType: 'home',
   mealClasses: MealClasses,
 };
 
