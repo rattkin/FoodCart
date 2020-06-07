@@ -1,5 +1,15 @@
 import { startTime, endTime, startDay, endDay, startMenuTime, endMenuTime, startMenuDay, endMenuDay } from '../config';
 
+export function isOrderPossible(time: moment.Moment) {
+    if (
+        isOpen(time) ||
+        isBeforeOpen(time)
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
 export function isOpen(time: moment.Moment) {
     if (
         time.isBetween(startTime, endTime, 'minute', '[]') &&
@@ -46,12 +56,11 @@ export function isAfterClose(time: moment.Moment) {
 
 export function isClosedDay(time: moment.Moment) {
     if (
-        !
         time.isBetween(startDay, endDay, 'day', '[]')
     ) {
-        return true;
-    } else {
         return false;
+    } else {
+        return true;
     }
 }
 

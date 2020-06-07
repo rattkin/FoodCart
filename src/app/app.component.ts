@@ -7,6 +7,7 @@ import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd
 import { selectSideNavOpened, selectMobileQuery } from './state/selectors';
 import { sideNavToggle, updateMediaQuery } from './actions/order.actions';
 import { Observable } from 'rxjs';
+import { startDay, endDay } from './config';
 
 @Component({
   selector: 'app-root',
@@ -44,7 +45,8 @@ export class AppComponent implements OnInit, OnDestroy {
     console.log('isAfterClose', isAfterClose(moment()));
     console.log('isClosedDay', isClosedDay(moment()));
     console.log('isUntilMenuEnd', isUntilMenuEnd(moment()));
-
+    console.log('startDay', startDay);
+    console.log('endDay', endDay);
   }
 
   sideNavToggle() {

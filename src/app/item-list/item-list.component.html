@@ -92,10 +92,9 @@
             </mat-card-content>
             <mat-card-actions>
                 <button mat-raised-button color="primary" (click)="pickSideDish(item)"
-                    [disabled]="isAfterClose || isClosedDay">Objednat</button>
+                    [disabled]="!isOrderPossible">Objednat</button>
                 <span class="grow"></span>
-                <button mat-raised-button color="primary" (click)="pickHeat(item)"
-                    [disabled]="isAfterClose || isClosedDay">Změnit
+                <button mat-raised-button color="primary" (click)="pickHeat(item)" [disabled]="!isOrderPossible">Změnit
                     pálivost</button>
             </mat-card-actions>
         </mat-card>

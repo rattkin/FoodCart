@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { mealFeatureKey, MealState, getterMealFilter, getterOrderMethod, getterSideNavOpened, getterMealClasses } from './reducers/mealStore';
-import { isUntilMenuEnd } from '../utils/date';
 import * as moment from 'moment';
+import { isUntilMenuEnd } from '../utils/date';
+import { getterOrderMethod, mealFeatureKey, MealState } from './reducers/mealStore';
 
 export const selectMealState = createFeatureSelector<MealState>(mealFeatureKey);
 
@@ -25,7 +25,6 @@ export const selectFilteredMeals = createSelector(
     })
 );
 
-
 export const selectFilterType = createSelector(
     selectMealState,
     (state) => state.filterType
@@ -40,7 +39,6 @@ export const selectMealClasses = createSelector(
             return true;
         }
     })
-
 );
 
 export const selectSideDishes = createSelector(
