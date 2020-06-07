@@ -22,3 +22,4 @@ export const endMenuTime = moment('15:00', timeFormat);
 // export const endMenuTime = moment('23:59', timeFormat); // Testing
 export const startMenuDay = moment().isoWeekday(1);
 export const endMenuDay = moment().isoWeekday(5);
+// export const endMenuDay = moment().isoWeekday(7); // Testing
