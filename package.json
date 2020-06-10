@@ -25,11 +25,11 @@
     "@ngrx/effects": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "@ngrx/store-devtools": "^9.2.0",
-    "bootstrap": "^4.4.1",
-    "moment": "^2.25.3",
-    "ngx-material-timepicker": "^5.5.1",
+    "bootstrap": "^4.5.0",
+    "moment": "^2.26.0",
+    "ngx-material-timepicker": "^5.5.3",
     "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
+    "tslib": "^1.13.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "@ngrx/schematics": "^9.2.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.47",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -48,10 +48,11 @@
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
-    "karma-jasmine-html-reporter": "^1.4.2",
+    "karma-jasmine-html-reporter": "^1.5.4",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "tslint": "^6.1.2",
+    "typescript": "~3.8.3",
+    "webpack-bundle-analyzer": "^3.8.0"
   }
 }
