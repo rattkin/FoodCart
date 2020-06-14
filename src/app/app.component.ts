@@ -1,10 +1,10 @@
 import { MediaMatcher, BreakpointState, Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import * as moment from 'moment';
 import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
-import { selectSideNavOpened, selectMobileQuery } from './state/selectors';
+import { selectSideNavOpened, selectMobileQuery, selectOrder } from './state/selectors';
 import { sideNavToggle, updateMediaQuery } from './actions/order.actions';
 import { Observable } from 'rxjs';
 import { startDay, endDay } from './config';
@@ -18,6 +18,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public sideNavOpened = this.store.pipe(select(selectSideNavOpened));
   public mobileQuery = this.store.pipe(select(selectMobileQuery));
+  public order = this.store.pipe(select(selectOrder));
+  private isOrder = false;
   public isMobile: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.XSmall);
 
   constructor(
@@ -35,6 +37,15 @@ export class AppComponent implements OnInit, OnDestroy {
       this.store.dispatch(updateMediaQuery({ mediaQuery: result.matches }));
     });
 
+    this.order.subscribe(result => {
+      console.log(result.length);
+      if (result.length) {
+        this.isOrder = true;
+      } else {
+        this.isOrder = false;
+      }
+    });
+
     // debug
     console.log('now', moment().format('LLLL'));
     console.log('isOpen', isOpen(moment()));
@@ -49,5 +60,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   sideNavToggle() {
     this.store.dispatch(sideNavToggle());
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadHandler(event: Event) {
+    if (this.isOrder) {
+      const result = confirm('Ztratíte objednávku.');
+      if (result) {
+        // Do more processing...
+      }
+      event.returnValue = false; // stay on same page}
+    }
   }
 }
