@@ -7,7 +7,9 @@
     "build": "ng build --prod --base-href /indicka/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:stats": "ng build --stats-json",
+    "analyze:stats": "webpack-bundle-analyzer dist/indicka/stats-esnext.json"
   },
   "private": true,
   "dependencies": {
