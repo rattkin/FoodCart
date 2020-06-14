@@ -1,13 +1,12 @@
-import { MediaMatcher, BreakpointState, Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
-import { Store, select } from '@ngrx/store';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
-import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
-import { selectSideNavOpened, selectMobileQuery, selectOrder } from './state/selectors';
-import { sideNavToggle, updateMediaQuery } from './actions/order.actions';
 import { Observable } from 'rxjs';
-import { startDay, endDay } from './config';
+import { sideNavToggle, updateMediaQuery } from './actions/order.actions';
+import { endDay, startDay } from './config';
+import { selectMobileQuery, selectOrder, selectSideNavOpened } from './state/selectors';
+import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +23,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private store: Store<any>,
-    private router: Router,
     private breakpointObserver: BreakpointObserver,
   ) {
   }
