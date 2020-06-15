@@ -68,13 +68,10 @@ export const confirmOrder = createAction(
   }>(),
 );
 
-export const sendOrder = createAction(
-  'sendOrder',
-);
-
 export const OrderSuccess = createAction(
   'OrderSuccess',
 );
+
 export const OrderFailed = createAction(
   'OrderFailed',
 );
