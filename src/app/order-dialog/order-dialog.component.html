@@ -95,7 +95,7 @@
 <div mat-dialog-actions>
     <button mat-raised-button [disabled]="(!(order |async).length) || (progress|async)" color="accent"
         (click)="onSubmit()">Objednat</button>
-    <button mat-button (click)="checkClose()">
+    <button mat-button mat-dialog-close>
         Zrušit
     </button>
     <mat-spinner diameter="36" *ngIf="(progress|async)"></mat-spinner>
