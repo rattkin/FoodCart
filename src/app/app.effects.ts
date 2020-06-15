@@ -28,7 +28,12 @@ export class AppEffects {
     private SideDishDialog: MatDialog,
     private HeatDialog: MatDialog,
     private orderDialog: MatDialog,
-    private dialogRef: MatDialogRef<PickSideDishComponent | PickHeatComponent | OrderDialogComponent>,
+    private dialogRef:
+      MatDialogRef<PickSideDishComponent |
+        PickHeatComponent |
+        OrderDialogComponent |
+        OrderSuccessfulComponent |
+        OrderFailedComponent>,
     private http: HttpClient,
     private router: Router,
   ) { }
@@ -148,8 +153,7 @@ export class AppEffects {
             }
           }),
         );
-    }
-    ),
+    }),
     catchError((error) => {
       return of(OrderFailed());
     })
@@ -196,20 +200,16 @@ export class AppEffects {
   OrderSuccess: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(OrderSuccess),
     tap(action => {
-      this.orderDialog.open(OrderSuccessfulComponent, {
-        height: '400px',
-        width: '600px',
-      });
+      this.dialogRef.close();
+      this.dialogRef = this.orderDialog.open(OrderSuccessfulComponent);
     })
   ), { dispatch: false });
 
   OrderFailed: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(OrderFailed),
     tap(action => {
-      this.orderDialog.open(OrderFailedComponent, {
-        height: '400px',
-        width: '600px',
-      });
+      this.dialogRef.close();
+      this.dialogRef = this.orderDialog.open(OrderFailedComponent);
     })
   ), { dispatch: false });
 

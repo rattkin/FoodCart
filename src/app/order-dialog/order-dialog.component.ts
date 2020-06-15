@@ -7,7 +7,7 @@ import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
 import { changeOrderMethod, confirmOrder, removeFromOrder } from '../actions/order.actions';
 import { endMenuTime, endTime, googleAnalytics, roundingFactor, startTime, timeFormat, timeToPrepareOrder } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
-import { selectIsMenuItemPresent, selectOrder, selectOrderMethod, selectOrderTotal } from '../state/selectors';
+import { selectIsMenuItemPresent, selectOrder, selectOrderMethod, selectOrderTotal, selectProgress } from '../state/selectors';
 
 // declare ga as a function to set and sent the events
 declare let gtag: Function;
@@ -22,6 +22,7 @@ export class OrderDialogComponent implements OnInit {
   public orderForm: FormGroup;
   public order = this.store.pipe(select(selectOrder));
   public total = this.store.pipe(select(selectOrderTotal));
+  public progress = this.store.pipe(select(selectProgress));
   public isMenuPresent = this.store.pipe(select(selectIsMenuItemPresent));
   public selectOrderMethod = this.store.pipe(select(selectOrderMethod));
   public pickSoonest: string;
@@ -90,7 +91,6 @@ export class OrderDialogComponent implements OnInit {
       orderMethod: this.orderMethod.value,
     }
     ));
-    this.DialogRef.close();
     return false;
   }
 
@@ -99,10 +99,6 @@ export class OrderDialogComponent implements OnInit {
   public get timePicker() { return this.orderForm.get('timePicker'); }
   public get phone() { return this.orderForm.get('phone'); }
   public get comment() { return this.orderForm.get('comment'); }
-
-  checkClose() {
-    this.DialogRef.close();
-  }
 
   remove(orderItem: number) {
     this.store.dispatch(removeFromOrder({ item: orderItem }));

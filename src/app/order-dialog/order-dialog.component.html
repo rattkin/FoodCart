@@ -93,10 +93,12 @@
 </div>
 
 <div mat-dialog-actions>
-    <button mat-raised-button [disabled]="!(order |async).length" color="accent" (click)="onSubmit()">Objednat</button>
+    <button mat-raised-button [disabled]="(!(order |async).length) || (progress|async)" color="accent"
+        (click)="onSubmit()">Objednat</button>
     <button mat-button (click)="checkClose()">
         Zrušit
     </button>
+    <mat-spinner diameter="36" *ngIf="(progress|async)"></mat-spinner>
 </div>
 
 <ng-template #cancelBtn>

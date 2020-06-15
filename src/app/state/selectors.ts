@@ -66,6 +66,11 @@ export const selectComment = createSelector(
     (state) => state.comment
 );
 
+export const selectProgress = createSelector(
+    selectMealState,
+    (state) => state.progress
+);
+
 export const selectOrderMethod = createSelector(
     selectMealState,
     (state) => state.orderMethod

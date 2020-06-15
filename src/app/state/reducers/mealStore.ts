@@ -1,6 +1,6 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
 // tslint:disable-next-line: max-line-length
-import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder, changeOrderMethod, sideNavToggle, sideNavOpen, sideNavClose, updateMediaQuery } from 'src/app/actions/order.actions';
+import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, confirmOrder, OrderSuccess, removeFromOrder, changeOrderMethod, sideNavToggle, sideNavOpen, sideNavClose, updateMediaQuery, OrderFailed } from 'src/app/actions/order.actions';
 import { environment } from '../../../environments/environment';
 import { Meal, MealClass } from '../../interfaces/meal';
 import { Meals } from '../../interfaces/meals';
@@ -20,6 +20,7 @@ export const initialState: MealState = {
   comment: undefined,
   filterType: 'home',
   mealClasses: MealClasses,
+  progress: false,
 };
 
 export interface MealState {
@@ -34,6 +35,7 @@ export interface MealState {
   comment: string;
   filterType: string;
   mealClasses: MealClass[];
+  progress: boolean;
 }
 
 const mealReducer = createReducer(
@@ -84,11 +86,17 @@ const mealReducer = createReducer(
     email: name,
     comment,
     orderMethod,
+    progress: true,
   })),
 
   on(OrderSuccess, () => (
     initialState
   )),
+
+  on(OrderFailed, (state) => ({
+    ...state,
+    progress: false,
+  })),
 
   on(removeFromOrder, (state, { item: payload }) => ({
     ...state,
