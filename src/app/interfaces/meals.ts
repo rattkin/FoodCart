@@ -166,7 +166,7 @@ export const Meals: Meal[] = [
         allergen: '1,7',
         weight: '100g',
         price: 95,
-        photo: 'assets/Dal Makhani.jpg',
+        photo: 'assets/Dal Makhani Menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: ['Indická placka v ceně', 'pro vegetariány'],
