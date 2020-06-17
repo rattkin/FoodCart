@@ -10,7 +10,9 @@ mat-sidenav-container {
 
 .floatingTopLeft {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    left: 5px;
     z-index: 999;
+    min-width: 30px;
+    padding: 0;
 }
