@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { NgxMaterialTimepickerComponent } from 'ngx-material-timepicker';
 import { changeOrderMethod, confirmOrder, removeFromOrder } from '../actions/order.actions';
-import { endMenuTime, endTime, googleAnalytics, roundingFactor, startTime, timeFormat, timeToPrepareOrder } from '../config';
+import { endMenuTime, endTime, googleAnalytics, roundingFactor, startTime, timeFormat, timeToPrepareOrder, AllowedOrderMethods } from '../config';
 import { PickSideDishComponent } from '../pick-side-dish/pick-side-dish.component';
 import { selectIsMenuItemPresent, selectOrder, selectOrderMethod, selectOrderTotal, selectProgress } from '../state/selectors';
 
@@ -19,6 +19,7 @@ declare let gtag: Function;
 })
 export class OrderDialogComponent implements OnInit {
   @ViewChild('picker') picker: NgxMaterialTimepickerComponent;
+  public AllowedOrderMethods = AllowedOrderMethods;
   public orderForm: FormGroup;
   public order = this.store.pipe(select(selectOrder));
   public total = this.store.pipe(select(selectOrderTotal));

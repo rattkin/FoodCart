@@ -35,7 +35,7 @@
     <form [formGroup]="orderForm" (keydown.enter)="onSubmit()">
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" *ngIf="AllowedOrderMethods.length >1">
                 <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
                     <mat-error *ngIf="orderMethod.invalid && (orderMethod.dirty || orderMethod.touched)">Prosím vyberte:
                     </mat-error>

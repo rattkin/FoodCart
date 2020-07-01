@@ -3,6 +3,10 @@ import * as moment from 'moment';
 moment.locale('cs');
 
 export const googleAnalytics = 'UA-8333732-11';
+export const emailServer = 'https://indic.cz/mail/mail.php';
+
+export const AllowedOrderMethods = ['takeout'];
+// export const AllowedOrderMethods = ['takeout', 'restaurant']; // Testing
 
 export const timeFormat = 'H:mm';
 export const dayFormat = 'dddd';

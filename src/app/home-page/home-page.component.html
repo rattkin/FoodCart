@@ -33,7 +33,7 @@
             <p>Dnes už je zavřeno, ale můžete si prohlédnout nabídku</p>
         </span>
 
-        <form [formGroup]="orderForm" *ngIf="! isClosedDay || !isAfterClose">
+        <form [formGroup]="orderForm" *ngIf="(! isClosedDay || !isAfterClose) && AllowedOrderMethods.length >1">
             Chcete si objednat:
             <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
                 <mat-radio-button value="takeout">s sebou</mat-radio-button>

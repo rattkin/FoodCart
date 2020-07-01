@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { changeMealFilter, changeOrderMethod } from '../actions/order.actions';
-import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat } from '../config';
+import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat, AllowedOrderMethods } from '../config';
 import { selectFilterType, selectMealClasses, selectOrderMethod } from '../state/selectors';
 import { isMenu, isOpen, isUntilMenuEnd, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -34,6 +34,7 @@ export class HomePageComponent implements OnInit {
   public orderForm: FormGroup = this.formBuilder.group({
     orderMethod: ['']
   });
+  public AllowedOrderMethods = AllowedOrderMethods;
 
   public get orderMethod() { return this.orderForm.get('orderMethod'); }
 

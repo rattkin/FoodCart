@@ -5,6 +5,8 @@ import { environment } from '../../../environments/environment';
 import { Meal, MealClass } from '../../interfaces/meal';
 import { Meals } from '../../interfaces/meals';
 import { MealClasses } from 'src/app/interfaces/mealClasses';
+import { endMenuTime, endTime, googleAnalytics, roundingFactor, startTime, timeFormat, timeToPrepareOrder, AllowedOrderMethods } from '../../config';
+
 
 export const mealFeatureKey = 'mealStore';
 
@@ -14,7 +16,7 @@ export const initialState: MealState = {
   mobileQuery: undefined,
   meals: Meals,
   order: [],
-  orderMethod: undefined,
+  orderMethod: AllowedOrderMethods[0],
   email: undefined,
   phone: undefined,
   comment: undefined,
@@ -29,7 +31,7 @@ export interface MealState {
   mobileQuery: boolean;
   meals: Meal[];
   order: Meal[];
-  orderMethod: 'takeout' | 'restaurant';
+  orderMethod: string;
   email: string;
   phone: string;
   comment: string;
