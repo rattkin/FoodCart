@@ -143,7 +143,7 @@ export class AppEffects {
 
       console.log(message);
 
-      return this.http.post('https://rattkin.info/mail/mail.php', { mailData: message, user: name })
+      return this.http.post('https://indic.cz/mail/mail.php', { mailData: message, user: name })
         .pipe(
           map(res => {
             if (res === 'OK') {
