@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'meal/:MealClass', component: ItemListComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: HomePageComponent }
 ];
 
 @NgModule({
