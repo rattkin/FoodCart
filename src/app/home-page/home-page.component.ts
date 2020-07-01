@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { changeMealFilter, changeOrderMethod } from '../actions/order.actions';
+// tslint:disable-next-line: max-line-length
 import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat, AllowedOrderMethods } from '../config';
 import { selectFilterType, selectMealClasses, selectOrderMethod } from '../state/selectors';
 import { isMenu, isOpen, isUntilMenuEnd, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
