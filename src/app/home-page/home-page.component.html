@@ -1,5 +1,5 @@
 <div class="page">
-    <img src="assets/logo-curry-house.png" class="logo">
+    <img src="assets/logo curry house-stroke.svg" class="logo">
     <div class=" center">
         <h1>
             Pravá indická restaurace
@@ -40,11 +40,6 @@
                 <mat-radio-button value="restaurant">ke stolu</mat-radio-button>
             </mat-radio-group>
         </form>
-
-        <div class="buttons">
-            <button *ngFor="let class of mealClasses |async" mat-raised-button
-                (click)="select(class.code)">{{class.name}}</button>
-        </div>
 
         <p>
             <a href="https://indickarestaurace.cz/viewpage.php?page_id=20">indickarestaurace.cz</a>
