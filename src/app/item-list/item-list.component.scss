@@ -82,7 +82,7 @@
     justify-content: center;
     img {
         flex-grow: 1;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 
