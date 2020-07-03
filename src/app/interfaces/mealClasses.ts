@@ -45,5 +45,9 @@ export const MealClasses: MealClass[] = [
     {
         code: 'side',
         name: 'Samotné přílohy'
+    },
+    {
+        code: 'drink',
+        name: 'Nápoje'
     }
 ];

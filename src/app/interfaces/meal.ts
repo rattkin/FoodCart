@@ -23,7 +23,8 @@ export interface Meal {
     'vege' |
     'fish' |
     'biryani' |
-    'side'
+    'side' |
+    'drink'
     ;
 }
 
