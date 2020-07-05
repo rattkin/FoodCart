@@ -15,7 +15,7 @@ import { OrderFailedComponent } from './order-failed/order-failed.component';
 import { OrderSuccessfulComponent } from './order-successful/order-successful.component';
 import { PickHeatComponent } from './pick-heat/pick-heat.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
-import { selectComment, selectName, selectOrder, selectOrderMethod, selectOrderTotal } from './state/selectors';
+import { selectComment, selectName, selectOrder, selectOrderMethod, selectOrderTotal, selectLocation } from './state/selectors';
 
 declare let gtag: Function;
 
@@ -111,12 +111,13 @@ export class AppEffects {
         this.store.pipe(select(selectComment)),
         this.store.pipe(select(selectOrder)),
         this.store.pipe(select(selectOrderTotal)),
-        this.store.pipe(select(selectOrderMethod))
+        this.store.pipe(select(selectOrderMethod)),
+        this.store.pipe(select(selectLocation))
       )
     )),
-    switchMap(([action, name, comment, order, total, method]) => {
+    switchMap(([action, name, comment, order, total, method, location]) => {
 
-      let message = name + ' chce ' + method + ':\n';
+      let message = name + ' chce ' + method + ' do ' + location + ':\n';
       order.forEach(item => {
         message = message + item.name;
         if (item.weight) {
