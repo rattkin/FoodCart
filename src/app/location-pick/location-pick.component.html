@@ -1,0 +1,8 @@
+<form [formGroup]="locationForm" *ngIf="AllowedLocations.length >1">
+    Vyberte restauraci pro kterou chcete objednat:
+    <mat-radio-group formControlName="location" (change)="locationChange()">
+        <mat-radio-button value="Jindřichův Hradec">Jindřichův Hradec</mat-radio-button>
+        &nbsp;
+        <mat-radio-button value="Třeboň">Třeboň</mat-radio-button>
+    </mat-radio-group>
+</form>

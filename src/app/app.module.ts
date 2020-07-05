@@ -25,6 +25,7 @@ import { PickHeatComponent } from './pick-heat/pick-heat.component';
 import { PickSideDishComponent } from './pick-side-dish/pick-side-dish.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import * as fromReducers from './state/reducers/mealStore';
+import { LocationPickComponent } from './location-pick/location-pick.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import * as fromReducers from './state/reducers/mealStore';
     PickHeatComponent,
     HomePageComponent,
     AreYouSureComponent,
+    LocationPickComponent,
   ],
   imports: [
     MaterialModule,
