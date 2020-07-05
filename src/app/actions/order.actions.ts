@@ -42,6 +42,11 @@ export const changeOrderMethod = createAction(
   props<{ orderMethod: string; }>()
 );
 
+export const changeLocation = createAction(
+  'changeLocation',
+  props<{ location: string; }>()
+);
+
 export const addToOrderWithSideDish = createAction(
   'addToOrderWithSideDish',
   props<{ item: Meal; sideDish: Meal; }>()

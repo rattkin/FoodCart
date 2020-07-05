@@ -76,6 +76,11 @@ export const selectOrderMethod = createSelector(
     (state) => state.orderMethod
 );
 
+export const selectLocation = createSelector(
+    selectMealState,
+    (state) => state.location
+);
+
 export const selectShowPackaging = createSelector(
     selectMealState,
     (state) => {

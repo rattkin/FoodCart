@@ -7,6 +7,7 @@ export const emailServer = 'https://indic.cz/mail/mail.php';
 
 export const AllowedOrderMethods = ['takeout'];
 // export const AllowedOrderMethods = ['takeout', 'restaurant']; // Testing
+export const AllowedLocations = ['Jindřichův Hradec', 'Třeboň'];
 
 export const timeFormat = 'H:mm';
 export const dayFormat = 'dddd';

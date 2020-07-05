@@ -1,18 +1,17 @@
 import { Action, createReducer, MetaReducer, on } from '@ngrx/store';
 // tslint:disable-next-line: max-line-length
-import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, changeOrderMethod, confirmOrder, OrderFailed, OrderSuccess, removeFromOrder, sideNavClose, sideNavOpen, sideNavToggle, updateMediaQuery } from 'src/app/actions/order.actions';
+import { addToOrderWithoutSideDish, addToOrderWithSideDish, changeMealFilter, changeOrderMethod, confirmOrder, OrderFailed, OrderSuccess, removeFromOrder, sideNavClose, sideNavOpen, sideNavToggle, updateMediaQuery, changeLocation } from 'src/app/actions/order.actions';
 import { MealClasses } from 'src/app/interfaces/mealClasses';
 import { environment } from '../../../environments/environment';
-import { AllowedOrderMethods } from '../../config';
+import { AllowedOrderMethods, AllowedLocations } from '../../config';
 import { Meal, MealClass } from '../../interfaces/meal';
 import { Meals } from '../../interfaces/meals';
-
 
 export const mealFeatureKey = 'mealStore';
 
 export const initialState: MealState = {
   time: '',
-  sideNavOpened: false,
+  sideNavOpened: true,
   mobileQuery: false,
   meals: Meals,
   order: [],
@@ -20,7 +19,7 @@ export const initialState: MealState = {
   email: undefined,
   phone: undefined,
   comment: undefined,
-  location: 'JH',
+  location: AllowedLocations[0],
   filterType: 'home',
   mealClasses: MealClasses,
   progress: false,
@@ -58,6 +57,11 @@ const mealReducer = createReducer(
   on(changeOrderMethod, (state, { orderMethod }) => ({
     ...state,
     orderMethod,
+  })),
+
+  on(changeLocation, (state, { location }) => ({
+    ...state,
+    location,
   })),
 
   on(updateMediaQuery, (state, { mediaQuery }) => ({
