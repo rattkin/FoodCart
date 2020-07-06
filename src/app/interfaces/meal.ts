@@ -1,9 +1,11 @@
 export interface Meal {
     name?: string;
+    description?: string;
     descriptionCZ?: string;
     descriptionEN?: string;
     allergen?: string;
     weight?: string;
+    price?: number;
     priceJH?: number;
     priceTR?: number;
     photo?: string;
