@@ -3,10 +3,11 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
-import { sideNavToggle, updateMediaQuery } from './actions/order.actions';
-import { endDay, startDay } from './config';
+import { sideNavToggle, updateMediaQuery, changeLocation } from './actions/order.actions';
+import { endDay, startDay, locationJH, locationTR } from './config';
 import { selectMobileQuery, selectOrder, selectSideNavOpened } from './state/selectors';
 import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from './utils/date';
+const distFrom = require('distance-from');
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.isMobile.subscribe(result => {
       this.store.dispatch(updateMediaQuery({ mediaQuery: result.matches }));
     });
@@ -39,6 +41,24 @@ export class AppComponent implements OnInit {
         this.isOrder = false;
       }
     });
+
+    navigator.geolocation.getCurrentPosition(position => {
+      const currentPosition = [position.coords.latitude, position.coords.longitude];
+      const distanceToJH = distFrom(locationJH).to(currentPosition).in('km');
+      const distanceToTR = distFrom(locationTR).to(currentPosition).in('km')
+
+      console.log('distance to JH:', distanceToJH);
+      console.log('distance to TR:', distanceToTR);
+
+      if (distanceToJH < distanceToTR) {
+        console.log('change location to JH');
+        this.store.dispatch(changeLocation({ location: 'JH' }));
+      } else {
+        console.log('change location to TR');
+        this.store.dispatch(changeLocation({ location: 'TR' }));
+      }
+    });
+
 
     // debug
     console.log('now', moment().format('LLLL'));

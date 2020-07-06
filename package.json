@@ -28,6 +28,7 @@
     "@ngrx/store": "^9.2.0",
     "@ngrx/store-devtools": "^9.2.0",
     "bootstrap": "^4.5.0",
+    "distance-from": "^1.1.2",
     "moment": "^2.26.0",
     "ngx-material-timepicker": "^5.5.3",
     "rxjs": "~6.5.4",
