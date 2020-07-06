@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
 
   public sideNavOpened = this.store.pipe(select(selectSideNavOpened));
   public mobileQuery = this.store.pipe(select(selectMobileQuery));
@@ -27,16 +27,12 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {
   }
 
-  ngOnDestroy(): void {
-  }
-
   ngOnInit(): void {
     this.isMobile.subscribe(result => {
       this.store.dispatch(updateMediaQuery({ mediaQuery: result.matches }));
     });
 
     this.order.subscribe(result => {
-      console.log(result.length);
       if (result.length) {
         this.isOrder = true;
       } else {
