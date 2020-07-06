@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     navigator.geolocation.getCurrentPosition(position => {
       const currentPosition = [position.coords.latitude, position.coords.longitude];
       const distanceToJH = distFrom(locationJH).to(currentPosition).in('km');
-      const distanceToTR = distFrom(locationTR).to(currentPosition).in('km')
+      const distanceToTR = distFrom(locationTR).to(currentPosition).in('km');
 
       console.log('distance to JH:', distanceToJH);
       console.log('distance to TR:', distanceToTR);
