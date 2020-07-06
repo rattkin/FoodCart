@@ -1,7 +1,8 @@
 <button class="floatingTopLeft" mat-raised-button color='accent' (click)="sideNavToggle()" [class.under]="!(mobileQuery |async)">
     <mat-icon>menu</mat-icon>
 </button>
-<mat-sidenav-container autosize>
+<mat-sidenav-container autosize
+(backdropClick)="sideNavToggle()">
     <mat-sidenav [opened]="sideNavOpened |async" [mode]="(mobileQuery |async) ? 'over' : 'side'">
         <app-side-menu></app-side-menu>
     </mat-sidenav>

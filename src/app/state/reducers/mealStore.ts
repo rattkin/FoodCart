@@ -86,7 +86,8 @@ const mealReducer = createReducer(
 
   on(changeMealFilter, (state, { filterType }) => ({
     ...state,
-    filterType
+    filterType,
+    sideNavOpened: false
   })),
 
   on(confirmOrder, (state, { name, comment, orderMethod }) => ({
