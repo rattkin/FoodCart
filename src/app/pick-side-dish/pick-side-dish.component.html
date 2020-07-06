@@ -11,7 +11,7 @@
                 <mat-radio-button class="example-radio-button"
                     *ngIf="(dish.class === 'menu' && side.class === 'menu') || (dish.class !== 'menu' && side.class !== 'menu')"
                     [value]="side">
-                    {{side.name}} ({{side.descriptionCZ}}) {{side.priceJH}} Kč
+                    {{side.name}} ({{side.description}}) {{side.price}} Kč
                     <span *ngIf="side.packaging && (showPackaging |async)" class="packing"> + obal {{side.packaging}}
                         Kč</span>
 

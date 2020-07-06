@@ -72,7 +72,7 @@
                 </span>
                 <mat-card-header>
                     <mat-card-title>{{item.name}} </mat-card-title>
-                    <mat-card-subtitle>{{item.descriptionCZ}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
                 </mat-card-header>
                 <div class="mat-card-image">
                     <div class="tags" *ngIf="item.tags">
@@ -84,7 +84,7 @@
                 </div>
                 <mat-card-content>
                     <div class="prices">
-                        Cena: {{item.priceJH}} Kč
+                        Cena: {{item.price}} Kč
                         <span *ngIf="item.packaging && (showPackaging |async)" class="packing"> + obal
                             {{item.packaging}}
                             Kč</span>
