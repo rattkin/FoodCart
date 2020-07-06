@@ -10,6 +10,7 @@ import { Meals } from '../../interfaces/meals';
 export const mealFeatureKey = 'mealStore';
 
 export const initialState: MealState = {
+  language: 'CZ',
   time: '',
   sideNavOpened: true,
   mobileQuery: false,
@@ -26,6 +27,7 @@ export const initialState: MealState = {
 };
 
 export interface MealState {
+  language: string;
   time: string;
   sideNavOpened: boolean;
   mobileQuery: boolean;
