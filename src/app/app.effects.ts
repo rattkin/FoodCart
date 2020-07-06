@@ -182,7 +182,7 @@ export class AppEffects {
           name: item.name,
           category: item.class,
           quantity: 1,
-          price: item.price
+          price: item.priceJH
         });
       });
 

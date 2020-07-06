@@ -99,16 +99,16 @@ export const selectOrderTotal = createSelector(
         let total = 0;
         state.order.forEach(item => {
 
-            if (item.price && !Number.isNaN(item.price)) {
-                total = total + item.price;
+            if (item.priceJH && !Number.isNaN(item.priceJH)) {
+                total = total + item.priceJH;
             }
 
             if (state.orderMethod === 'takeout' && item.packaging && !Number.isNaN(item.packaging)) {
                 total = total + item.packaging;
             }
 
-            if (item.sideDish && item.sideDish.price) {
-                total = total + item.sideDish.price;
+            if (item.sideDish && item.sideDish.priceJH) {
+                total = total + item.sideDish.priceJH;
             }
 
             if (state.orderMethod === 'takeout' && item.sideDish && item.sideDish.packaging) {
