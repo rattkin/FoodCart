@@ -17,8 +17,8 @@ export const selectFilteredMeals = createSelector(
         .filter(meal => (meal.class !== 'menu' || meal.type === 'meal'))        // filter menu and side-dish
         // if local price is set
         .filter(meal => (
-            state.location === 'JH' && meal.priceJH ||
-            state.location === 'TR' && meal.priceTR))
+            state.location === 'JH' && meal.hasOwnProperty('priceJH') ||
+            state.location === 'TR' && meal.hasOwnProperty('priceTR')))
         .map(meal => {
             if (state.location === 'JH') {
                 return {
@@ -70,8 +70,9 @@ export const selectSideDishes = createSelector(
         .filter(meal => meal.type === 'side')
         // if local price is set
         .filter(meal => (
-            state.location === 'JH' && meal.priceJH ||
-            state.location === 'TR' && meal.priceTR))
+            state.location === 'JH' && meal.hasOwnProperty('priceJH') ||
+            state.location === 'TR' && meal.hasOwnProperty('priceTR'))
+        )
         .map(meal => {
             if (state.location === 'JH') {
                 return {
