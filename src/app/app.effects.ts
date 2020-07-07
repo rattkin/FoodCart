@@ -144,7 +144,7 @@ export class AppEffects {
 
       console.log(message);
 
-      return this.http.post(emailServer, { mailData: message, user: name })
+      return this.http.post(emailServer, { mailData: message, user: name, location })
         .pipe(
           map(res => {
             if (res === 'OK') {
@@ -166,9 +166,10 @@ export class AppEffects {
       withLatestFrom(
         this.store.pipe(select(selectOrder)),
         this.store.pipe(select(selectOrderTotal)),
+        this.store.pipe(select(selectLocation)),
       )
     )),
-    tap(([action, order, total]) => {
+    tap(([, order, total, location]) => {
 
       gtag('config', googleAnalytics, {
         page_path: '/confirmOrder'
@@ -181,8 +182,9 @@ export class AppEffects {
           id: item.name,
           name: item.name,
           category: item.class,
+          brand: location,
           quantity: 1,
-          price: item.priceJH
+          price: item.price
         });
       });
 
@@ -200,7 +202,7 @@ export class AppEffects {
 
   OrderSuccess: Observable<Action> = createEffect(() => this.actions.pipe(
     ofType(OrderSuccess),
-    tap(action => {
+    tap(() => {
       this.dialogRef.close();
       this.dialogRef = this.orderDialog.open(OrderSuccessfulComponent);
     })
