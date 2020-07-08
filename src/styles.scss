@@ -26,6 +26,7 @@ body {
 
 .mat-radio-label {
     white-space: normal !important;
+    padding: 5px 0 !important;
 }
 
 .timepicker-overlay {
@@ -42,4 +43,8 @@ body {
 
 .cold {
     color: #66f;
+}
+
+.mat-radio-label-content {
+    line-height: 1em !important;
 }

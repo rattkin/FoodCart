@@ -1,8 +1,10 @@
 <form [formGroup]="locationForm" *ngIf="AllowedLocations.length >1">
-    Odběr:
+    V jakém městě chcete objednat:<br>
     <mat-radio-group formControlName="location" (change)="locationChange()">
-        <mat-radio-button value="JH">Jindřichův Hradec, <a href="https://goo.gl/maps/AxwVtizeE7XqFp6R9" target="_blank">Panská 95</a></mat-radio-button>
-        &nbsp;
-        <mat-radio-button value="TR">Třeboň, <a href="https://goo.gl/maps/wQMz526dg4tyLHKi9" target="_blank">Krčínova 51</a></mat-radio-button>
+        <mat-radio-button value="JH">Jindřichův Hradec, <a href="https://goo.gl/maps/AxwVtizeE7XqFp6R9"
+                target="_blank">Panská 95</a></mat-radio-button>
+        <br>
+        <mat-radio-button value="TR">Třeboň, <a href="https://goo.gl/maps/wQMz526dg4tyLHKi9" target="_blank">Krčínova
+                51</a></mat-radio-button>
     </mat-radio-group>
 </form>

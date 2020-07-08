@@ -13,6 +13,14 @@
     margin: 10px;
 }
 
+@media (max-width: 370px) {
+    .list-item {
+        max-width: 350px;
+        margin: 5px;
+        flex-grow: 1;
+    }
+}
+
 .mat-card {
     mat-card-title {
         font-weight: 800;
@@ -82,6 +90,7 @@
     justify-content: center;
     img {
         flex-grow: 1;
+        max-width: 100%;
         object-fit: contain;
     }
 }
