@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { showOrder } from '../actions/order.actions';
-import { selectOrder, selectOrderTotal } from '../state/selectors';
+import { selectOrderTotal } from '../state/selectors';
 
 @Component({
   selector: 'app-order-button',
@@ -10,7 +10,6 @@ import { selectOrder, selectOrderTotal } from '../state/selectors';
 })
 export class OrderListComponent implements OnInit {
 
-  public order = this.store.pipe(select(selectOrder));
   public total = this.store.pipe(select(selectOrderTotal));
 
   constructor(
