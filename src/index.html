@@ -17,10 +17,45 @@
   <meta name="theme-color" content="#ffffff">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    html {
+      background-color: #f2d38f;
+      background-image: url("assets/background2.png");
+    }
+
+    .lds-dual-ring {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+    }
+
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid #f90;
+      border-color: #f90 transparent #f90 transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body class="mat-typography">
-  <div class=" center">
+  <div style="margin: 0 auto;max-width:500px;text-align: center;">
     <img src="assets/logo curry house-stroke.svg">
     <h1>
       Indická restaurace The Curry House
@@ -32,6 +67,8 @@
     <p>
       objednávka: Objednat můžete na této stránce
     </p>
+
+    <div class="lds-dual-ring"></div>
 
     <app-root></app-root>
 
