@@ -55,13 +55,14 @@ export const selectFilterType = createSelector(
 
 export const selectMealClasses = createSelector(
     selectMealState,
-    (state) => state.mealClasses.filter(mealClass => {
-        if (mealClass.code !== 'menu') {
-            return true;
-        } else if (isUntilMenuEnd(moment())) {
-            return true;
-        }
-    })
+    (state) => state.mealClasses
+        .filter(mealClass => {
+            if (mealClass.code !== 'menu') {
+                return true;
+            } else if (isUntilMenuEnd(moment())) {
+                return true;
+            }
+        })
 );
 
 export const selectSideDishes = createSelector(
@@ -118,6 +119,30 @@ export const selectMobileQuery = createSelector(
 export const selectOrder = createSelector(
     selectMealState,
     (state) => state.order
+        .filter(item => {
+            if (state.location === 'JH') {
+                if (!item.hasOwnProperty('priceJH')) {
+                    return false;
+                }
+            } else if (state.location === 'TR') {
+                if (!item.hasOwnProperty('priceTR')) {
+                    return false;
+                }
+            }
+
+            if (item.sideDish) {
+                if (state.location === 'JH') {
+                    if (!item.sideDish.hasOwnProperty('priceJH')) {
+                        return false;
+                    }
+                } else if (state.location === 'TR') {
+                    if (!item.sideDish.hasOwnProperty('priceTR')) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        })
 );
 
 export const selectName = createSelector(
@@ -158,21 +183,38 @@ export const selectShowPackaging = createSelector(
 
 export const selectOrderTotal = createSelector(
     selectMealState,
-    getterOrderMethod,
     (state) => {
         let total = 0;
         state.order.forEach(item => {
-
-            if (item.price && !Number.isNaN(item.price)) {
-                total = total + item.price;
+            if (state.location === 'JH') {
+                if (item.priceJH && !Number.isNaN(item.priceJH)) {
+                    total = total + item.priceJH;
+                } else {
+                    return;
+                }
+            } else if (state.location === 'TR') {
+                if (item.priceTR && !Number.isNaN(item.priceTR)) {
+                    total = total + item.priceTR;
+                } else {
+                    return;
+                }
             }
 
             if (state.orderMethod === 'takeout' && item.packaging && !Number.isNaN(item.packaging)) {
                 total = total + item.packaging;
             }
 
-            if (item.sideDish && item.sideDish.price) {
-                total = total + item.sideDish.price;
+
+            if (item.sideDish) {
+                if (state.location === 'JH') {
+                    if (item.sideDish.priceJH && !Number.isNaN(item.sideDish.priceJH)) {
+                        total = total + item.sideDish.priceJH;
+                    }
+                } else if (state.location === 'TR') {
+                    if (item.sideDish.priceTR && !Number.isNaN(item.sideDish.priceTR)) {
+                        total = total + item.sideDish.priceTR;
+                    }
+                }
             }
 
             if (state.orderMethod === 'takeout' && item.sideDish && item.sideDish.packaging) {
