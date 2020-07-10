@@ -49,7 +49,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/Shahi Paneer.jpg',
+        photo: 'assets/shahi-paneer-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
@@ -537,6 +537,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/chicken-tikka-masala.jpg',
     }, {
         name: 'Chicken Chana',
         descriptionCZ: 'Kuřecí kostky s cizrnou',
