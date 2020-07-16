@@ -5,8 +5,14 @@
             Pravá indická restaurace
         </h1>
         <h2>
-            Jindřichův Hradec, <a href="https://goo.gl/maps/AxwVtizeE7XqFp6R9" target="_blank">Panská 95</a><br>
-            Třeboň, <a href="https://goo.gl/maps/wQMz526dg4tyLHKi9" target="_blank">Krčínova 51</a>
+            Jindřichův Hradec<br>
+            <a href="https://goo.gl/maps/AxwVtizeE7XqFp6R9" target="_blank">Panská 95</a><br>
+            Tel.: 775 323 914<br>
+        </h2>
+        <h2>
+            Třeboň<br>
+            <a href="https://goo.gl/maps/wQMz526dg4tyLHKi9" target="_blank">Krčínova 51</a><br>
+            Tel.: 774 933 899
         </h2>
 
         <p>
@@ -22,6 +28,12 @@
             (mimo svátky) {{startMenuDay}} - {{endMenuDay}}, {{openingMenuTime}} - {{closingMenuTime}}
         </p>
 
+        <h1 *ngIf="!allowOrder">
+            <p>Objednávky on-line jsme museli teď v sezoně zastavit.<br>
+                Byl takový zájem, že doba čekání byla moc dlouhá.<br>
+                Můžete si prohlédnout nabídku a objednejte si prosím po telefonu.</p>
+        </h1>
+
         <span class="storeInfo" *ngIf="isBeforeOpen">
             <p>Zatím není otevřeno ale můžete si objednat</p>
         </span>
@@ -34,7 +46,8 @@
             <p>Dnes už je zavřeno, ale můžete si prohlédnout nabídku</p>
         </span>
 
-        <form [formGroup]="orderForm" *ngIf="(! isClosedDay || !isAfterClose) && AllowedOrderMethods.length >1">
+        <form [formGroup]="orderForm"
+            *ngIf="(! isClosedDay || !isAfterClose) && AllowedOrderMethods.length >1 && allowOrder">
             Chcete si objednat:
             <mat-radio-group formControlName="orderMethod" (change)="methodChange()">
                 <mat-radio-button value="takeout">s sebou</mat-radio-button>
@@ -42,7 +55,7 @@
             </mat-radio-group>
         </form>
 
-        <app-location-pick></app-location-pick>
+        <app-location-pick *ngIf="allowOrder"></app-location-pick>
 
         <p>
             <small>

@@ -2,6 +2,8 @@ import * as moment from 'moment';
 
 moment.locale('cs');
 
+export const allowOrder = false;
+
 export const googleAnalytics = 'UA-8333732-11';
 export const emailServer = 'https://indic.cz/mail/mail.php';
 

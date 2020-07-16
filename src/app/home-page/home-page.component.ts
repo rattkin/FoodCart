@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
-import { changeMealFilter, changeOrderMethod, changeLocation } from '../actions/order.actions';
+import { changeMealFilter, changeOrderMethod } from '../actions/order.actions';
 // tslint:disable-next-line: max-line-length
-import { dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat, AllowedOrderMethods, AllowedLocations } from '../config';
-import { selectFilterType, selectMealClasses, selectOrderMethod, selectLocation } from '../state/selectors';
-import { isMenu, isOpen, isUntilMenuEnd, isBeforeOpen, isClosedDay, isAfterClose } from '../utils/date';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AllowedOrderMethods, allowOrder, dayFormat, endDay, endMenuDay, endMenuTime, endTime, startDay, startMenuDay, startMenuTime, startTime, timeFormat } from '../config';
+import { selectFilterType, selectMealClasses, selectOrderMethod } from '../state/selectors';
+import { isAfterClose, isBeforeOpen, isClosedDay, isMenu, isOpen, isUntilMenuEnd } from '../utils/date';
 
 @Component({
   selector: 'app-home-page',
@@ -35,6 +35,7 @@ export class HomePageComponent implements OnInit {
   public orderForm: FormGroup = this.formBuilder.group({
     orderMethod: ['']
   });
+  public allowOrder = allowOrder;
 
   public AllowedOrderMethods = AllowedOrderMethods;
 

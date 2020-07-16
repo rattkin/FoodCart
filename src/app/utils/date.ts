@@ -1,9 +1,12 @@
-import { startTime, endTime, startDay, endDay, startMenuTime, endMenuTime, startMenuDay, endMenuDay } from '../config';
+import { startTime, endTime, startDay, endDay, startMenuTime, endMenuTime, startMenuDay, endMenuDay, allowOrder } from '../config';
 
 export function isOrderPossible(time: moment.Moment) {
     if (
-        isOpen(time) ||
-        isBeforeOpen(time)
+        allowOrder &&
+        (
+            isOpen(time) ||
+            isBeforeOpen(time)
+        )
     ) {
         return true;
     } else {
