@@ -707,7 +707,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         tags: [MealTags.New, MealTags.ChefSpecial],
-        class: 'lamb',
+        class: 'chicken',
     }, {
         name: 'Lamb Thali',
         descriptionCZ: 'Kořeněné jehněčí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
