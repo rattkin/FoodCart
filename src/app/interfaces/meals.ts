@@ -157,7 +157,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/Aloo Rajma.jpg',
+        photo: 'assets/aloo-rajma-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
@@ -524,6 +524,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
+        photo: 'assets/mushroom.jpg',
     }, {
         name: 'Chicken Tikka Masala',
         descriptionCZ: 'Grilované kuřecí kostky  s ostrou omáčkou',
@@ -733,6 +734,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        photo: 'assets/mushroom.jpg',
     }, {
         name: 'Lamb Masala',
         descriptionCZ: 'Jehněčí kostky s ostrou omáčkou',
@@ -883,6 +885,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
+        photo: 'assets/mushroom.jpg',
     }, {
         name: 'Pork Rara',
         descriptionCZ: 'Vepřové kostky s jemně pálivou omáčkou',
