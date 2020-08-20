@@ -20,6 +20,7 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 20,
         priceTR: 20,
+        photo: 'assets/chicken-soup.jpg',
         packaging: 5,
         type: 'meal',
         class: 'menu',
@@ -257,6 +258,7 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 25,
         priceTR: 35,
+        photo: 'assets/chicken-soup.jpg',
         packaging: 5,
         type: 'meal',
         class: 'soup',
@@ -268,6 +270,7 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 25,
         priceTR: 35,
+        photo: 'assets/chicken-soup.jpg',
         packaging: 5,
         type: 'meal',
         class: 'soup',
@@ -405,7 +408,6 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
-        photo: 'assets/chicken malaj kabab.jpg',
     }, {
         name: 'Chicken Kastoori Kabab',
         descriptionCZ: 'Jemně kořeněné a grilované kuřecí kostky a 2 druhy chutney',
@@ -445,7 +447,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'tandoor',
-        photo: 'assets/chicken tika.jpg',
+        photo: 'assets/chicken-tikka.jpg',
     }, {
         name: 'Pork Saslik',
         descriptionCZ: 'Grilované vepřové kostky, grilovaná cibule a rajčata a 2 druhy chutney',
@@ -699,7 +701,7 @@ export const Meals: Meal[] = [
         photo: 'assets/Curry.jpg',
     }, {
         name: 'Labbader Chicken',
-        descriptionCZ: 'Kuřecí kostky s kari omáčkou a jemně krájenou papričkou a kešu',
+        descriptionCZ: 'Kuřecí kostky s kari omáčkou a jemně krájenou paprikou a kešu',
         descriptionEN: 'Chicken nuggets with curry sauce and finely sliced pepper and cashew nuts',
         allergen: '7,8',
         weight: '200g',
@@ -709,6 +711,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         tags: [MealTags.New, MealTags.ChefSpecial],
         class: 'chicken',
+        photo: 'assets/labbader.jpg',
     }, {
         name: 'Lamb Thali',
         descriptionCZ: 'Kořeněné jehněčí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
@@ -1347,7 +1350,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/Chicken Birianes.jpg'
+        photo: 'assets/biryani.jpg'
     }, {
         name: 'Pork Biryani',
         descriptionCZ: 'Indická rýže s vepřovými kostkami',
@@ -1360,7 +1363,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/Chicken Birianes.jpg'
+        photo: 'assets/biryani.jpg'
     }, {
         name: 'Chicken Biryani',
         descriptionCZ: 'Indická rýže s kuřecími kostkami',
@@ -1373,7 +1376,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/Chicken Birianes.jpg'
+        photo: 'assets/biryani.jpg'
     }, {
         name: 'Vegetarian Biryani',
         descriptionCZ: 'Indická rýže s míchanou zeleninou',
@@ -1386,7 +1389,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/Chicken Birianes.jpg'
+        photo: 'assets/biryani.jpg'
     },
     {
         name: 'Tandoori Chapati',
