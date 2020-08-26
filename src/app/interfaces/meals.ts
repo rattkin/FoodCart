@@ -605,7 +605,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/Palak.jpg',
+        photo: 'assets/palak.jpg',
     }, {
         name: 'Chicken Badam Pasanda',
         descriptionCZ: 'Kuřecí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -778,7 +778,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        photo: 'assets/Palak.jpg',
+        photo: 'assets/palak.jpg',
     }, {
         name: 'Lamb Badam Pasanda',
         descriptionCZ: 'Jehněčí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -955,7 +955,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/Palak Paneer.jpg',
+        photo: 'assets/palak.jpg',
     }, {
         name: 'Paneer Korma',
         descriptionCZ: 'Sýrové kostky s jemnou omáčkou',
@@ -1087,7 +1087,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/Palak.jpg',
+        photo: 'assets/palak.jpg',
     }, {
         name: 'Plain Palak',
         descriptionCZ: 'Pikantní špenát',
@@ -1128,6 +1128,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        photo: 'assets/mix-vegetables.jpg',
     }, {
         name: 'Malai Kofta',
         descriptionCZ: 'Opečené mleté bramborové kuličky se sýrem, oříšky a jemnou omáčkou',
