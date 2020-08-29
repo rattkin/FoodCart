@@ -9,6 +9,7 @@ export interface Meal {
     priceJH?: number;
     priceTR?: number;
     photo?: string;
+    clPhoto?: string;
     heat?: number;
     chosenHeat?: number;
     orderQuantity?: number;

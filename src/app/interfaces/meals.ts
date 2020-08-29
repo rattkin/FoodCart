@@ -1,7 +1,7 @@
 import { Meal, MealTags } from './meal';
 
 export const Meals: Meal[] = [
-    {
+     {
         name: 'Tomato Soup',
         descriptionCZ: 'Rajčatová polévka',
         descriptionEN: 'Tomato soup',
@@ -20,10 +20,10 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 20,
         priceTR: 20,
-        photo: 'assets/chicken-soup.jpg',
         packaging: 5,
         type: 'meal',
         class: 'menu',
+        clPhoto: 'chicken-soup2_fdqoyl.jpg',
     },
     {
         name: 'Chicken Rara',
@@ -65,7 +65,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 100,
         priceTR: 110,
-        photo: 'assets/palak-menu.jpg',
+        clPhoto: 'palak-menu_skg8zy.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree],
@@ -142,7 +142,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/palak-menu.jpg',
+        clPhoto: 'palak-menu_skg8zy.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
@@ -258,7 +258,7 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 25,
         priceTR: 35,
-        photo: 'assets/chicken-soup.jpg',
+        clPhoto: 'chicken-soup2_fdqoyl.jpg',
         packaging: 5,
         type: 'meal',
         class: 'soup',
@@ -270,10 +270,10 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 25,
         priceTR: 35,
-        photo: 'assets/chicken-soup.jpg',
         packaging: 5,
         type: 'meal',
         class: 'soup',
+        clPhoto: 'chicken-soup2_fdqoyl.jpg',
     },
     {
         name: 'Dal Soup',
@@ -553,7 +553,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/chana.jpg',
+        clPhoto: 'chana_hu5ckr.jpg',
     }, {
         name: 'Chicken Dabal Maza',
         descriptionCZ: 'Kuřecí kostky s jemně kořeněnou restovanou zeleninou',
@@ -605,7 +605,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/palak.jpg',
+        clPhoto: 'palak_henlbs.jpg',
     }, {
         name: 'Chicken Badam Pasanda',
         descriptionCZ: 'Kuřecí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -711,7 +711,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         tags: [MealTags.New, MealTags.ChefSpecial],
         class: 'chicken',
-        photo: 'assets/labbader.jpg',
+        clPhoto: 'labbader_isdzaz.jpg'
     }, {
         name: 'Lamb Thali',
         descriptionCZ: 'Kořeněné jehněčí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
@@ -778,7 +778,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        photo: 'assets/palak.jpg',
+        clPhoto: 'palak_henlbs.jpg',
     }, {
         name: 'Lamb Badam Pasanda',
         descriptionCZ: 'Jehněčí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -955,7 +955,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/palak.jpg',
+        clPhoto: 'palak_henlbs.jpg',
     }, {
         name: 'Paneer Korma',
         descriptionCZ: 'Sýrové kostky s jemnou omáčkou',
@@ -1087,7 +1087,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/palak.jpg',
+        clPhoto: 'palak_henlbs.jpg',
     }, {
         name: 'Plain Palak',
         descriptionCZ: 'Pikantní špenát',
@@ -1128,7 +1128,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/mix-vegetables.jpg',
+        clPhoto: 'mix-vegetables_prhn02.jpg',
     }, {
         name: 'Malai Kofta',
         descriptionCZ: 'Opečené mleté bramborové kuličky se sýrem, oříšky a jemnou omáčkou',
@@ -1351,7 +1351,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/biryani.jpg'
+        clPhoto: 'biryani_f70g8d.jpg',
     }, {
         name: 'Pork Biryani',
         descriptionCZ: 'Indická rýže s vepřovými kostkami',
@@ -1364,7 +1364,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/biryani.jpg'
+        clPhoto: 'biryani_f70g8d.jpg',
     }, {
         name: 'Chicken Biryani',
         descriptionCZ: 'Indická rýže s kuřecími kostkami',
@@ -1377,7 +1377,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/biryani.jpg'
+        clPhoto: 'biryani_f70g8d.jpg',
     }, {
         name: 'Vegetarian Biryani',
         descriptionCZ: 'Indická rýže s míchanou zeleninou',
@@ -1390,7 +1390,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        photo: 'assets/biryani.jpg'
+        clPhoto: 'biryani_f70g8d.jpg',
     },
     {
         name: 'Tandoori Chapati',

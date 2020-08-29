@@ -79,8 +79,12 @@
                         <span *ngFor="let tag of item.tags">{{tag}}</span>
                     </div>
 
-                    <img src="{{item.photo}}" *ngIf="item.photo">
-                    <img src="assets/logo curry house-stroke.svg" class="noPhoto" *ngIf="!item.photo">
+                    <img *ngIf="item.photo" src="{{item.photo}}">
+
+                    <cl-image *ngIf="item.clPhoto" dpr="auto" responsive width="auto" public-id="{{item.clPhoto}}"
+                        loading="lazy" crop="scale" quality="auto" fetch-format="auto">
+                    </cl-image>
+                    <img src="assets/logo curry house-stroke.svg" class="noPhoto" *ngIf="!item.photo && !item.clPhoto">
                 </div>
                 <mat-card-content>
                     <div class="prices">
