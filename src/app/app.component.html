@@ -3,14 +3,13 @@
     <mat-icon>menu</mat-icon>
 </button>
 
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" [opened]="sideNavOpened |async"
-        [mode]="(mobileQuery |async) ? 'over' : 'side'">
-        example-sidenav
+<mat-sidenav-container class="example-container" autosize>
+    <mat-sidenav class="example-sidenav" [opened]="sideNavOpened |async" [mode]="(mobileQuery |async) ? 'over' : 'side'"
+        fixedInViewport>
         <app-side-menu></app-side-menu>
-    </mat-drawer>
-
-    <app-order-button></app-order-button>
-    <router-outlet class="example-sidenav-content"></router-outlet>
-
-</mat-drawer-container>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-order-button></app-order-button>
+        <router-outlet class="example-sidenav-content"></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

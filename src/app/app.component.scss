@@ -1,21 +1,13 @@
 .example-container {
-    position: relative;
-    min-height: 100%;
+    // position: relative;
+    // min-height: 100%;
     background-image: url("/assets/background2.png");
     background-color: #f2d38f;
-}
-
-.example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 .example-sidenav {
     background-image: url("/assets/background.png");
     background-color: #f7d66e;
-    min-height: 100%;
 }
 
 .floatingTopLeft {
