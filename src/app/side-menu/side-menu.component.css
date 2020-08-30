@@ -2,9 +2,6 @@
     display: flex;
     flex-direction: column;
     padding: 0 10px;
-    background-image: url("~/assets/background.png");
-    background-color: #f7d66e;
-    min-height: 100%;
 }
 
 button {

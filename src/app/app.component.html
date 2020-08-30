@@ -1,14 +1,16 @@
-<button class="floatingTopLeft" mat-raised-button color='accent' (click)="sideNavToggle()" [class.under]="!(mobileQuery |async)">
+<button class="floatingTopLeft" mat-raised-button color='accent' (click)="sideNavToggle()"
+    [class.under]="!(mobileQuery |async)">
     <mat-icon>menu</mat-icon>
 </button>
-<mat-sidenav-container autosize
-(backdropClick)="sideNavToggle()">
-    <mat-sidenav [opened]="sideNavOpened |async" [mode]="(mobileQuery |async) ? 'over' : 'side'">
-        <app-side-menu></app-side-menu>
-    </mat-sidenav>
-    <mat-sidenav-content>
 
-        <router-outlet></router-outlet>
-        <app-order-button></app-order-button>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" [opened]="sideNavOpened |async"
+        [mode]="(mobileQuery |async) ? 'over' : 'side'">
+        example-sidenav
+        <app-side-menu></app-side-menu>
+    </mat-drawer>
+
+    <app-order-button></app-order-button>
+    <router-outlet class="example-sidenav-content"></router-outlet>
+
+</mat-drawer-container>

@@ -1,11 +1,21 @@
-mat-sidenav-container {
+.example-container {
+    position: relative;
+    min-height: 100%;
+    background-image: url("/assets/background2.png");
+    background-color: #f2d38f;
+}
+
+.example-sidenav-content {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    background-image: url("/assets/background.png");
+    background-color: #f7d66e;
+    min-height: 100%;
 }
 
 .floatingTopLeft {

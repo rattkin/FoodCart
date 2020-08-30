@@ -1,6 +1,4 @@
 .page {
-    background-image: url("~/assets/background2.png");
-    background-color: #f2d38f;
     min-height: 100%;
 }
 .list {
@@ -97,7 +95,7 @@
 
 .noPhoto {
     background-color: #eee;
-    background-image: url("~/assets/background.png");
+    background-image: url("/assets/background.png");
 }
 
 .list .mat-raised-button {
