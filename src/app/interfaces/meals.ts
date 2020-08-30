@@ -1,7 +1,7 @@
 import { Meal, MealTags } from './meal';
 
 export const Meals: Meal[] = [
-     {
+    {
         name: 'Tomato Soup',
         descriptionCZ: 'Rajčatová polévka',
         descriptionEN: 'Tomato soup',
@@ -540,7 +540,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/chicken-tikka-masala.jpg',
+        clPhoto: 'tikka-masala2_nanicq.jpg'
     }, {
         name: 'Chicken Chana',
         descriptionCZ: 'Kuřecí kostky s cizrnou',
