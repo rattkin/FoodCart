@@ -8,7 +8,7 @@
 }
 .list-item {
     width: 400px;
-    margin: 10px;
+    margin: 5px;
 }
 
 @media (max-width: 370px) {
@@ -86,7 +86,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    img {
+    cl-image, img {
         flex-grow: 1;
         max-width: 100%;
         object-fit: contain;
