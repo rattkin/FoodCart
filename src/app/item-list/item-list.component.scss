@@ -7,7 +7,7 @@
     justify-content: center;
 }
 .list-item {
-    width: 400px;
+    width: 500px;
     margin: 5px;
 }
 
@@ -82,11 +82,12 @@
 
 .mat-card-image {
     position: relative;
-    height: 229px;
+    height: 286px;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    cl-image, img {
+    cl-image,
+    img {
         flex-grow: 1;
         max-width: 100%;
         object-fit: contain;
