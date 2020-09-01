@@ -34,12 +34,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 100,
         priceTR: 110,
-        photo: 'assets/Rara.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     },
     {
         name: 'Shahi Paneer',
@@ -50,12 +50,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/shahi-paneer-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'indicka-menu/shahi-paneer-menu_i3ut78.jpg',
     },
     {
         name: 'Chicken Palak',
@@ -65,12 +65,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 100,
         priceTR: 110,
-        clPhoto: 'palak-menu_skg8zy.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'palak-menu_skg8zy.jpg',
     },
     {
         name: 'Chicken Korma',
@@ -85,7 +85,7 @@ export const Meals: Meal[] = [
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
-        clPhoto: 'chicken-korma-menu_wn2xmq.jpg'
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     },
     {
         name: 'Chicken Badam Pasanda',
@@ -95,7 +95,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 100,
         priceTR: 110,
-        photo: 'assets/badam-pasanda-menu.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree],
@@ -111,12 +111,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceTR: 110,
         priceJH: 100,
-        photo: 'assets/curry-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     },
     {
         name: 'Pork Rara',
@@ -132,7 +132,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         tags: [MealTags.ChapatiOrRiceFree],
         class: 'menu',
-        photo: 'assets/Rara.jpg',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     },
     {
         name: 'Palak Paneer',
@@ -142,12 +142,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        clPhoto: 'palak-menu_skg8zy.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'palak-menu_skg8zy.jpg',
     },
     {
         name: 'Aloo Rajma',
@@ -158,12 +158,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/aloo-rajma-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'indicka-menu/aloo-rajma-menu_ha1bjf.jpg',
     },
     {
         name: 'Lamb Kadai',
@@ -174,12 +174,12 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 135,
         priceTR: 135,
-        photo: 'assets/kadai-menu.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
+        clPhoto: 'indicka-menu/kadai-menu_q4n4zk.jpg',
     },
     {
         name: 'Paneer Badam Pasanda',
@@ -189,7 +189,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/badam-pasanda-menu.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
@@ -204,7 +204,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/dal-makhani-menu.jpg',
+        clPhoto: 'indicka-menu/dal-makhani-menu_agsfks.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
@@ -219,7 +219,7 @@ export const Meals: Meal[] = [
         weight: '100g',
         priceJH: 95,
         priceTR: 110,
-        photo: 'assets/malai-kofta.jpg',
+        clPhoto: 'indicka-menu/malai-kofta-menu_dgkeiv.jpg',
         packaging: 5,
         sideDish: {},
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
@@ -526,7 +526,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/mushroom.jpg',
+        clPhoto: 'indicka/mushroom_bcw5gb.jpg',
     }, {
         name: 'Chicken Tikka Masala',
         descriptionCZ: 'Grilované kuřecí kostky  s ostrou omáčkou',
@@ -540,7 +540,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        clPhoto: 'tikka-masala2_nanicq.jpg'
+        clPhoto: 'indicka/tikka-masala2_nanicq.jpg'
     }, {
         name: 'Chicken Chana',
         descriptionCZ: 'Kuřecí kostky s cizrnou',
@@ -553,7 +553,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        clPhoto: 'chana_hu5ckr.jpg',
+        clPhoto: 'indicka/chana_hu5ckr.jpg',
     }, {
         name: 'Chicken Dabal Maza',
         descriptionCZ: 'Kuřecí kostky s jemně kořeněnou restovanou zeleninou',
@@ -605,7 +605,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        clPhoto: 'palak_henlbs.jpg',
+        clPhoto: 'indicka/palak_henlbs.jpg',
     }, {
         name: 'Chicken Badam Pasanda',
         descriptionCZ: 'Kuřecí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -618,7 +618,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/badam-pasanda.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
     }, {
         name: 'Chicken Rara',
         descriptionCZ: 'Kuřecí kostky s jemně pálivou omáčkou',
@@ -632,7 +632,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/Rara.jpg',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     }, {
         name: 'Butter Chicken',
         descriptionCZ: 'Kuřecí kostky s pikantní máslovou omáčkou',
@@ -659,7 +659,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        photo: 'assets/vindaloo.jpg',
+        clPhoto: 'indicka/vindaloo_lpt3oe.jpg',
     }, {
         name: 'Chicken Korma',
         descriptionCZ: 'Kuřecí kostky s jemnou omáčkou',
@@ -711,7 +711,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         tags: [MealTags.New, MealTags.ChefSpecial],
         class: 'chicken',
-        clPhoto: 'labbader_isdzaz.jpg'
+        clPhoto: 'indicka/labbader_isdzaz.jpg'
     }, {
         name: 'Lamb Thali',
         descriptionCZ: 'Kořeněné jehněčí kostky, špenát, míchaná zelenina (fazole, hrášek, květák, brambory, mrkev, sýr)',
@@ -737,7 +737,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        photo: 'assets/mushroom.jpg',
+        clPhoto: 'indicka/mushroom_bcw5gb.jpg',
     }, {
         name: 'Lamb Masala',
         descriptionCZ: 'Jehněčí kostky s ostrou omáčkou',
@@ -778,7 +778,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        clPhoto: 'palak_henlbs.jpg',
+        clPhoto: 'indicka/palak_henlbs.jpg',
     }, {
         name: 'Lamb Badam Pasanda',
         descriptionCZ: 'Jehněčí kostky s jemnou omáčkou z kokosu s mandlemi',
@@ -791,7 +791,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        photo: 'assets/badam-pasanda.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
     }, {
         name: 'Lamb Vindaloo',
         descriptionCZ: 'Jehněčí kostky s bramborami a velmi ostrou omáčkou',
@@ -805,7 +805,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'lamb',
-        photo: 'assets/vindaloo.jpg',
+        clPhoto: 'indicka/vindaloo_lpt3oe.jpg',
     }, {
         name: 'Lamb Curry',
         descriptionCZ: 'Jehněčí kostky s kari omáčkou',
@@ -830,7 +830,7 @@ export const Meals: Meal[] = [
         priceJH: 180,
         priceTR: 180,
         packaging: 5,
-        photo: 'assets/Rara.jpg',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg',
         sideDish: {},
         type: 'meal',
         class: 'lamb',
@@ -847,7 +847,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
-        photo: 'assets/vindaloo.jpg',
+        clPhoto: 'indicka/vindaloo_lpt3oe.jpg',
     }, {
         name: 'Pork Curry',
         descriptionCZ: 'Vepřové kostky s kari omáčkou',
@@ -888,7 +888,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
-        photo: 'assets/mushroom.jpg',
+        clPhoto: 'indicka/mushroom_bcw5gb.jpg',
     }, {
         name: 'Pork Rara',
         descriptionCZ: 'Vepřové kostky s jemně pálivou omáčkou',
@@ -902,7 +902,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
-        photo: 'assets/Rara.jpg',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     }, {
         name: 'Vegetarian Thali',
         descriptionCZ: 'Indická čočka, špenát, míchaná zelenina (fazole, hrášek, květák, sýr, brambory, mrkev)',
@@ -928,7 +928,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/badam-pasanda.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
     }, {
         name: 'Shahi Paneer',
         descriptionCZ: 'Sýrové kostky s jemně pálivou omáčkou',
@@ -955,7 +955,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        clPhoto: 'palak_henlbs.jpg',
+        clPhoto: 'indicka/palak_henlbs.jpg',
     }, {
         name: 'Paneer Korma',
         descriptionCZ: 'Sýrové kostky s jemnou omáčkou',
@@ -1036,7 +1036,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/vindaloo.jpg',
+        clPhoto: 'indicka/vindaloo_lpt3oe.jpg',
     }, {
         name: 'Vegetarian Korma',
         descriptionCZ: 'Míchaná zelenina (fazole, květák, mrkev, brambory hrášek, sýr) jemná omáčka s kokosem a kešu oříšky',
@@ -1087,7 +1087,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        clPhoto: 'palak_henlbs.jpg',
+        clPhoto: 'indicka/palak_henlbs.jpg',
     }, {
         name: 'Plain Palak',
         descriptionCZ: 'Pikantní špenát',
@@ -1101,7 +1101,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/plain palak.jpg',
+        clPhoto: 'indicka/palak_henlbs.jpg',
     }, {
         name: 'Aloo Rajma',
         descriptionCZ: 'Brambory s fazolemi a kari omáčkou',
@@ -1128,7 +1128,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        clPhoto: 'mix-vegetables_prhn02.jpg',
+        clPhoto: 'indicka/mix-vegetables_prhn02.jpg',
     }, {
         name: 'Malai Kofta',
         descriptionCZ: 'Opečené mleté bramborové kuličky se sýrem, oříšky a jemnou omáčkou',
@@ -1137,7 +1137,7 @@ export const Meals: Meal[] = [
         weight: '200g',
         priceJH: 145,
         priceTR: 140,
-        photo: 'assets/malai-kofta.jpg',
+        clPhoto: 'indicka-menu/malai-kofta-menu_dgkeiv.jpg',
         packaging: 5,
         sideDish: {},
         type: 'meal',
@@ -1151,7 +1151,7 @@ export const Meals: Meal[] = [
         weight: '200g',
         priceJH: 145,
         priceTR: 140,
-        photo: 'assets/malai-kofta.jpg',
+        clPhoto: 'indicka-menu/malai-kofta-menu_dgkeiv.jpg',
         packaging: 5,
         sideDish: {},
         type: 'meal',
@@ -1220,7 +1220,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/Rara.jpg',
+        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
     }, {
         name: 'Fish Vindaloo',
         descriptionCZ: 'Ryba s velmi pálivou omáčkou a s bramborami',
@@ -1233,7 +1233,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/vindaloo.jpg',
+        clPhoto: 'indicka/vindaloo_lpt3oe.jpg',
     }, {
         name: 'Fish Badam Pasanda',
         descriptionCZ: 'Ryba s jemnou omáčkou z kokosu a s mandlemi',
@@ -1245,7 +1245,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/badam-pasanda.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
     }, {
         name: 'Fish Korma',
         descriptionCZ: 'Ryba s jemnou omáčkou',
@@ -1271,7 +1271,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/vindaloo.jpg',
+        clPhoto: 'indicka/vindaloo_lpt3oe.jpg',
     }, {
         name: 'Lumbini Palau',
         descriptionCZ: 'Krevety, směs rýže a míchané zeleniny',
@@ -1283,7 +1283,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'fish',
-        clPhoto: 'lumbini-palau_lzpxnz.jpg'
+        clPhoto: 'indicka/lumbini-palau_lzpxnz.jpg'
     }, {
         name: 'Prawn Badam Pasanda',
         descriptionCZ: 'Krevety s jemnou omáčkou z kokosu a s mandlemi',
@@ -1296,7 +1296,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        photo: 'assets/badam-pasanda.jpg',
+        clPhoto: 'indicka-menu/badam-pasanda-menu_nvhyld.jpg',
     }, {
         name: 'Prawn Masala',
         descriptionCZ: 'Krevety s ostrou omáčkou',
@@ -1350,7 +1350,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'biryani',
-        clPhoto: 'biryani_f70g8d.jpg',
+        clPhoto: 'indicka/biryani_f70g8d.jpg',
     }, {
         name: 'Pork Biryani',
         descriptionCZ: 'Indická rýže s vepřovými kostkami',
@@ -1362,7 +1362,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'biryani',
-        clPhoto: 'biryani_f70g8d.jpg',
+        clPhoto: 'indicka/biryani_f70g8d.jpg',
     }, {
         name: 'Chicken Biryani',
         descriptionCZ: 'Indická rýže s kuřecími kostkami',
@@ -1374,7 +1374,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'biryani',
-        clPhoto: 'biryani_f70g8d.jpg',
+        clPhoto: 'indicka/biryani_f70g8d.jpg',
     }, {
         name: 'Vegetarian Biryani',
         descriptionCZ: 'Indická rýže s míchanou zeleninou',
@@ -1387,7 +1387,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'biryani',
-        clPhoto: 'biryani_f70g8d.jpg',
+        clPhoto: 'indicka/biryani_f70g8d.jpg',
     },
     {
         name: 'Tandoori Chapati',
