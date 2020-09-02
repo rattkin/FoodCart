@@ -8,7 +8,7 @@ export const Meals: Meal[] = [
         allergen: '1,7',
         priceJH: 25,
         priceTR: 25,
-        clPhoto: 'tomato-soup_g813nq.jpg',
+        clPhoto: 'indicka-soup/tomato-soup_g813nq.jpg',
         packaging: 5,
         type: 'meal',
         class: 'menu',
@@ -23,7 +23,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'menu',
-        clPhoto: 'chicken-soup2_fdqoyl.jpg',
+        clPhoto: 'indicka-soup/chicken-soup2_fdqoyl.jpg',
     },
     {
         name: 'Chicken Rara',
@@ -39,7 +39,7 @@ export const Meals: Meal[] = [
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
+        clPhoto: 'indicka-menu/rara-menu_ojtnzr.jpg'
     },
     {
         name: 'Shahi Paneer',
@@ -70,7 +70,7 @@ export const Meals: Meal[] = [
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
-        clPhoto: 'palak-menu_skg8zy.jpg',
+        clPhoto: 'indicka-menu/palak-menu_skg8zy.jpg',
     },
     {
         name: 'Chicken Korma',
@@ -116,7 +116,7 @@ export const Meals: Meal[] = [
         tags: [MealTags.ChapatiOrRiceFree],
         type: 'meal',
         class: 'menu',
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
+        clPhoto: 'indicka-menu/kari-menu2_qc5u0h.jpg'
     },
     {
         name: 'Pork Rara',
@@ -132,7 +132,7 @@ export const Meals: Meal[] = [
         type: 'meal',
         tags: [MealTags.ChapatiOrRiceFree],
         class: 'menu',
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
+        clPhoto: 'indicka-menu/rara-menu_ojtnzr.jpg'
     },
     {
         name: 'Palak Paneer',
@@ -147,7 +147,7 @@ export const Meals: Meal[] = [
         tags: [MealTags.ChapatiOrRiceFree, MealTags.Vegetarian],
         type: 'meal',
         class: 'menu',
-        clPhoto: 'palak-menu_skg8zy.jpg',
+        clPhoto: 'indicka-menu/palak-menu_skg8zy.jpg',
     },
     {
         name: 'Aloo Rajma',
@@ -237,7 +237,7 @@ export const Meals: Meal[] = [
         tags: [MealTags.ChapatiOrRiceFree, MealTags.New],
         type: 'meal',
         class: 'menu',
-        clPhoto: 'chicken-mango-menu_gvqy69.jpg'
+        clPhoto: 'indicka-menu/chicken-mango-menu_gvqy69.jpg'
     },
     {
         name: 'Tomato Soup',
@@ -246,7 +246,7 @@ export const Meals: Meal[] = [
         allergen: '1,7',
         priceJH: 25,
         priceTR: 35,
-        clPhoto: 'tomato-soup_g813nq.jpg',
+        clPhoto: 'indicka-soup/tomato-soup_g813nq.jpg',
         packaging: 5,
         type: 'meal',
         class: 'soup',
@@ -258,7 +258,7 @@ export const Meals: Meal[] = [
         allergen: '1,3',
         priceJH: 25,
         priceTR: 35,
-        clPhoto: 'chicken-soup2_fdqoyl.jpg',
+        clPhoto: 'indicka-soup/chicken-soup2_fdqoyl.jpg',
         packaging: 5,
         type: 'meal',
         class: 'soup',
@@ -273,7 +273,7 @@ export const Meals: Meal[] = [
         packaging: 5,
         type: 'meal',
         class: 'soup',
-        clPhoto: 'chicken-soup2_fdqoyl.jpg',
+        clPhoto: 'indicka-soup/chicken-soup2_fdqoyl.jpg',
     },
     {
         name: 'Dal Soup',
@@ -632,7 +632,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'chicken',
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
+        clPhoto: 'indicka-menu/rara-menu_ojtnzr.jpg'
     }, {
         name: 'Butter Chicken',
         descriptionCZ: 'Kuřecí kostky s pikantní máslovou omáčkou',
@@ -830,10 +830,10 @@ export const Meals: Meal[] = [
         priceJH: 180,
         priceTR: 180,
         packaging: 5,
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg',
         sideDish: {},
         type: 'meal',
         class: 'lamb',
+        clPhoto: 'indicka-menu/rara-menu_ojtnzr.jpg'
     }, {
         name: 'Pork Vindaloo',
         descriptionCZ: 'Vepřové kostky s bramborami a velmi ostrou omáčkou',
@@ -902,7 +902,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'pork',
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
+        clPhoto: 'indicka-menu/rara-menu_ojtnzr.jpg'
     }, {
         name: 'Vegetarian Thali',
         descriptionCZ: 'Indická čočka, špenát, míchaná zelenina (fazole, hrášek, květák, sýr, brambory, mrkev)',
@@ -1181,7 +1181,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
-        photo: 'assets/chana.jpg',
+        clPhoto: 'indicka/chana_hu5ckr.jpg',
     }, {
         name: 'Fish Masala',
         descriptionCZ: 'Kousky ryby v ostré omáčce',
@@ -1220,7 +1220,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'fish',
-        clPhoto: 'indicka-menu/Chicken_Korma_kgi59a.jpg'
+        clPhoto: 'indicka-menu/rara-menu_ojtnzr.jpg'
     }, {
         name: 'Fish Vindaloo',
         descriptionCZ: 'Ryba s velmi pálivou omáčkou a s bramborami',
