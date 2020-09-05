@@ -1075,6 +1075,7 @@ export const Meals: Meal[] = [
         sideDish: {},
         type: 'meal',
         class: 'vege',
+        clPhoto: 'indicka/bombay_aloo_afy9xt.jpg'
     }, {
         name: 'Aloo Palak',
         descriptionCZ: 'Brambory se špenátem',
